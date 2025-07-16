@@ -4,33 +4,24 @@
 
 ## 基础参数
 
-| 参数        | 说明                           | 类型     | 可选值                                                        | 默认值                               |
-| ----------- | ------------------------------ | -------- | ------------------------------------------------------------- | ------------------------------------ |
-| modelValue  | 双向绑定的日期值               | string   | -                                                             | -                                    |
-| title       | 选择器弹窗顶部标题             | string   | -                                                             | "请选择"                             |
-| placeholder | 输入框占位符文本               | string   | -                                                             | "请选择"                             |
-| headers     | 选择器列表头部标题数组         | string[] | -                                                             | ['年', '月', '日', '时', '分', '秒'] |
-| showTrigger | 是否显示默认的选择器触发元素   | boolean  | true / false                                                  | true                                 |
-| disabled    | 是否禁用选择器，禁用后无法操作 | boolean  | true / false                                                  | false                                |
-| type        | 选择器类型，控制日期选择的精度 | string   | "year" \| "month" \| "date" \| "hour" \| "minute" \| "second" | "second"                             |
-
-## 按钮配置
-
-| 参数        | 说明             | 类型    | 默认值 |
-| ----------- | ---------------- | ------- | ------ |
-| confirmText | 确认按钮显示文本 | string  | "确定" |
-| showConfirm | 是否显示确认按钮 | boolean | true   |
-| cancelText  | 取消按钮显示文本 | string  | "取消" |
-| showCancel  | 是否显示取消按钮 | boolean | true   |
-
-## 格式化配置
-
-| 参数        | 说明                         | 类型   | 默认值                |
-| ----------- | ---------------------------- | ------ | --------------------- |
-| labelFormat | 选中值在触发器中的显示格式） | string | ""                    |
-| valueFormat | 输出值的格式化规则           | string | ""                    |
-| start       | 可选择的最早日期时间         | string | "1950-01-01 00:00:00" |
-| end         | 可选择的最晚日期时间         | string | "2050-12-31 23:59:59" |
+| 参数        | 说明                           | 类型                        | 可选值                                                        | 默认值                               |
+| ----------- | ------------------------------ | --------------------------- | ------------------------------------------------------------- | ------------------------------------ |
+| pt          | 样式穿透配置                   | [PassThrough](#passthrough) | -                                                             | -                                    |
+| modelValue  | 双向绑定的日期值               | string                      | -                                                             | -                                    |
+| title       | 选择器弹窗顶部标题             | string                      | -                                                             | "请选择"                             |
+| placeholder | 输入框占位符文本               | string                      | -                                                             | "请选择"                             |
+| headers     | 选择器列表头部标题数组         | string[]                    | -                                                             | ['年', '月', '日', '时', '分', '秒'] |
+| showTrigger | 是否显示默认的选择器触发元素   | boolean                     | true / false                                                  | true                                 |
+| disabled    | 是否禁用选择器，禁用后无法操作 | boolean                     | true / false                                                  | false                                |
+| type        | 选择器类型，控制日期选择的精度 | string                      | "year" \| "month" \| "date" \| "hour" \| "minute" \| "second" | "second"                             |
+| confirmText | 确认按钮显示文本               | string                      | "确定"                                                        |
+| showConfirm | 是否显示确认按钮               | boolean                     | true                                                          |
+| cancelText  | 取消按钮显示文本               | string                      | "取消"                                                        |
+| showCancel  | 是否显示取消按钮               | boolean                     | true                                                          |
+| labelFormat | 选中值在触发器中的显示格式     | string                      | ""                                                            |
+| valueFormat | 输出值的格式化规则             | string                      | ""                                                            |
+| start       | 可选择的最早日期时间           | string                      | "1950-01-01 00:00:00"                                         |
+| end         | 可选择的最晚日期时间           | string                      | "2050-12-31 23:59:59"                                         |
 
 ## 事件
 
@@ -148,7 +139,7 @@
 ```html
 <template>
   <cl-select-date
-    ref="selectRef"
+    ref="selectDateRef"
     v-model="customDate"
     :show-trigger="false"
     type="date"
@@ -160,11 +151,11 @@
 <script setup lang="ts">
   import { ref } from "vue";
 
-  const selectRef = ref<ClSelectDateComponentPublicInstance | null>(null);
+  const selectDateRef = ref<ClSelectDateComponentPublicInstance | null>(null);
   const customDate = ref("");
 
   function openDatePicker() {
-    selectRef.value?.open((value: string) => {
+    selectDateRef.value!.open((value: string) => {
       console.log("选择的日期:", value);
     });
   }

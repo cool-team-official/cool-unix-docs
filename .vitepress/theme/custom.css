@@ -44,6 +44,10 @@ table {
   position: sticky !important;
 }
 
+.aside-curtain {
+  display: none !important;
+}
+
 .VPDocAside {
   flex-direction: row !important;
 }
