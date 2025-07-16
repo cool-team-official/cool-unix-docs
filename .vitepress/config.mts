@@ -47,7 +47,7 @@ export default defineConfig({
     nav: [
       { text: "介绍", link: "/src/introduce/index.md", noIcon: false },
       { text: "教程", link: "/src/introduce/quick.md" },
-      { text: "组件库", link: "/src/guide/components/basic/button.md" },
+      { text: "组件库", link: "/src/components/basic/button.md" },
       { text: "插件市场", link: "https://cool-js.com/plugin" },
       { text: "交流合作", link: "/src/about/index.md" },
       {
@@ -99,8 +99,224 @@ export default defineConfig({
             link: "/src/introduce/i18n.md",
           },
           {
-            text: "帮助文档",
+            text: "常见问题",
             link: "/src/introduce/help.md",
+          },
+        ],
+      },
+      {
+        items: [
+          {
+            text: "使用说明",
+            link: "/src/components/doc.md",
+          },
+          {
+            text: "PassThrough",
+            link: "/src/components/pt.md",
+          },
+          {
+            text: "基础组件",
+            items: [
+              {
+                text: "Button",
+                link: "/src/components/basic/button.md",
+              },
+              {
+                text: "Text",
+                link: "/src/components/basic/text.md",
+              },
+              {
+                text: "Icon",
+                link: "/src/components/basic/icon.md",
+              },
+              {
+                text: "Image",
+                link: "/src/components/basic/image.md",
+              },
+              {
+                text: "Tag",
+                link: "/src/components/basic/tag.md",
+              },
+            ],
+          },
+          {
+            text: "表单组件",
+            items: [
+              {
+                text: "Input",
+                link: "/src/components/form/input.md",
+              },
+              {
+                text: "Textarea",
+                link: "/src/components/form/textarea.md",
+              },
+              {
+                text: "InputNumber",
+                link: "/src/components/form/input-number.md",
+              },
+              {
+                text: "InputOtp",
+                link: "/src/components/form/input-otp.md",
+              },
+              {
+                text: "Keyboard",
+                link: "/src/components/form/keyboard.md",
+              },
+              {
+                text: "Radio",
+                link: "/src/components/form/radio.md",
+              },
+              {
+                text: "Checkbox",
+                link: "/src/components/form/checkbox.md",
+              },
+              {
+                text: "Switch",
+                link: "/src/components/form/switch.md",
+              },
+              {
+                text: "Rate",
+                link: "/src/components/form/rate.md",
+              },
+              {
+                text: "Slider",
+                link: "/src/components/form/slider.md",
+              },
+              {
+                text: "Select",
+                link: "/src/components/form/select.md",
+              },
+              {
+                text: "SelectDate",
+                link: "/src/components/form/select-date.md",
+              },
+              {
+                text: "SelectTime",
+                link: "/src/components/form/select-time.md",
+              },
+              {
+                text: "Cascader",
+                link: "/src/components/form/cascader.md",
+              },
+              {
+                text: "Upload",
+                link: "/src/components/form/upload.md",
+              },
+            ],
+          },
+          {
+            text: "视图组件",
+            items: [
+              {
+                text: "Avatar",
+                link: "/src/components/view/avatar.md",
+              },
+              {
+                text: "Badge",
+                link: "/src/components/view/badge.md",
+              },
+              {
+                text: "Banner",
+                link: "/src/components/view/banner.md",
+              },
+              {
+                text: "Card",
+                link: "/src/components/view/card.md",
+              },
+              {
+                text: "Divider",
+                link: "/src/components/view/divider.md",
+              },
+              {
+                text: "Flex",
+                link: "/src/components/view/flex.md",
+              },
+              {
+                text: "List",
+                link: "/src/components/view/list.md",
+              },
+              {
+                text: "ListIndex",
+                link: "/src/components/view/list-index.md",
+              },
+              {
+                text: "Loadmore",
+                link: "/src/components/view/loadmore.md",
+              },
+              {
+                text: "Noticebar",
+                link: "/src/components/view/noticebar.md",
+              },
+              {
+                text: "Popup",
+                link: "/src/components/view/popup.md",
+              },
+              {
+                text: "Progress",
+                link: "/src/components/view/progress.md",
+              },
+              {
+                text: "Scroller",
+                link: "/src/components/view/scroller.md",
+              },
+              {
+                text: "Search",
+                link: "/src/components/view/search.md",
+              },
+              {
+                text: "Slider",
+                link: "/src/components/view/slider.md",
+              },
+              {
+                text: "Tabs",
+                link: "/src/components/view/tabs.md",
+              },
+              {
+                text: "Topbar",
+                link: "/src/components/view/topbar.md",
+              },
+              {
+                text: "Waterfall",
+                link: "/src/components/view/waterfall.md",
+              },
+              {
+                text: "Skeleton",
+                link: "/src/components/view/skeleton.md",
+              },
+            ],
+          },
+          {
+            text: "扩展组件",
+            items: [
+              {
+                text: "ActionSheet",
+                link: "/src/components/extend/action-sheet.md",
+              },
+              {
+                text: "Captcha",
+                link: "/src/components/extend/captcha.md",
+              },
+              {
+                text: "Confirm",
+                link: "/src/components/extend/confirm.md",
+              },
+              {
+                text: "Dialog",
+                link: "/src/components/extend/dialog.md",
+              },
+              {
+                text: "FilterBar",
+                link: "/src/components/extend/filter-bar.md",
+              },
+              {
+                text: "Page",
+                link: "/src/components/extend/page.md",
+              },
+              {
+                text: "SliderVerify",
+                link: "/src/components/extend/slider-verify.md",
+              },
+            ],
           },
         ],
       },
@@ -115,7 +331,7 @@ export default defineConfig({
               },
               {
                 text: ".cursor",
-                link: "/src/guide/components.md",
+                link: "/src/components.md",
               },
               {
                 text: "components",
@@ -179,206 +395,6 @@ export default defineConfig({
               { text: "pages.json", link: "/src/guide/pages.json.md" },
               { text: "theme.json", link: "/src/guide/theme.json.md" },
               { text: "vite.config.ts", link: "/src/guide/vite.config.ts.md" },
-            ],
-          },
-        ],
-      },
-      {
-        items: [
-          {
-            text: "基础组件",
-            items: [
-              {
-                text: "Button",
-                link: "/src/guide/components/basic/button.md",
-              },
-              {
-                text: "Text",
-                link: "/src/guide/components/basic/text.md",
-              },
-              {
-                text: "Icon",
-                link: "/src/guide/components/basic/icon.md",
-              },
-              {
-                text: "Image",
-                link: "/src/guide/components/basic/image.md",
-              },
-              {
-                text: "Loading",
-                link: "/src/guide/components/basic/loading.md",
-              },
-              {
-                text: "Tag",
-                link: "/src/guide/components/basic/tag.md",
-              },
-              {
-                text: "Toast",
-                link: "/src/guide/components/basic/toast.md",
-              },
-            ],
-          },
-          {
-            text: "表单组件",
-            items: [
-              {
-                text: "Form",
-                link: "/src/guide/components/form/form.md",
-              },
-              {
-                text: "Input",
-                link: "/src/guide/components/form/input.md",
-              },
-              {
-                text: "InputNumber",
-                link: "/src/guide/components/form/input-number.md",
-              },
-              {
-                text: "Radio",
-                link: "/src/guide/components/form/radio.md",
-              },
-              {
-                text: "Checkbox",
-                link: "/src/guide/components/form/checkbox.md",
-              },
-              {
-                text: "Select",
-                link: "/src/guide/components/form/select.md",
-              },
-              {
-                text: "SelectCity",
-                link: "/src/guide/components/form/select-city.md",
-              },
-              {
-                text: "SelectDate",
-                link: "/src/guide/components/form/select-date.md",
-              },
-              {
-                text: "SelectPopup",
-                link: "/src/guide/components/form/select-popup.md",
-              },
-              {
-                text: "Switch",
-                link: "/src/guide/components/form/switch.md",
-              },
-              {
-                text: "Textarea",
-                link: "/src/guide/components/form/textarea.md",
-              },
-            ],
-          },
-          {
-            text: "视图组件",
-            items: [
-              {
-                text: "Avatar",
-                link: "/src/guide/components/view/avatar.md",
-              },
-              {
-                text: "Badge",
-                link: "/src/guide/components/view/badge.md",
-              },
-              {
-                text: "Banner",
-                link: "/src/guide/components/view/banner.md",
-              },
-              {
-                text: "Card",
-                link: "/src/guide/components/view/card.md",
-              },
-              {
-                text: "Divider",
-                link: "/src/guide/components/view/divider.md",
-              },
-              {
-                text: "Flex",
-                link: "/src/guide/components/view/flex.md",
-              },
-              {
-                text: "List",
-                link: "/src/guide/components/view/list.md",
-              },
-              {
-                text: "ListIndex",
-                link: "/src/guide/components/view/list-index.md",
-              },
-              {
-                text: "Loadmore",
-                link: "/src/guide/components/view/loadmore.md",
-              },
-              {
-                text: "Noticebar",
-                link: "/src/guide/components/view/noticebar.md",
-              },
-              {
-                text: "Popup",
-                link: "/src/guide/components/view/popup.md",
-              },
-              {
-                text: "Progress",
-                link: "/src/guide/components/view/progress.md",
-              },
-              {
-                text: "Scroller",
-                link: "/src/guide/components/view/scroller.md",
-              },
-              {
-                text: "Search",
-                link: "/src/guide/components/view/search.md",
-              },
-              {
-                text: "Slider",
-                link: "/src/guide/components/view/slider.md",
-              },
-              {
-                text: "Tabs",
-                link: "/src/guide/components/view/tabs.md",
-              },
-              {
-                text: "Topbar",
-                link: "/src/guide/components/view/topbar.md",
-              },
-              {
-                text: "Waterfall",
-                link: "/src/guide/components/view/waterfall.md",
-              },
-              {
-                text: "Skeleton",
-                link: "/src/guide/components/view/skeleton.md",
-              },
-            ],
-          },
-          {
-            text: "扩展组件",
-            items: [
-              {
-                text: "ActionSheet",
-                link: "/src/guide/components/extend/action-sheet.md",
-              },
-              {
-                text: "Captcha",
-                link: "/src/guide/components/extend/captcha.md",
-              },
-              {
-                text: "Confirm",
-                link: "/src/guide/components/extend/confirm.md",
-              },
-              {
-                text: "Dialog",
-                link: "/src/guide/components/extend/dialog.md",
-              },
-              {
-                text: "FilterBar",
-                link: "/src/guide/components/extend/filter-bar.md",
-              },
-              {
-                text: "Page",
-                link: "/src/guide/components/extend/page.md",
-              },
-              {
-                text: "SliderVerify",
-                link: "/src/guide/components/extend/slider-verify.md",
-              },
             ],
           },
         ],

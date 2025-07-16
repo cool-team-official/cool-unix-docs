@@ -1,4 +1,5 @@
 :root {
+  --vp-layout-max-width: 100%;
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: -webkit-linear-gradient(
     120deg,
@@ -12,6 +13,39 @@
     #47caff 50%
   );
   --vp-home-hero-image-filter: blur(44px);
+}
+
+table,
+tr,
+thead,
+tbody {
+  width: 100%;
+}
+
+table {
+  display: table !important;
+}
+
+.VPDoc .content {
+  flex: 1;
+  flex-grow: none !important;
+  width: auto !important;
+}
+
+.VPDoc .aside {
+  max-width: none !important;
+  width: fit-content !important;
+  flex-shrink: 0 !important;
+  flex-grow: 0 !important;
+}
+
+.aside-container {
+  width: 100% !important;
+  position: sticky !important;
+}
+
+.VPDocAside {
+  flex-direction: row !important;
 }
 
 @media (min-width: 640px) {
@@ -65,5 +99,6 @@
 @media (max-width: 768px) {
   table {
     white-space: nowrap;
+    display: block !important;
   }
 }

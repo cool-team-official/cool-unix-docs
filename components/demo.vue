@@ -1,12 +1,5 @@
 <template>
-  <div
-    class="demo"
-    :class="{
-      'is-home': isHome,
-      'is-fr': isFr,
-    }"
-    v-if="isShow"
-  >
+  <div class="demo" :class="{}" v-if="isShow">
     <img class="bg" src="/demo/bg.png" />
 
     <iframe class="preview" :src="`http://localhost:9900/#/${path}`" />
@@ -18,7 +11,6 @@ import { computed } from "vue";
 
 const props = defineProps({
   isHome: Boolean,
-  isFr: Boolean,
   path: {
     type: String,
     default: "",
@@ -49,10 +41,9 @@ const isShow = computed(() => {
   position: relative;
   height: 727px;
   width: 364px;
-  max-width: 100%;
   background-color: var(--vp-c-bg);
   border-radius: 50px;
-  margin: 50px 0;
+  margin-left: 50px;
 
   .bg {
     position: relative;
@@ -74,21 +65,6 @@ const isShow = computed(() => {
 
   &.is-home {
     margin: 0 auto;
-  }
-
-  &.is-fr {
-    position: fixed;
-    right: 70px;
-    top: 70px;
-    z-index: 999;
-  }
-}
-
-@media (max-width: 1920px) {
-  .demo {
-    &.is-fr {
-      right: 10px;
-    }
   }
 }
 </style>

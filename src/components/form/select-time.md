@@ -1,4 +1,4 @@
-# SelectDate 日期选择器
+# SelectTime 时间选择器
 
 ## 参数
 
@@ -43,12 +43,16 @@
 ### 起始时间
 
 ```html
-<cl-select-date v-model="v4" start="2023-01-01 08:00:00" end="2025-12-12 12:00:00" />
+<cl-select-date
+  v-model="v4"
+  start="2023-01-01 08:00:00"
+  end="2025-12-12 12:00:00"
+/>
 
 <cl-row :margin="[20, 0, 0, 0]">
-	<cl-text value="2023-01-01 08:00:00 < " />
-	<cl-text value="时间" color="red" :margin="[0, 10, 0, 10]" />
-	<cl-text value=" < 2025-12-12 12:00:00" />
+  <cl-text value="2023-01-01 08:00:00 < " />
+  <cl-text value="时间" color="red" :margin="[0, 10, 0, 10]" />
+  <cl-text value=" < 2025-12-12 12:00:00" />
 </cl-row>
 ```
 
@@ -56,8 +60,8 @@
 
 ```html
 <cl-select-date
-	v-model="v5"
-	:display-format="
+  v-model="v5"
+  :display-format="
 					(date: string) => {
 						return date ? dayjs(date).format('YYYY年MM月DD日 HH时mm分ss秒') : '';
 					}
@@ -69,17 +73,17 @@
 
 ```html
 <cl-select-date v-model="v6" title="请选择预约时间">
-	<template #default="{ value }">
-		<cl-select-inner round background-color="#f7f7f7">
-			<cl-text
-				prefix-icon="cl-icon-time"
-				:value="
+  <template #default="{ value }">
+    <cl-select-inner round background-color="#f7f7f7">
+      <cl-text
+        prefix-icon="cl-icon-time"
+        :value="
 					value
 						? dayjs(value).format('YYYY年MM月DD日 HH时mm分ss秒')
 						: '请选择预约时间'
 				"
-			/>
-		</cl-select-inner>
-	</template>
+      />
+    </cl-select-inner>
+  </template>
 </cl-select-date>
 ```

@@ -10,9 +10,11 @@
         />
       </div>
     </template>
-  </Layout>
 
-  <demo is-fr :path="path" :key="path" />
+    <template #aside-outline-after>
+      <demo is-fr :path="path" :key="path" />
+    </template>
+  </Layout>
 </template>
 
 <script setup>
@@ -58,19 +60,25 @@ const path = ref("");
 watch(
   () => route.path,
   (val) => {
-    if (val.includes("/guide/components/")) {
+    if (val.includes("/introduce/icon")) {
+      path.value = "pages/demo/basic/icon";
+      return;
+    }
+
+    if (val.includes("/components/pt") || val.includes("/components/doc")) {
+      path.value = "/";
+      return;
+    }
+
+    if (val.includes("/components/")) {
       const str = val
-        .replace("/guide/components", "")
+        .replace("/components", "")
         .replace("/src", "")
         .replace(".html", "");
 
       path.value = `pages/demo${str}`;
     } else {
       path.value = "";
-    }
-
-    if (val.includes("/introduce/icon")) {
-      path.value = "pages/demo/basic/icon";
     }
   },
   {
