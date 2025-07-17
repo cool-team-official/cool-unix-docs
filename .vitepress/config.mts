@@ -118,23 +118,23 @@ export default defineConfig({
             text: "基础组件",
             items: [
               {
-                text: "Button",
+                text: "Button 按钮",
                 link: "/src/components/basic/button.md",
               },
               {
-                text: "Text",
+                text: "Text 文本",
                 link: "/src/components/basic/text.md",
               },
               {
-                text: "Icon",
+                text: "Icon 图标",
                 link: "/src/components/basic/icon.md",
               },
               {
-                text: "Image",
+                text: "Image 图片",
                 link: "/src/components/basic/image.md",
               },
               {
-                text: "Tag",
+                text: "Tag 标签",
                 link: "/src/components/basic/tag.md",
               },
             ],
@@ -143,178 +143,184 @@ export default defineConfig({
             text: "表单组件",
             items: [
               {
-                text: "Input",
+                text: "Input 输入框",
                 link: "/src/components/form/input.md",
               },
               {
-                text: "Textarea",
+                text: "Textarea 文本域",
                 link: "/src/components/form/textarea.md",
               },
               {
-                text: "InputNumber",
+                text: "InputNumber 计数器",
                 link: "/src/components/form/input-number.md",
               },
               {
-                text: "InputOtp",
+                text: "InputOtp 验证码输入",
                 link: "/src/components/form/input-otp.md",
               },
               {
-                text: "Keyboard",
+                text: "Keyboard 虚拟键盘",
                 link: "/src/components/form/keyboard.md",
               },
               {
-                text: "Radio",
+                text: "Radio 单选框",
                 link: "/src/components/form/radio.md",
               },
               {
-                text: "Checkbox",
+                text: "Checkbox 多选框",
                 link: "/src/components/form/checkbox.md",
               },
               {
-                text: "Switch",
+                text: "Switch 开关",
                 link: "/src/components/form/switch.md",
               },
               {
-                text: "Rate",
+                text: "Rate 评分",
                 link: "/src/components/form/rate.md",
               },
               {
-                text: "Slider",
+                text: "Slider 滑块",
                 link: "/src/components/form/slider.md",
               },
               {
-                text: "Select",
+                text: "Select 选择器",
                 link: "/src/components/form/select.md",
               },
               {
-                text: "SelectDate",
+                text: "SelectDate 日期选择",
                 link: "/src/components/form/select-date.md",
               },
               {
-                text: "SelectTime",
+                text: "SelectTime 时间选择",
                 link: "/src/components/form/select-time.md",
               },
               {
-                text: "Cascader",
+                text: "Cascader 级联选择",
                 link: "/src/components/form/cascader.md",
               },
               {
-                text: "Upload",
+                text: "Upload 文件上传",
                 link: "/src/components/form/upload.md",
               },
             ],
           },
           {
-            text: "视图组件",
+            text: "布局组件",
             items: [
               {
-                text: "Avatar",
-                link: "/src/components/view/avatar.md",
+                text: "Flex 弹性布局",
+                link: "/src/components/layout/flex.md",
               },
               {
-                text: "Badge",
-                link: "/src/components/view/badge.md",
+                text: "Tabs 标签页",
+                link: "/src/components/layout/tabs.md",
               },
               {
-                text: "Banner",
-                link: "/src/components/view/banner.md",
+                text: "Collapse 折叠面板",
+                link: "/src/components/layout/collapse.md",
               },
               {
-                text: "Card",
-                link: "/src/components/view/card.md",
+                text: "Sticky 吸顶",
+                link: "/src/components/layout/sticky.md",
               },
               {
-                text: "Divider",
-                link: "/src/components/view/divider.md",
+                text: "Topbar 导航栏",
+                link: "/src/components/layout/topbar.md",
               },
               {
-                text: "Flex",
-                link: "/src/components/view/flex.md",
+                text: "Footer 底部视图",
+                link: "/src/components/layout/footer.md",
               },
               {
-                text: "List",
-                link: "/src/components/view/list.md",
-              },
-              {
-                text: "ListIndex",
-                link: "/src/components/view/list-index.md",
-              },
-              {
-                text: "Loadmore",
-                link: "/src/components/view/loadmore.md",
-              },
-              {
-                text: "Noticebar",
-                link: "/src/components/view/noticebar.md",
-              },
-              {
-                text: "Popup",
-                link: "/src/components/view/popup.md",
-              },
-              {
-                text: "Progress",
-                link: "/src/components/view/progress.md",
-              },
-              {
-                text: "Scroller",
-                link: "/src/components/view/scroller.md",
-              },
-              {
-                text: "Search",
-                link: "/src/components/view/search.md",
-              },
-              {
-                text: "Slider",
-                link: "/src/components/view/slider.md",
-              },
-              {
-                text: "Tabs",
-                link: "/src/components/view/tabs.md",
-              },
-              {
-                text: "Topbar",
-                link: "/src/components/view/topbar.md",
-              },
-              {
-                text: "Waterfall",
-                link: "/src/components/view/waterfall.md",
-              },
-              {
-                text: "Skeleton",
-                link: "/src/components/view/skeleton.md",
+                text: "FloatView 悬浮视图",
+                link: "/src/components/layout/float-view.md",
               },
             ],
           },
           {
-            text: "扩展组件",
+            text: "数据展示",
             items: [
               {
-                text: "ActionSheet",
-                link: "/src/components/extend/action-sheet.md",
+                text: "Avatar 头像",
+                link: "/src/components/data/avatar.md",
               },
               {
-                text: "Captcha",
-                link: "/src/components/extend/captcha.md",
+                text: "List 列表",
+                link: "/src/components/data/list.md",
               },
               {
-                text: "Confirm",
-                link: "/src/components/extend/confirm.md",
+                text: "ListView 列表视图",
+                link: "/src/components/data/list-view.md",
               },
               {
-                text: "Dialog",
-                link: "/src/components/extend/dialog.md",
+                text: "Waterfall 瀑布流",
+                link: "/src/components/data/waterfall.md",
               },
               {
-                text: "FilterBar",
-                link: "/src/components/extend/filter-bar.md",
+                text: "Banner 轮播图",
+                link: "/src/components/data/banner.md",
               },
               {
-                text: "Page",
-                link: "/src/components/extend/page.md",
+                text: "Pagination 分页",
+                link: "/src/components/data/pagination.md",
               },
               {
-                text: "SliderVerify",
-                link: "/src/components/extend/slider-verify.md",
+                text: "Timeline 时间轴",
+                link: "/src/components/data/timeline.md",
+              },
+            ],
+          },
+          {
+            text: "状态组件",
+            items: [
+              {
+                text: "Badge 角标",
+                link: "/src/components/status/badge.md",
+              },
+              {
+                text: "NoticeBar 通知栏",
+                link: "/src/components/status/notice-bar.md",
+              },
+              {
+                text: "Countdown 倒计时",
+                link: "/src/components/status/countdown.md",
+              },
+              {
+                text: "Progress 进度条",
+                link: "/src/components/status/progress.md",
+              },
+              {
+                text: "Skeleton 骨架屏",
+                link: "/src/components/status/skeleton.md",
+              },
+              {
+                text: "Loadmore 加载更多",
+                link: "/src/components/status/loadmore.md",
+              },
+              {
+                text: "RollingNumber 滚动数字",
+                link: "/src/components/status/rolling-number.md",
+              },
+            ],
+          },
+          {
+            text: "反馈组件",
+            items: [
+              {
+                text: "ActionSheet 操作面板",
+                link: "/src/components/feedback/action-sheet.md",
+              },
+              {
+                text: "Popup 弹出层",
+                link: "/src/components/feedback/popup.md",
+              },
+              {
+                text: "Confirm 确认框",
+                link: "/src/components/feedback/confirm.md",
+              },
+              {
+                text: "Toast 提示框",
+                link: "/src/components/feedback/toast.md",
               },
             ],
           },

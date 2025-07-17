@@ -1,6 +1,6 @@
-# checkbox 复选框
+# checkbox 多选框
 
-checkbox 复选框组件用于在一组选项中进行单一选择。支持自定义图标、样式穿透配置，以及灵活的事件处理。
+checkbox 多选框组件用于在一组选项中进行单一选择。支持自定义图标、样式穿透配置，以及灵活的事件处理。
 
 ## 参数
 
@@ -11,9 +11,9 @@ checkbox 复选框组件用于在一组选项中进行单一选择。支持自�
 | activeIcon   | 选中状态的图标名称   | string                      | -      | "checkbox-line"       |
 | inactiveIcon | 未选中状态的图标名称 | string                      | -      | "checkbox-blank-line" |
 | showIcon     | 是否显示状态图标     | boolean                     | -      | true                  |
-| label        | 复选框的标签文本     | string                      | -      | -                     |
-| value        | 该复选框对应的唯一值 | string \| number \| boolean | -      | -                     |
-| disabled     | 是否禁用该复选框     | boolean                     | -      | false                 |
+| label        | 多选框的标签文本     | string                      | -      | -                     |
+| value        | 该多选框对应的唯一值 | string \| number \| boolean | -      | -                     |
+| disabled     | 是否禁用该多选框     | boolean                     | -      | false                 |
 
 ## 事件
 
@@ -35,7 +35,7 @@ checkbox 复选框组件用于在一组选项中进行单一选择。支持自�
 
 ### 基础用法
 
-最基本的复选框使用方式，通过 `v-model` 实现双向数据绑定。
+最基本的多选框使用方式，通过 `v-model` 实现双向数据绑定。
 
 ```html
 <template>
@@ -55,7 +55,7 @@ checkbox 复选框组件用于在一组选项中进行单一选择。支持自�
 
 ### 禁用状态
 
-使用 `disabled` 属性可以禁用特定的复选框选项。
+使用 `disabled` 属性可以禁用特定的多选框选项。
 
 ```html
 <template>
@@ -73,7 +73,7 @@ checkbox 复选框组件用于在一组选项中进行单一选择。支持自�
 
 ### 纯文本样式
 
-通过设置 `:show-icon="false"` 隐藏图标，创建纯文本风格的复选框。
+通过设置 `:show-icon="false"` 隐藏图标，创建纯文本风格的多选框。
 
 ```html
 <template>
@@ -141,7 +141,7 @@ checkbox 复选框组件用于在一组选项中进行单一选择。支持自�
 
 ### 动态渲染选项
 
-通过循环渲染创建动态的复选框组，注意需要为选项数组指定正确的 TypeScript 类型。
+通过循环渲染创建动态的多选框组，注意需要为选项数组指定正确的 TypeScript 类型。
 
 ```html
 <template>
