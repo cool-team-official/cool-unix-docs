@@ -1,55 +1,78 @@
 # Avatar 头像
 
-## Avatar 参数
+用于展示用户头像或替代图像的组件，支持图片显示和图标占位。
 
-| 参数      | 说明     | 类型    | 可选值          | 默认值      |
-| --------- | -------- | ------- | --------------- | ----------- |
-| src       | 图片地址 | string  |
-| mode      | 裁剪模式 | string  |                 | scaleToFill |
-| name      | 展位名称 | string  |                 |             |
-| lazy-load | 懒加载   | boolean |                 | false       |
-| size      | 图标尺寸 | number  |                 | 80          |
-| shape     | 类型     | string  | circle / square | circle      |
+## 基础参数
 
-## Avatar-gorup 参数
+| 参数    | 说明                 | 类型                        | 可选值     | 默认值 |
+| ------- | -------------------- | --------------------------- | ---------- | ------ |
+| pt      | 样式穿透配置         | [PassThrough](#passthrough) | -          | -      |
+| src     | 头像图片地址         | string                      | -          | -      |
+| size    | 头像尺寸大小（像素） | number                      | -          | 80     |
+| rounded | 是否显示为圆形头像   | boolean                     | true/false | false  |
 
-| 参数     | 说明     | 类型    | 可选值 | 默认值      |
-| -------- | -------- | ------- | ------ | ----------- |
-| urls     | 图片地址 | string  |
-| size     | 图标尺寸 | number  |        | 80          |
-| mode     | 裁剪模式 | string  |        | scaleToFill |
-| max      | 最大数量 | number  |        | 5           |
-| shape    | 懒加载   | boolean |        | false       |
-| showMore | 图标尺寸 | number  |        | 80          |
+## PassThrough
+
+样式穿透配置对象，用于深度自定义组件内部元素的样式。
+
+| 参数      | 说明                  | 类型                                                     |
+| --------- | --------------------- | -------------------------------------------------------- |
+| className | 组件根元素的 CSS 类名 | string                                                   |
+| icon      | 占位图标的属性配置    | [ClIconProps](/src/components/basic/icon.md#passthrough) |
 
 ## 示例
 
 ### 基本用法
 
 ```html
-<cl-avatar src=""></cl-avatar>
+<!-- 使用图片地址显示头像 -->
+<cl-avatar src="https://example.com/avatar.jpg"></cl-avatar>
 ```
 
-### 头像形状
+### 圆形头像
 
 ```html
-<cl-avatar shape="square"></cl-avatar>
+<!-- 显示圆形头像，常用于用户头像展示 -->
+<cl-avatar src="https://example.com/avatar.jpg" rounded></cl-avatar>
 ```
 
-### 头像大小
+### 自定义尺寸
 
 ```html
-<cl-avatar :size="70"></cl-avatar>
+<!-- 设置头像尺寸为120像素 -->
+<cl-avatar src="https://example.com/avatar.jpg" :size="120"></cl-avatar>
+
+<!-- 小尺寸头像 -->
+<cl-avatar src="https://example.com/avatar.jpg" :size="40"></cl-avatar>
 ```
 
-### 文字头像
+### 图标占位
 
 ```html
-<cl-avatar :size="70">cool</cl-avatar>
+<!-- 当没有图片时，使用图标作为占位符 -->
+<cl-avatar
+  :pt="{
+    icon: {
+        size: 60,
+        name: 'user-line'
+    }
+}"
+></cl-avatar>
 ```
 
-### 头像组
+### 组合示例
 
 ```html
-<cl-avatar-group :urls="[...]"></cl-avatar-group>
+<!-- 大尺寸圆形头像配合自定义图标 -->
+<cl-avatar
+  :size="150"
+  rounded
+  :pt="{
+    className: 'custom-avatar',
+    icon: {
+        size: 80,
+        name: 'account-circle-line'
+    }
+}"
+></cl-avatar>
 ```
