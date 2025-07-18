@@ -21,10 +21,10 @@
 
 样式穿透配置允许您自定义组件内部各个元素的样式，实现更灵活的外观定制。
 
-| 参数      | 说明               | 类型                                                       |
-| --------- | ------------------ | ---------------------------------------------------------- |
-| className | 底部视图根容器样式 | string                                                     |
-| content   | 内容区域样式配置   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
+| 参数      | 说明           | 类型                                                       |
+| --------- | -------------- | ---------------------------------------------------------- |
+| className | 组件根元素样式 | string                                                     |
+| content   | 内容区域配置   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
 
 ## 使用示例
 

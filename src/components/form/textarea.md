@@ -49,10 +49,10 @@
 
 样式穿透配置，用于自定义组件内部元素的样式。
 
-| 参数      | 说明               | 类型                                                        |
-| --------- | ------------------ | ----------------------------------------------------------- |
-| className | 组件根元素样式类名 | string                                                      |
-| inner     | 内部输入框样式     | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| 参数      | 说明           | 类型                                                        |
+| --------- | -------------- | ----------------------------------------------------------- |
+| className | 组件根元素样式 | string                                                      |
+| inner     | 内部输入框配置 | [PassThroughProps](/src/components/doc.md#passthroughprops) |
 
 ## 示例
 

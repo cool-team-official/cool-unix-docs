@@ -28,12 +28,12 @@
 
 样式穿透配置对象，用于深度自定义组件内部元素的样式。
 
-| 参数      | 说明                  | 类型                                                        |
-| --------- | --------------------- | ----------------------------------------------------------- |
-| className | 组件根元素的 CSS 类名 | string                                                      |
-| item      | 星级项的样式配置      | [PassThroughProps](/src/components/doc.md#passthroughprops) |
-| score     | 分数显示的样式配置    | [PassThroughProps](/src/components/doc.md#passthroughprops) |
-| icon      | 图标组件的属性配置    | [ClIconProps]                                               |
+| 参数      | 说明           | 类型                                                        |
+| --------- | -------------- | ----------------------------------------------------------- |
+| className | 组件根元素样式 | string                                                      |
+| item      | 星级项的配置   | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| score     | 分数显示配置   | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| icon      | 图标组件配置   | [ClIconProps](/src/components/basic/icon.md#passthrough)    |
 
 ## 示例
 

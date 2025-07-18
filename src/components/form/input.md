@@ -52,9 +52,9 @@
 | 参数       | 说明           | 类型                                                        |
 | ---------- | -------------- | ----------------------------------------------------------- |
 | className  | 组件根元素样式 | string                                                      |
-| inner      | 输入框样式     | [PassThroughProps](/src/components/doc.md#passthroughprops) |
-| prefixIcon | 前缀图标样式   | [ClIconProps]                                               |
-| suffixIcon | 后缀图标样式   | [ClIconProps]                                               |
+| inner      | 输入框配置     | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| prefixIcon | 前缀图标配置   | [ClIconProps](/src/components/basic/icon.md#passthrough)    |
+| suffixIcon | 后缀图标配置   | [ClIconProps](/src/components/basic/icon.md#passthrough)    |
 
 ## 示例
 

@@ -23,8 +23,8 @@
 
 | 参数      | 说明             | 类型                                                       |
 | --------- | ---------------- | ---------------------------------------------------------- |
-| className | 导航栏根容器样式 | string                                                     |
-| title     | 标题文本样式     | [PassThroughProps](/src/components/pt.md#passthroughprops) |
+| className | 组件根元素样式   | string                                                     |
+| title     | 标题文本配置     | [PassThroughProps](/src/components/pt.md#passthroughprops) |
 | back      | 返回按钮图标配置 | [ClIconProps](/src/components/basic/icon.md#passthrough)   |
 
 ## 使用示例

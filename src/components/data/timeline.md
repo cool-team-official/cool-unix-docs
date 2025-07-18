@@ -17,13 +17,13 @@ Timeline 时间轴组件用于展示时间流信息，通常用于显示历史�
 
 PassThrough 是一个样式透传配置对象，允许您深度自定义组件内部各个元素的样式。
 
-| 属性名    | 说明                        | 类型                                                        |
-| --------- | --------------------------- | ----------------------------------------------------------- |
-| className | 时间轴组件根容器的 CSS 类名 | string                                                      |
-| icon      | 图标元素的样式配置          | [PassThroughProps](/src/components/doc.md#passthroughprops) |
-| title     | 标题元素的样式配置          | [PassThroughProps](/src/components/doc.md#passthroughprops) |
-| content   | 内容元素的样式配置          | [PassThroughProps](/src/components/doc.md#passthroughprops) |
-| date      | 日期元素的样式配置          | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| 属性名    | 说明           | 类型                                                        |
+| --------- | -------------- | ----------------------------------------------------------- |
+| className | 组件根元素样式 | string                                                      |
+| icon      | 图标元素配置   | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| title     | 标题元素配置   | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| content   | 内容元素配置   | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| date      | 日期元素配置   | [PassThroughProps](/src/components/doc.md#passthroughprops) |
 
 ## 使用示例
 

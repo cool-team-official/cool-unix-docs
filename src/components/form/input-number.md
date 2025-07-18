@@ -29,9 +29,9 @@
 
 | 参数      | 说明               | 类型             |
 | --------- | ------------------ | ---------------- |
-| className | 组件根容器的样式   | string           |
-| value     | 中间数值显示区样式 | ValuePassThrough |
-| op        | 左右加减按钮样式   | OpPassThrough    |
+| className | 组件根元素样式     | string           |
+| value     | 中间数值显示区配置 | ValuePassThrough |
+| op        | 左右加减按钮配置   | OpPassThrough    |
 
 ```ts
 type ValuePassThrough = {

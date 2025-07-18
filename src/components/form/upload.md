@@ -47,11 +47,11 @@ type ClUploadItem = {
 
 | 参数      | 说明           | 类型                                                       |
 | --------- | -------------- | ---------------------------------------------------------- |
-| className | 组件根容器样式 | string                                                     |
-| item      | 文件项容器样式 | [PassThroughProps](/src/components/pt.md#passthroughprops) |
-| add       | 添加按钮样式   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
-| image     | 图片预览样式   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
-| text      | 按钮文本样式   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
+| className | 组件根元素样式 | string                                                     |
+| item      | 文件项容器配置 | [PassThroughProps](/src/components/pt.md#passthroughprops) |
+| add       | 添加按钮配置   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
+| image     | 图片预览配置   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
+| text      | 按钮文本配置   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
 
 ## 使用示例
 

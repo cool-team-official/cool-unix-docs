@@ -27,15 +27,15 @@
 
 样式透传配置对象，用于深度自定义组件内部元素的样式。
 
-| 参数       | 说明                     | 类型                                                        |
-| ---------- | ------------------------ | ----------------------------------------------------------- |
-| className  | 组件根元素的 CSS 类名    | string                                                      |
-| item       | 轮播项容器的样式配置     | [PassThroughProps](/src/components/doc.md#passthroughprops) |
-| itemActive | 当前激活轮播项的样式配置 | [PassThroughProps](/src/components/doc.md#passthroughprops) |
-| image      | 轮播图片的样式配置       | [PassThroughProps](/src/components/doc.md#passthroughprops) |
-| dots       | 指示器容器的样式配置     | [PassThroughProps](/src/components/doc.md#passthroughprops) |
-| dot        | 指示器圆点的样式配置     | [PassThroughProps](/src/components/doc.md#passthroughprops) |
-| dotActive  | 激活指示器圆点的样式配置 | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| 参数       | 说明                 | 类型                                                        |
+| ---------- | -------------------- | ----------------------------------------------------------- |
+| className  | 组件根元素样式       | string                                                      |
+| item       | 轮播项容器的配置     | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| itemActive | 当前激活轮播项的配置 | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| image      | 轮播图片的配置       | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| dots       | 指示器容器的配置     | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| dot        | 指示器圆点的配置     | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| dotActive  | 激活指示器圆点的配置 | [PassThroughProps](/src/components/doc.md#passthroughprops) |
 
 ## 示例
 

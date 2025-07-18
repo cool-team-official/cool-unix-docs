@@ -23,13 +23,13 @@
 
 样式穿透配置对象，用于深度自定义组件内部元素的样式。
 
-| 参数      | 说明                   | 类型                                                        |
-| --------- | ---------------------- | ----------------------------------------------------------- |
-| className | 组件根元素的 CSS 类名  | string                                                      |
-| track     | 开关轨道元素的样式配置 | [PassThroughProps](/src/components/doc.md#passthroughprops) |
-| thumb     | 开关滑块元素的样式配置 | [PassThroughProps](/src/components/doc.md#passthroughprops) |
-| label     | 标签文本元素的样式配置 | [PassThroughProps](/src/components/doc.md#passthroughprops) |
-| loading   | 加载图标元素的样式配置 | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| 参数      | 说明             | 类型                                                        |
+| --------- | ---------------- | ----------------------------------------------------------- |
+| className | 组件根元素样式   | string                                                      |
+| track     | 开关轨道元素配置 | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| thumb     | 开关滑块元素配置 | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| label     | 标签文本元素配置 | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| loading   | 加载图标元素配置 | [PassThroughProps](/src/components/doc.md#passthroughprops) |
 
 ## 示例
 

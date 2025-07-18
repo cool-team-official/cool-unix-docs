@@ -30,11 +30,11 @@
 
 | 参数      | 说明           | 类型                                                       |
 | --------- | -------------- | ---------------------------------------------------------- |
-| className | 组件根容器样式 | string                                                     |
-| text      | 标签文本样式   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
-| item      | 单个标签样式   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
-| line      | 底部下划线样式 | [PassThroughProps](/src/components/pt.md#passthroughprops) |
-| slider    | 滑块背景样式   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
+| className | 组件根元素样式 | string                                                     |
+| text      | 标签文本配置   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
+| item      | 单个标签配置   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
+| line      | 底部下划线配置 | [PassThroughProps](/src/components/pt.md#passthroughprops) |
+| slider    | 滑块背景配置   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
 
 ## 示例
 

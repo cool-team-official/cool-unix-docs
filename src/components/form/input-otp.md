@@ -25,11 +25,11 @@
 
 | 参数      | 说明               | 类型                                                       |
 | --------- | ------------------ | ---------------------------------------------------------- |
-| className | 组件根容器的样式   | string                                                     |
-| list      | 输入框列表容器样式 | [PassThroughProps](/src/components/pt.md#passthroughprops) |
-| item      | 单个输入框样式     | [PassThroughProps](/src/components/pt.md#passthroughprops) |
-| cursor    | 光标指示器样式     | [PassThroughProps](/src/components/pt.md#passthroughprops) |
-| value     | 输入值显示样式     | [PassThroughProps](/src/components/pt.md#passthroughprops) |
+| className | 组件根元素样式     | string                                                     |
+| list      | 输入框列表容器配置 | [PassThroughProps](/src/components/pt.md#passthroughprops) |
+| item      | 单个输入框配置     | [PassThroughProps](/src/components/pt.md#passthroughprops) |
+| cursor    | 光标指示器配置     | [PassThroughProps](/src/components/pt.md#passthroughprops) |
+| value     | 输入值显示配置     | [PassThroughProps](/src/components/pt.md#passthroughprops) |
 
 ## 示例
 

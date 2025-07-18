@@ -71,12 +71,12 @@
 
 支持自定义组件内部元素的样式，提供更灵活的样式控制能力。
 
-| 属性名    | 说明               | 类型                                                       |
-| --------- | ------------------ | ---------------------------------------------------------- |
-| className | 组件根元素样式类名 | string                                                     |
-| inner     | 图片元素样式类名   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
-| error     | 错误状态样式类名   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
-| loading   | 加载状态样式类名   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
+| 属性名    | 说明           | 类型                                                       |
+| --------- | -------------- | ---------------------------------------------------------- |
+| className | 组件根元素样式 | string                                                     |
+| inner     | 图片元素配置   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
+| error     | 错误状态配置   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
+| loading   | 加载状态配置   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
 
 ## 使用示例
 

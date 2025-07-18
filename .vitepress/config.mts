@@ -118,6 +118,10 @@ export default defineConfig({
             text: "基础组件",
             items: [
               {
+                text: "Page 页面",
+                link: "/src/components/basic/page.md",
+              },
+              {
                 text: "Button 按钮",
                 link: "/src/components/basic/button.md",
               },
@@ -278,8 +282,8 @@ export default defineConfig({
                 link: "/src/components/status/badge.md",
               },
               {
-                text: "NoticeBar 通知栏",
-                link: "/src/components/status/notice-bar.md",
+                text: "Noticebar 通知栏",
+                link: "/src/components/status/noticebar.md",
               },
               {
                 text: "Countdown 倒计时",
@@ -290,7 +294,7 @@ export default defineConfig({
                 link: "/src/components/status/progress.md",
               },
               {
-                text: "Skeleton 骨架屏",
+                text: "Skeleton 骨架图",
                 link: "/src/components/status/skeleton.md",
               },
               {
@@ -333,33 +337,28 @@ export default defineConfig({
             items: [
               {
                 text: ".cool",
-                link: "/src/guide/build.md",
+                link: "/src/guide/.cool.md",
               },
               {
                 text: ".cursor",
-                link: "/src/components.md",
+                link: "/src/guide/.cursor.md",
               },
               {
                 text: "components",
-                link: "/src/guide/config.md",
-                items: [
-                  { text: "local-set.uvue", link: "/src/guide/cool/hooks.md" },
-                  { text: "sms-btn.uvue", link: "/src/guide/cool/router.md" },
-                  { text: "tabbar.uvue", link: "/src/guide/cool/service.md" },
-                ],
+                link: "/src/guide/components.md",
               },
-              { text: "config", link: "/src/guide/pages.md" },
+              { text: "config", link: "/src/guide/config.md" },
               {
                 text: "cool",
                 items: [
-                  { text: "ctx", link: "/src/guide/cool/hooks.md" },
+                  { text: "ctx", link: "/src/guide/cool/ctx.md" },
                   { text: "hooks", link: "/src/guide/cool/hooks.md" },
                   { text: "router", link: "/src/guide/cool/router.md" },
                   { text: "service", link: "/src/guide/cool/service.md" },
                   { text: "store", link: "/src/guide/cool/store.md" },
-                  { text: "theme", link: "/src/guide/cool/store.md" },
-                  { text: "types", link: "/src/guide/cool/store.md" },
-                  { text: "utils", link: "/src/guide/cool/store.md" },
+                  { text: "theme", link: "/src/guide/cool/theme.md" },
+                  { text: "types", link: "/src/guide/cool/types.md" },
+                  { text: "utils", link: "/src/guide/cool/utils.md" },
                 ],
               },
               { text: "icons", link: "/src/guide/pages.md" },
@@ -367,12 +366,6 @@ export default defineConfig({
               {
                 text: "pages",
                 link: "/src/guide/pages.md",
-                items: [
-                  { text: "demo", link: "/src/guide/cool/hooks.md" },
-                  { text: "index", link: "/src/guide/cool/hooks.md" },
-                  { text: "set", link: "/src/guide/cool/hooks.md" },
-                  { text: "user", link: "/src/guide/cool/hooks.md" },
-                ],
               },
               { text: "router", link: "/src/guide/router.md" },
               { text: "static", link: "/src/guide/static.md" },

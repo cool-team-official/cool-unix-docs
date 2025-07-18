@@ -65,7 +65,12 @@ watch(
       return;
     }
 
-    if (val.includes("/components/pt") || val.includes("/components/doc")) {
+    if (
+      val.includes("/components/pt") ||
+      val.includes("/components/doc") ||
+      val.includes("/components/basic/page") ||
+      val.includes("/components/basic/loading")
+    ) {
       path.value = "/";
       return;
     }

@@ -21,12 +21,12 @@
 
 PassThrough 是一个样式透传配置对象，允许您深度自定义组件内部各个元素的样式。
 
-| 属性名    | 说明                      | 类型                                                        |
-| --------- | ------------------------- | ----------------------------------------------------------- |
-| className | 分页组件根容器的 CSS 类名 | string                                                      |
-| item      | 页码项元素的样式配置      | [PassThroughProps](/src/components/doc.md#passthroughprops) |
-| prev      | "上一页"按钮的样式配置    | [PassThroughProps](/src/components/doc.md#passthroughprops) |
-| next      | "下一页"按钮的样式配置    | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| 属性名    | 说明             | 类型                                                        |
+| --------- | ---------------- | ----------------------------------------------------------- |
+| className | 组件根元素样式   | string                                                      |
+| item      | 页码项元素配置   | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| prev      | "上一页"按钮配置 | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| next      | "下一页"按钮配置 | [PassThroughProps](/src/components/doc.md#passthroughprops) |
 
 ## 使用示例
 

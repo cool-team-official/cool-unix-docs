@@ -135,10 +135,10 @@
 
 | 参数      | 说明               | 类型                                                       |
 | --------- | ------------------ | ---------------------------------------------------------- |
-| className | 组件根容器样式类   | string                                                     |
-| item      | 键盘按键样式配置   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
-| value     | 输入值显示区域样式 | [PassThroughProps](/src/components/pt.md#passthroughprops) |
-| popup     | 弹窗容器参数配置   | [ClPopupProps](/src/components/pt.md#passthroughprops)     |
+| className | 组件根元素样式     | string                                                     |
+| item      | 键盘按键配置       | [PassThroughProps](/src/components/pt.md#passthroughprops) |
+| value     | 输入值显示区域配置 | [PassThroughProps](/src/components/pt.md#passthroughprops) |
+| popup     | 弹窗容器配置       | [ClPopupProps](/src/components/pt.md#passthroughprops)     |
 
 ### 示例
 

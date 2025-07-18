@@ -19,11 +19,11 @@ List 组件用于展示一系列的数据项，支持自定义样式、交互操
 
 样式透传配置对象，用于深度自定义组件内部元素的样式。
 
-| 参数      | 说明                  | 类型                                                        |
-| --------- | --------------------- | ----------------------------------------------------------- |
-| className | 组件根元素的 CSS 类名 | string                                                      |
-| list      | 列表容器的样式配置    | [PassThroughProps](/src/components/doc.md#passthroughprops) |
-| item      | 列表项的样式配置      | [ClListItemPassThrough](#cllistitempassthrough)             |
+| 参数      | 说明           | 类型                                                        |
+| --------- | -------------- | ----------------------------------------------------------- |
+| className | 组件根元素样式 | string                                                      |
+| list      | 列表容器配置   | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| item      | 列表项配置     | [ClListItemPassThrough](#cllistitempassthrough)             |
 
 ```ts
 export type ClListItemPassThrough = {

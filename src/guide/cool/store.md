@@ -1,4 +1,4 @@
-# store
+# Store
 
 ## user
 

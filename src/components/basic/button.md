@@ -23,12 +23,12 @@
 
 样式穿透配置，用于自定义组件内部元素的样式。
 
-| 参数      | 说明           | 类型                                                        |
-| --------- | -------------- | ----------------------------------------------------------- |
-| className | 组件根元素样式 | string                                                      |
-| label     | 文本标签样式   | [PassThroughProps](/src/components/doc.md#passthroughprops) |
-| icon      | 图标元素样式   | [ClIconProps]                                               |
-| loading   | 加载动画样式   | [ClLoadingProps]                                            |
+| 参数      | 说明             | 类型                                                           |
+| --------- | ---------------- | -------------------------------------------------------------- |
+| className | 组件根元素样式 | string                                                         |
+| label     | 文本元素配置     | [PassThroughProps](/src/components/doc.md#passthroughprops)    |
+| icon      | 图标元素配置     | [ClIconProps](/src/components/basic/icon.md#passthrough)       |
+| loading   | 加载元素配置     | [ClLoadingProps](/src/components/basic/loading.md#passthrough) |
 
 ## 示例
 
