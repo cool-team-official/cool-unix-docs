@@ -5,7 +5,7 @@
 ## 类型定义
 
 ```ts
-export type Ctx = {
+type Ctx = {
   /** 应用唯一标识符 */
   appid: string;
   /** 全局样式配置 */

@@ -25,10 +25,10 @@
 | item    | 菜单项             | item: ClActionSheetItem |
 | append  | 内容之后插入的内容 |                         |
 
-## 类型
+## 类型定义
 
 ```ts
-export type ClActionSheetItem = {
+type ClActionSheetItem = {
   label: string; // 标签内容
   icon?: string; // 图标
   disabled?: boolean; // 是否禁用
@@ -36,7 +36,7 @@ export type ClActionSheetItem = {
   callback?: () => void; // 点击回掉
 };
 
-export type ClActionSheetOptions = {
+type ClActionSheetOptions = {
   list: ClActionSheetItem[]; // 菜单列表
   title?: string; // 标题
   description?: string; // 描述

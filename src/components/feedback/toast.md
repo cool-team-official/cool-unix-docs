@@ -21,9 +21,9 @@ Toast 组件用于向用户显示简短的消息反馈，支持多种类型和�
 ## 类型定义
 
 ```ts
-export type ClToastPosition = "top" | "center" | "bottom";
+type ClToastPosition = "top" | "center" | "bottom";
 
-export type ClToastType =
+type ClToastType =
   | "success"
   | "warn"
   | "error"
@@ -31,7 +31,7 @@ export type ClToastType =
   | "disabled"
   | "stop";
 
-export type ClToastOptions = {
+type ClToastOptions = {
   type?: ClToastType;
   icon?: string;
   image?: string;

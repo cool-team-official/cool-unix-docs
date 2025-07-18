@@ -20,7 +20,7 @@
 ### 请求配置
 
 ```ts
-export type RequestOptions = {
+type RequestOptions = {
   url: string; // 请求地址
   method?: RequestMethod; // 请求方法 (GET, POST, PUT, DELETE等)
   data?: any; // 请求体数据
@@ -36,7 +36,7 @@ export type RequestOptions = {
 ### 响应数据结构
 
 ```ts
-export type Response = {
+type Response = {
   code?: number; // 响应状态码
   message?: string; // 响应消息
   data?: any; // 响应数据

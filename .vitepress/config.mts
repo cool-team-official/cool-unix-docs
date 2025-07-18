@@ -357,19 +357,38 @@ export default defineConfig({
                   { text: "service", link: "/src/guide/cool/service.md" },
                   { text: "store", link: "/src/guide/cool/store.md" },
                   { text: "theme", link: "/src/guide/cool/theme.md" },
-                  { text: "types", link: "/src/guide/cool/types.md" },
-                  { text: "utils", link: "/src/guide/cool/utils.md" },
+                  { text: "upload", link: "/src/guide/cool/upload.md" },
+                  {
+                    text: "utils",
+                    items: [
+                      {
+                        text: "comm",
+                        link: "/src/guide/cool/utils/comm.md",
+                      },
+                      {
+                        text: "day",
+                        link: "/src/guide/cool/utils/day.md",
+                      },
+                      {
+                        text: "path",
+                        link: "/src/guide/cool/utils/path.md",
+                      },
+                      {
+                        text: "storage",
+                        link: "/src/guide/cool/utils/storage.md",
+                      },
+                    ],
+                  },
                 ],
               },
-              { text: "icons", link: "/src/guide/pages.md" },
-              { text: "locale", link: "/src/guide/pages.md" },
+              { text: "icons", link: "/src/guide/icons.md" },
+              { text: "locale", link: "/src/guide/locale.md" },
               {
                 text: "pages",
                 link: "/src/guide/pages.md",
               },
               { text: "router", link: "/src/guide/router.md" },
               { text: "static", link: "/src/guide/static.md" },
-              { text: "types", link: "/src/guide/types.md" },
               {
                 text: "uni_modules",
                 link: "/src/guide/uni_modules.md",

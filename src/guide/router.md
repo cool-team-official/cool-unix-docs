@@ -1,108 +1,60 @@
-# router
+# Router 路由导航
 
-页面跳转
+路由导航是应用程序中控制页面跳转和访问权限的重要机制。
 
-| 属性名                    | 说明                   | 类型     |
-| ------------------------- | ---------------------- | -------- |
-| tabs                      | 底部导航               | object[] |
-| routes                    | 路由列表               | object[] |
-| query                     | 跳转参数（地址栏）     | object   |
-| params                    | 跳转参数（缓存）       | object   |
-| pages                     | 自定义页面路径         | object   |
-| currentPage               | 当前页面信息           | function |
-| path                      | 当前路由路径           | string   |
-| info                      | 当前路由信息           | function |
-| [push](#push)             | 路由跳转               | function |
-| back                      | 后退                   | function |
-| [callMethod](#callmethod) | 执行当前页面的某个方法 | function |
-| isFirstPage               | 页面栈长度是否只有 1   | function |
-| isCurrentPage             | 是否当前页             | function |
-| home                      | 回到首页               | function |
-| switchTab                 | 跳转 Tab 页            | function |
-| isTab                     | 是否是 Tab 页          | function |
-| login                     | 去登陆                 | function |
-| [nextLogin](#nextlogin)   | 登录成功后操作         | function |
-| ---                       | ---                    |
+## beforeEach 路由守卫
 
-## 使用
+`beforeEach` 是一个全局前置守卫，可以在每次路由跳转之前执行自定义逻辑，常用于权限验证、登录状态检查等场景。
 
-- 方式一
+### 基础配置
 
 ```ts
-import { router } from "/@/cool";
-```
+import { router, useStore } from "@/cool";
 
-- 方式二
+// 定义无需token验证的页面路径
+const ignoreToken = [
+  "/pages/index/home", // 首页
+  "/pages/index/my", // 个人中心
+  "/pages/user/login", // 登录页
+  "/pages/user/doc", // 文档页
+];
 
-```ts
-import { useCool } from "/@/cool";
-const { router } = useCool();
-```
+// 配置路由守卫
+router.beforeEach((to, next) => {
+  const { user } = useStore();
 
-### push
-
-```ts
-router.push("/pages/goods/list");
-```
-
-```ts
-router.push({
-  path: "/pages/goods/detail",
-  query: {
-    id: 1,
-  },
+  // 检查是否为无需验证的页面或演示页面
+  if (ignoreToken.includes(to.path) || to.path.startsWith("/pages/demo")) {
+    next(); // 直接通过
+  } else {
+    // 需要验证登录状态
+    if (!user.isNull()) {
+      next(); // 已登录，允许访问
+    } else {
+      router.login(); // 未登录，跳转到登录页
+    }
+  }
 });
-
-router.query(); // { id }
 ```
 
-```ts
-router.push({
-  path: "/pages/goods/detail",
-  params: {
-    data: {},
-  },
-});
+### 参数说明
 
-router.params(); // { data }
-```
+- **to**: 即将要进入的目标路由对象
+- **next**: 用于控制路由跳转的函数
+  - `next()`: 进行管道中的下一个钩子
+  - `next('/login')`: 跳转到指定路径
 
-### callMethod
+### 最佳实践
 
-执行当前页面的某个方法。
+1. **白名单管理**: 将不需要登录验证的页面统一管理在 `ignoreToken` 数组中
+2. **权限分层**: 可以根据用户角色设置不同的访问权限
+3. **错误处理**: 为权限不足、页面不存在等情况提供友好的错误页面
+4. **性能优化**: 避免在路由守卫中执行耗时操作
 
-如：监听消息并刷新页面，直接触发页面的 refresh 方法，而不是在每个页面加事件监听
+### 相关方法
 
-```html
-<template>
-  <text>Demo</text>
-</template>
-
-<script setup>
-  function refresh(params) {}
-
-  defineExpose({
-    refresh,
-  });
-</script>
-```
-
-```ts
-router.callMethod("refresh", { page: 1 });
-```
-
-### isTab
-
-检测是否 Tab 页面，返回 `boolean`
-
-```ts
-router.isTab("/pages/index/home");
-```
-
-### nextLogin
-
-跳转到重定向登录前的页面，并触发 `afterLogin` 事件
-
-```ts
-router.nextLogin();
-```
+- `router.to(path)`: 跳转到指定页面
+- `router.login()`: 跳转到登录页
+- `router.back()`: 返回上一页
+- `user.isNull()`: 检查用户是否已登录
+- `user.hasPermission(permission)`: 检查用户权限

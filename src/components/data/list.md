@@ -26,7 +26,7 @@ List 组件用于展示一系列的数据项，支持自定义样式、交互操
 | item      | 列表项配置     | [ClListItemPassThrough](#cllistitempassthrough)             |
 
 ```ts
-export type ClListItemPassThrough = {
+type ClListItemPassThrough = {
   className?: string;
   inner?: PassThroughProps;
   label?: PassThroughProps;

@@ -28,10 +28,10 @@
 | beforeEach         | callback                              |                | 注册页面跳转前的全局守卫钩子             |
 | afterLogin         | callback                              |                | 注册用户登录成功后的回调处理             |
 
-## 类型
+## 类型定义
 
 ```ts
-export type BackOptions = {
+type BackOptions = {
   delta?: number;
   animationType?: BackAnimationType;
   animationDuration?: number;
@@ -40,9 +40,9 @@ export type BackOptions = {
   complete?: (result: any) => void;
 };
 
-export type PushMode = "navigateTo" | "redirectTo" | "reLaunch" | "switchTab";
+type PushMode = "navigateTo" | "redirectTo" | "reLaunch" | "switchTab";
 
-export type PushOptions = {
+type PushOptions = {
   path: string;
   mode?: PushMode;
   events?: any;

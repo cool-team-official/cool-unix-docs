@@ -23,15 +23,15 @@
 ## 类型定义
 
 ```ts
-export type ClConfirmAction = "confirm" | "cancel" | "close";
+type ClConfirmAction = "confirm" | "cancel" | "close";
 
-export type ClConfirmBeforeCloseEvent = {
+type ClConfirmBeforeCloseEvent = {
   close: () => void;
   showLoading: () => void;
   hideLoading: () => void;
 };
 
-export type ClConfirmOptions = {
+type ClConfirmOptions = {
   title: string;
   message: string;
   confirmText?: string;
