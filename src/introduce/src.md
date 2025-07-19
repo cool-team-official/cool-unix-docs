@@ -34,20 +34,20 @@ Cool Unix 是一个完全开源的项目，采用 [MIT 许可证](https://baike.
 
 跨端应用开发脚手架，基于 uni-app x 技术栈：
 
-| 平台        | 仓库地址                                                                        | 推荐用户    |
-| ----------- | ------------------------------------------------------------------------------- | ----------- |
-| **GitHub**  | [cool-team-official/cool-unix](https://github.com/cool-team-official/cool-unix) | 🌍 海外用户 |
-| **Gitee**   | [cool-team-official/cool-unix](https://gitee.com/cool-team-official/cool-unix)  | 🇨🇳 国内用户 |
-| **GitCode** | [cool_team/cool-unix](https://gitcode.com/cool_team/cool-unix)                  | 🔄 备用选择 |
+| 平台        | 仓库地址                                                                        |
+| ----------- | ------------------------------------------------------------------------------- |
+| **GitHub**  | [cool-team-official/cool-unix](https://github.com/cool-team-official/cool-unix) |
+| **Gitee**   | [cool-team-official/cool-unix](https://gitee.com/cool-team-official/cool-unix)  |
+| **GitCode** | [cool_team/cool-unix](https://gitcode.com/cool_team/cool-unix)                  |
 
 ### 📚 项目文档
 
 本文档的源码仓库，欢迎完善文档内容：
 
-| 平台       | 仓库地址                                                                                |
-| ---------- | --------------------------------------------------------------------------------------- |
-| **GitHub** | [cool-team-official/cool-uni-docs](https://github.com/cool-team-official/cool-uni-docs) |
-| **Gitee**  | [cool-team-official/cool-uni-docs](https://gitee.com/cool-team-official/cool-uni-docs)  |
+| 平台       | 仓库地址                                                                                  |
+| ---------- | ----------------------------------------------------------------------------------------- |
+| **GitHub** | [cool-team-official/cool-unix-docs](https://github.com/cool-team-official/cool-unix-docs) |
+| **Gitee**  | [cool-team-official/cool-unix-docs](https://gitee.com/cool-team-official/cool-unix-docs)  |
 
 ## 🖥️ Cool Admin 系列
 
@@ -82,14 +82,3 @@ Cool Unix 是一个完全开源的项目，采用 [MIT 许可证](https://baike.
 | **GitHub**  | [cool-team-official/cool-admin-java](https://github.com/cool-team-official/cool-admin-java) |
 | **Gitee**   | [cool-team-official/cool-admin-java](https://gitee.com/cool-team-official/cool-admin-java)  |
 | **GitCode** | [cool_team/cool-admin-java](https://gitcode.com/cool_team/cool-admin-java)                  |
-
-## 🚀 快速开始
-
-准备好体验 Cool Unix 了吗？
-
-1. **⭐ Star 项目** - 表达您的支持
-2. **📥 克隆代码** - 选择合适的平台克隆项目
-3. **📖 阅读文档** - 查看 [快速开始指南](./quick.md)
-4. **🛠️ 开始开发** - 构建您的跨端应用
-
-让我们一起构建更好的跨端开发生态！

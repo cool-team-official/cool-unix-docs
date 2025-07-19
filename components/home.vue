@@ -22,7 +22,9 @@
       <button v-if="tabInfo.demo" @click="open(tabInfo.demo)">查看演示</button>
     </div>
 
-    <demo is-home />
+    <div class="demo">
+      <demo is-home />
+    </div>
   </div>
 </template>
 
@@ -177,6 +179,18 @@ onMounted(() => {});
       background-color: #444;
       color: #fff;
     }
+  }
+}
+
+.demo {
+  position: relative;
+
+  .app {
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    top: 20px;
+    left: 450px;
   }
 }
 

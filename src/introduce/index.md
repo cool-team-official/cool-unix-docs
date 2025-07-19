@@ -2,6 +2,18 @@
 
 在移动互联网快速发展的今天，跨端应用开发已成为企业数字化转型的重要需求。Cool Unix 是一个现代化的跨端应用开发脚手架，基于 uni-app x 技术栈，为开发者提供了完整的解决方案，助力快速构建高质量、高性能的跨平台应用。
 
+## 开源共建
+
+在 uni-app x 生态中，虽然存在众多收费的 UI 框架，但我们选择将 Cool Unix `完全开源`。我们相信，开源共享不仅能让更多开发者受益，也能吸引优秀的贡献者共同完善框架，推动 uni-app x 生态的繁荣发展。我们期待与社区一起，打造一个更加开放、活跃的跨端开发生态系统。
+
+仓库地址：
+
+| 平台        | 仓库地址                                                                        |
+| ----------- | ------------------------------------------------------------------------------- |
+| **GitHub**  | [cool-team-official/cool-unix](https://github.com/cool-team-official/cool-unix) |
+| **Gitee**   | [cool-team-official/cool-unix](https://gitee.com/cool-team-official/cool-unix)  |
+| **GitCode** | [cool_team/cool-unix](https://gitcode.com/cool_team/cool-unix)                  |
+
 ## 🛠️ 核心技术栈
 
 采用业界领先的技术组合，确保项目的稳定性和可扩展性：

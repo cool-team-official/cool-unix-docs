@@ -1,6 +1,6 @@
 # 主题与样式系统
 
-Cool Unix 基于 [Tailwind CSS](https://tailwindcss.com/) 构建了完整的主题系统，提供灵活的样式定制能力和优雅的深色模式支持。
+基于 [Tailwind CSS](https://tailwindcss.com/) 构建了完整的主题系统，提供灵活的样式定制能力和优雅的深色模式支持。
 
 ## 🎨 颜色系统
 

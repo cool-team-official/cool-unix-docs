@@ -11,17 +11,17 @@
 
 您可以通过以下任一方式克隆项目仓库：
 
-### GitHub（推荐海外用户）
+### GitHub
+
 ```shell
 git clone https://github.com/cool-team-official/cool-unix.git
 ```
 
-### Gitee（推荐国内用户）
+### Gitee
+
 ```shell
 git clone https://gitee.com/cool-team-official/cool-unix.git
 ```
-
-> **💡 提示**：建议国内用户优先选择 Gitee，下载速度更快更稳定。
 
 ## 安装与运行
 
@@ -35,10 +35,11 @@ pnpm i
 
 # 或者使用其他包管理器
 npm install
-# yarn install
+# yarn
 ```
 
 > **⚡ 性能提示**：推荐使用 `pnpm`，它具有以下优势：
+>
 > - 安装速度更快
 > - 磁盘空间占用更少
 > - 依赖管理更严格
@@ -48,6 +49,7 @@ npm install
 使用 [HBuilderX](https://www.dcloud.io/hbuilderx.html) 打开项目，即可运行到各个平台：
 
 #### 支持的平台
+
 - **🌐 H5**：浏览器预览
 - **📱 小程序**：微信、支付宝、百度等各大小程序平台
 - **📲 App**：Android、iOS 原生应用
@@ -60,6 +62,7 @@ npm install
 ### 3. 开发模式
 
 项目启动后，您可以：
+
 - 实时预览代码修改效果
 - 使用 HBuilderX 的调试功能
 - 体验热重载带来的高效开发体验
@@ -68,6 +71,8 @@ npm install
 
 恭喜！🎉 您已经成功启动了项目。接下来可以：
 
-- 📖 阅读 [组件文档](../guide/components/basic/button.md) 了解可用组件
+- 📖 阅读 [组件文档](../components/doc.md) 了解可用组件
 - 🛠️ 查看 [配置指南](../guide/config.md) 自定义项目设置
 - 🎨 学习 [主题定制](./theme.md) 打造独特风格
+- 🔧 了解 [兼容问题](./help.md) 避免开发陷阱
+- 🔍 探索 Admin [对接指南](./admin.md) 快速构建完整应用

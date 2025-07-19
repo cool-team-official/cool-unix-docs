@@ -86,6 +86,9 @@ service.user.address
 
 当需要更灵活的请求配置时，可以使用`request`方法：
 
+- 请求参数必须提供默认值 `{}`
+- `request` 必须带返回值类型
+
 ```ts
 import { request, Response, type UserAddressEntity } from "@/cool";
 import { useUi } from "@/uni_modules/cool-ui";

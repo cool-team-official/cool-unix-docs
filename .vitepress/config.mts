@@ -100,7 +100,15 @@ export default defineConfig({
           },
           {
             text: "常见问题",
+            link: "/src/introduce/question.md",
+          },
+          {
+            text: "兼容问题",
             link: "/src/introduce/help.md",
+          },
+          {
+            text: "对接 cool-admin",
+            link: "/src/introduce/admin.md",
           },
         ],
       },
@@ -325,6 +333,15 @@ export default defineConfig({
               {
                 text: "Toast 提示框",
                 link: "/src/components/feedback/toast.md",
+              },
+            ],
+          },
+          {
+            text: "其他",
+            items: [
+              {
+                text: "二维码",
+                link: "/src/components/other/qrcode.md",
               },
             ],
           },

@@ -6,7 +6,21 @@
 本文档主要解决 uni-app x 在 APP 端（Android/iOS/鸿蒙）的兼容性问题，帮助开发者避免常见陷阱。
 :::
 
-## 🔧 函数开发规范
+## 代码规范
+
+### 必须使用双闭合标签
+
+```html
+<!-- ❌ 错误写法 -->
+<image />
+<cl-image />
+
+<!--  ✅ 成功写法 -->
+<image></image>
+<cl-image></cl-image>
+```
+
+## 函数开发规范
 
 ### 箭头函数参数限制
 
@@ -58,7 +72,7 @@ export const getName2 = (val: string) => {
 
 **解决方案**：在模板中优先使用 `export const` 导出的箭头函数。
 
-## 🎨 样式开发注意事项
+## 样式开发注意事项
 
 ### 父子样式联动限制
 
@@ -136,7 +150,7 @@ APP 端不支持通过父级样式修改控制子元素样式，需要为子元�
 }
 ```
 
-## 📝 TypeScript 类型规范
+## 类型规范
 
 ### v-model 类型声明
 
@@ -315,7 +329,7 @@ const user = parse<User>(rawData);
 console.log(user?.name);
 ```
 
-## 🚨 开发限制说明
+## 开发限制说明
 
 ### 通用限制
 
@@ -328,11 +342,9 @@ console.log(user?.name);
 
 - **暂不支持**: 多个 `dark:` 样式绑定（开发中）
 
-## 📱 平台特定问题
+## 鸿蒙平台
 
-### 🔥 鸿蒙平台
-
-#### 窗口高度获取问题
+### 窗口高度获取问题
 
 ```ts
 // ❌ 问题：获取的高度为 0
@@ -342,7 +354,7 @@ const { windowHeight } = uni.getWindowInfo();
 const { screenHeight } = uni.getWindowInfo();
 ```
 
-#### DOM 查询时机
+### DOM 查询时机
 
 ```ts
 // ❌ 问题：立即查询可能获取不准确
@@ -360,9 +372,9 @@ onMounted(() => {
 });
 ```
 
-### 🤖 Android 平台
+## Android 平台
 
-#### 安全区域获取问题
+### 安全区域获取问题
 
 ```ts
 // ❌ 问题：首个页面底部安全区域为 0
@@ -372,15 +384,7 @@ const safeAreaBottom = uni.getSystemInfoSync().safeAreaInsets?.bottom;
 const safeBottom = safeAreaBottom || 20; // 提供默认值
 ```
 
-## 💡 开发建议
-
-1. **测试优先**: 在多个平台上测试功能完整性
-2. **类型严格**: 明确定义所有类型，避免隐式转换
-3. **条件检查**: 对可空值进行严格的条件检查
-4. **延迟执行**: DOM 相关操作适当延迟执行
-5. **降级方案**: 为平台特性提供降级处理
-
-## 🔗 相关资源
+## 相关资源
 
 - [uni-app x 官方文档](https://doc.dcloud.net.cn/uni-app-x/)
 - [UTS 语法说明](https://doc.dcloud.net.cn/uni-app-x/uts/)
