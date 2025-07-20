@@ -340,7 +340,7 @@ export default defineConfig({
             text: "其他",
             items: [
               {
-                text: "二维码",
+                text: "Qrcode 二维码",
                 link: "/src/components/other/qrcode.md",
               },
             ],

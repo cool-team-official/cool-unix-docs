@@ -14,6 +14,10 @@
 | **Gitee**   | [cool-team-official/cool-unix](https://gitee.com/cool-team-official/cool-unix)  |
 | **GitCode** | [cool_team/cool-unix](https://gitcode.com/cool_team/cool-unix)                  |
 
+加入我们：
+
+<img src="/show/wechat.png" style="width: 200px" />
+
 ## 🛠️ 核心技术栈
 
 采用业界领先的技术组合，确保项目的稳定性和可扩展性：

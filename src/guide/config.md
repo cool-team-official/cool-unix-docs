@@ -45,7 +45,7 @@ type Config = {
 export const config = {
   name: "cool-unix",
   version: "1.0.0",
-  locale: "zh-Hans",
+  locale: "zh",
   website: "https://cool-js.com",
   showDarkButton: isMp() ? false : true, // 小程序端隐藏暗色模式按钮
   isCustomTabBar: true,
@@ -60,7 +60,7 @@ export const config = {
 | ---------------- | ------- | ------------------------------ | ----------------------- |
 | `name`           | string  | 应用名称，用于显示和标识       | "cool-unix"             |
 | `version`        | string  | 应用版本号，建议遵循语义化版本 | "1.0.0"                 |
-| `locale`         | string  | 国际化语言代码                 | "zh-Hans"               |
+| `locale`         | string  | 国际化语言代码                 | "zh"                    |
 | `website`        | string  | 官方网站链接                   | "https://cool-js.com"   |
 | `showDarkButton` | boolean | 暗色模式切换按钮显示控制       | 小程序:false, 其他:true |
 | `isCustomTabBar` | boolean | 是否启用自定义底部导航栏       | true                    |

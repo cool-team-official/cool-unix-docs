@@ -53,7 +53,6 @@ const isShow = computed(() => {
   position: relative;
   height: 727px;
   width: 364px;
-  background-color: var(--vp-c-bg);
   border-radius: 50px;
   margin-left: 50px;
 
@@ -69,8 +68,8 @@ const isShow = computed(() => {
     border: 0;
     position: absolute;
     left: 24px;
-    top: 48px;
-    height: 658px;
+    top: 22px;
+    height: 684px;
     width: calc(100% - 48px);
     border-radius: 0 0 30px 0;
   }
@@ -81,7 +80,7 @@ const isShow = computed(() => {
 
   .view {
     display: flex;
-    margin-top: 20px;
+    padding: 20px 0 50px 0;
 
     .item {
       flex: 1;
