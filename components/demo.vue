@@ -2,7 +2,8 @@
   <div class="demo" :class="{}" v-if="isShow">
     <img class="bg" src="/demo/bg.png" />
 
-    <iframe class="preview" :src="`http://localhost:9900/#/${path}`" />
+    <iframe class="preview" :src="`/demo/index.html#/${path}`" />
+    <!-- <iframe class="preview" :src="`http://localhost:9900/#/${path}`" /> -->
 
     <div class="view">
       <div class="item">
@@ -19,7 +20,7 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 
 const props = defineProps({
   isHome: Boolean,
@@ -35,6 +36,31 @@ const isShow = computed(() => {
   }
 
   return props.path;
+});
+
+onMounted(() => {
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.attributeName === "class") {
+        const isDark = document.documentElement.classList.contains("dark");
+
+        // 向iframe通信
+        const iframe = document.querySelector(".preview");
+        if (iframe && iframe.contentWindow) {
+          iframe.contentWindow.postMessage(
+            { type: "theme-change", isDark },
+            "*"
+          );
+        }
+      }
+    });
+  });
+
+  // 开始观察 html 元素的 class 变化
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["class"],
+  });
 });
 </script>
 
