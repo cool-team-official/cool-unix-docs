@@ -1,6 +1,12 @@
 <template>
-  <div class="demo" v-if="isShow">
-    <img class="bg" src="/demo/bg.png" />
+  <div
+    class="demo"
+    :class="{
+      'is-home': isHome,
+    }"
+    v-if="isShow"
+  >
+    <img class="bg" src="/phone-bg.png" />
 
     <div class="safe-top"></div>
 
@@ -10,7 +16,7 @@
     <div class="view">
       <div class="item">
         <p>H5预览</p>
-        <img />
+        <img src="/qrcode-h5.png" />
       </div>
 
       <div class="item">
@@ -93,7 +99,6 @@ onMounted(() => {
 <style lang="scss" scoped>
 .demo {
   position: relative;
-  height: 727px;
   width: 364px;
   border-radius: 50px;
   margin-left: 50px;
@@ -144,8 +149,8 @@ onMounted(() => {
       }
 
       img {
-        height: 100px;
-        width: 100px;
+        height: 150px;
+        width: 150px;
         border-radius: 10px;
         background-color: #fff;
       }

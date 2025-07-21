@@ -1,5 +1,9 @@
 # 常见问题
 
+### loadFontFace: fail, font-family or src is null
+
+`HBuilderX` 控制台出现 loadFontFace: fail, font-family or src is null，不必在意
+
 ### 为何使用 .ts 后缀而不是 .uts
 
 我们选择使用 `.ts` 文件扩展名而不是 `.uts` 的原因是:
