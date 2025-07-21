@@ -1,6 +1,8 @@
 <template>
-  <div class="demo" :class="{}" v-if="isShow">
+  <div class="demo" v-if="isShow">
     <img class="bg" src="/demo/bg.png" />
+
+    <div class="safe-top"></div>
 
     <iframe class="preview" :src="`/demo/index.html#/${path}`" />
     <!-- <iframe class="preview" :src="`http://localhost:9900/#/${path}`" /> -->
@@ -61,6 +63,20 @@ onMounted(() => {
     attributes: true,
     attributeFilter: ["class"],
   });
+
+  // 监听 iframe 的消息事件
+  window.addEventListener(
+    "message",
+    (e) => {
+      if (e.data.type == "theme-change") {
+        document.querySelector(".demo .safe-top").style.backgroundColor = e.data
+          .isDark
+          ? "rgb(25, 25, 25)"
+          : "#fff";
+      }
+    },
+    false
+  );
 });
 </script>
 
@@ -90,14 +106,21 @@ onMounted(() => {
     pointer-events: none;
   }
 
+  .safe-top {
+    height: 20px;
+    width: calc(100% - 48px);
+    position: absolute;
+    top: 22px;
+    left: 24px;
+  }
+
   .preview {
     border: 0;
     position: absolute;
     left: 24px;
-    top: 22px;
-    height: 684px;
+    top: 42px;
+    height: 664px;
     width: calc(100% - 48px);
-    border-radius: 0 0 30px 0;
   }
 
   &.is-home {

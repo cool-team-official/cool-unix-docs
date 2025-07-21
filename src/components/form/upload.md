@@ -1,6 +1,6 @@
 # Upload 文件上传
 
-一个功能完整的上传组件，已封装好[上传请求处理]()。
+一个功能完整的上传组件，已封装好[上传请求处理](/src/guide/cool/upload.md)。
 
 - 图片上传：支持配置 [上传插件](https://cool-js.com/plugin?page=1&category=1&isMy=false&keyWord=%E4%B8%8A%E4%BC%A0) 实现多种云存储方式：七牛云、阿里云 OSS、腾讯云 COS、MinIO、亚马逊 AWS 等。
 
