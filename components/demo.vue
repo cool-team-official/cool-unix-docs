@@ -21,7 +21,7 @@
 
       <div class="item">
         <p>APP下载</p>
-        <img />
+        <img src="/qrcode-apk.png" />
       </div>
     </div>
   </div>
