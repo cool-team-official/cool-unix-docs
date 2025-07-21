@@ -4,6 +4,12 @@
 
 通过深度集成 cool-admin 生态系统，本项目不仅继承了其强大的功能特性，还针对移动端开发进行了专门优化，让您能够快速构建高质量的跨平台应用。
 
+## 预览
+
+[在线预览](https://show.cool-admin.com/)，账号：`admin`、密码：`123456`
+
+<img src="https://vue.cool-admin.com/show/admin.jpg" />
+
 ## 使用
 
 默认情况下，系统连接的是官方提供的 `测试接口`。您可以从[源码](/src/introduce/src.md)中获取 `node` 或 `java` 版本的后端代码并在本地运行。运行后，只需在 `config/proxy.ts` 配置文件中将 `dev.target` 修改为 `http://127.0.0.1:8001` 或其他可访问的有效服务地址即可完成对接。
