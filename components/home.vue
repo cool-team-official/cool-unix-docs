@@ -46,7 +46,12 @@ const tab = reactive({
       content: "集成 Tailwind CSS，支持深色模式，快速构建界面",
     },
     {
-      label: "i18n",
+      label: "支持鸿蒙",
+      value: "harmony",
+      content: "全面适配鸿蒙系统，畅享原生体验",
+    },
+    {
+      label: "多语言",
       value: "locale",
       content: "内置多语言支持，AI智能翻译，轻松实现全球化",
     },

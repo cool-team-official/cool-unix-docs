@@ -105,9 +105,6 @@ request<UTSJSONObject>({
     page: 1,
     size: 10,
   },
-  header: {
-    "Custom-Header": "value",
-  },
 })
   .then((res) => {
     // 需要手动进行类型转换
