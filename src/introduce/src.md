@@ -37,8 +37,8 @@ Cool Unix 是一个完全开源的项目，采用 [MIT 许可证](https://baike.
 | 平台        | 仓库地址                                                                        |
 | ----------- | ------------------------------------------------------------------------------- |
 | **GitHub**  | [cool-team-official/cool-unix](https://github.com/cool-team-official/cool-unix) |
-<!-- | **Gitee**   | [cool-team-official/cool-unix](https://gitee.com/cool-team-official/cool-unix)  |
-| **GitCode** | [cool_team/cool-unix](https://gitcode.com/cool_team/cool-unix)                  | -->
+| **Gitee**   | [cool-team-official/cool-unix](https://gitee.com/cool-team-official/cool-unix)  |
+<!-- | **GitCode** | [cool_team/cool-unix](https://gitcode.com/cool_team/cool-unix)                  | -->
 
 ### 📚 项目文档
 
