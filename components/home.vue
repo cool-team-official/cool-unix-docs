@@ -20,6 +20,7 @@
       <span>{{ tabInfo.content }}</span>
 
       <button v-if="tabInfo.demo" @click="open(tabInfo.demo)">查看演示</button>
+      <button v-if="tabInfo.doc" @click="open(tabInfo.doc)">查看文档</button>
     </div>
 
     <div class="demo">
@@ -39,11 +40,13 @@ const tab = reactive({
       label: "Eps",
       value: "eps",
       content: "一键生成接口服务层代码，自动完成类型定义",
+      doc: "http://localhost:5173/src/guide/cool/service.html",
     },
     {
       label: "tailwindcss",
       value: "vue",
       content: "集成 Tailwind CSS，支持深色模式，快速构建界面",
+      doc: "http://localhost:5173/src/introduce/theme.html#%F0%9F%93%9D-%E6%A0%B7%E5%BC%8F%E7%B1%BB%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97",
     },
     {
       label: "支持鸿蒙",
@@ -54,6 +57,7 @@ const tab = reactive({
       label: "多语言",
       value: "locale",
       content: "内置多语言支持，AI智能翻译，轻松实现全球化",
+      doc: "http://localhost:5173/src/introduce/i18n.html",
     },
     {
       label: "Admin",

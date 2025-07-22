@@ -128,10 +128,6 @@ onMounted(() => {
     width: calc(100% - 48px);
   }
 
-  &.is-home {
-    margin: 0 auto;
-  }
-
   .view {
     display: flex;
     padding: 20px 0 50px 0;
@@ -153,6 +149,22 @@ onMounted(() => {
         width: 150px;
         border-radius: 10px;
         background-color: #fff;
+      }
+    }
+  }
+
+  &.is-home {
+    margin: 0 auto;
+
+    .view {
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 250px;
+
+      .item {
+        margin-bottom: 50px;
       }
     }
   }
