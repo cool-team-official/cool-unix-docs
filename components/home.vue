@@ -122,6 +122,7 @@ onMounted(() => {});
     padding: 10px 15px;
     font-size: 18px;
     cursor: pointer;
+    white-space: nowrap;
 
     &::after {
       display: block;
@@ -193,14 +194,6 @@ onMounted(() => {});
 
 .demo {
   position: relative;
-
-  .app {
-    height: 120px;
-    width: 120px;
-    position: absolute;
-    top: 20px;
-    left: 450px;
-  }
 }
 
 .box {
@@ -209,5 +202,21 @@ onMounted(() => {});
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+}
+
+@media screen and (max-width: 750px) {
+  .tabs {
+    .item {
+      font-size: 14px;
+      gap: 0;
+      padding: 10px;
+    }
+  }
+
+  .demo {
+    :deep(.view) {
+      display: none;
+    }
+  }
 }
 </style>
