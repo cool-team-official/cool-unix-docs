@@ -6,6 +6,20 @@ export default defineConfig({
   description: "基于 uniapp 的项目脚手架",
   lastUpdated: true,
 
+  head: [
+    [
+      "script",
+      {},
+      `var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?85bf4e006202034d3081db93fa376408";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();`,
+    ],
+  ],
+
   themeConfig: {
     logo: "/logo.png",
     search: {
