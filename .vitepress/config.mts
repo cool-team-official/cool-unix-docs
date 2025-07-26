@@ -316,6 +316,10 @@ export default defineConfig({
                 link: "/src/components/status/progress.md",
               },
               {
+                text: "ProgressCircle 圆形进度条",
+                link: "/src/components/status/progress-circle.md",
+              },
+              {
                 text: "Skeleton 骨架图",
                 link: "/src/components/status/skeleton.md",
               },

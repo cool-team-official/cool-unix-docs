@@ -11,7 +11,6 @@
 | showText     | 是否显示进度百分比文本    | boolean |                    | true   |
 | color        | 进度条颜色                | string  |                    | -      |
 | unColor      | 进度条背景色              | string  |                    | -      |
-| type(待支持) | 进度条类型                | string  | "line" \| "circle" | -      |
 
 ## 基础用法
 
