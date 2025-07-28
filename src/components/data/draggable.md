@@ -24,7 +24,7 @@
 
 | 插槽名 | 说明   | 参数                                                                                            |
 | ------ | ------ | ----------------------------------------------------------------------------------------------- |
-| item   | 子元素 | {item: UTSJSONObject, index: number, dragging: boolean, dragIndex: number, insertIndex: number} |
+| item   | 子元素 | `{item: UTSJSONObject; index: numbe; dragging: boolean; dragIndex: number; insertIndex: number}` |
 
 ## PassThrough 样式透传
 
@@ -89,10 +89,10 @@
     <view
       class="flex flex-row items-center justify-center p-3 bg-surface-100 rounded-lg m-1"
       :class="{
-        '!bg-surface-300': (item as UTSJSONObject).disabled
+        '!bg-surface-300': item['disabled']
       }"
     >
-      <cl-text>{{ (item as UTSJSONObject).label }}</cl-text>
+      <cl-text>{{ item['label'] }}</cl-text>
     </view>
   </template>
 </cl-draggable>
