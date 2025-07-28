@@ -45,9 +45,9 @@
 <cl-draggable v-model="list">
   <template #item="{ item, index }">
     <view
-      class="flex flex-row items-center p-3 bg-surface-100 rounded-lg mb-2"
+      class="flex flex-row items-center p-3 bg-surface-100 rounded-lg mb-2 dark:!bg-surface-700"
       :class="{
-        '!bg-surface-300': (item as UTSJSONObject).disabled
+        'opacity-50': item['disabled']
       }"
     >
       <cl-text>{{ (item as UTSJSONObject).label }}</cl-text>
@@ -87,9 +87,9 @@
 <cl-draggable v-model="list3" :columns="4">
   <template #item="{ item, index }">
     <view
-      class="flex flex-row items-center justify-center p-3 bg-surface-100 rounded-lg m-1"
+      class="flex flex-row items-center justify-center p-3 bg-surface-100 rounded-lg m-1 dark:!bg-surface-700"
       :class="{
-        '!bg-surface-300': item['disabled']
+        'opacity-50': item['disabled']
       }"
     >
       <cl-text>{{ item['label'] }}</cl-text>
