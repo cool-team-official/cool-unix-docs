@@ -4,37 +4,51 @@
 
 ## 基础参数
 
-| 参数        | 说明                           | 类型                        | 可选值                                                        | 默认值                               |
-| ----------- | ------------------------------ | --------------------------- | ------------------------------------------------------------- | ------------------------------------ |
-| pt          | 样式穿透配置                   | [PassThrough](#passthrough) | -                                                             | -                                    |
-| modelValue  | 双向绑定的日期值               | string                      | -                                                             | -                                    |
-| title       | 选择器弹窗顶部标题             | string                      | -                                                             | "请选择"                             |
-| placeholder | 输入框占位符文本               | string                      | -                                                             | "请选择"                             |
-| headers     | 选择器列表头部标题数组         | string[]                    | -                                                             | ['年', '月', '日', '时', '分', '秒'] |
-| showTrigger | 是否显示默认的选择器触发元素   | boolean                     | true / false                                                  | true                                 |
-| disabled    | 是否禁用选择器，禁用后无法操作 | boolean                     | true / false                                                  | false                                |
-| type        | 选择器类型，控制日期选择的精度 | string                      | "year" \| "month" \| "date" \| "hour" \| "minute" \| "second" | "second"                             |
-| confirmText | 确认按钮显示文本               | string                      | "确定"                                                        |
-| showConfirm | 是否显示确认按钮               | boolean                     | true                                                          |
-| cancelText  | 取消按钮显示文本               | string                      | "取消"                                                        |
-| showCancel  | 是否显示取消按钮               | boolean                     | true                                                          |
-| labelFormat | 选中值在触发器中的显示格式     | string                      | ""                                                            |
-| valueFormat | 输出值的格式化规则             | string                      | ""                                                            |
-| start       | 可选择的最早日期时间           | string                      | "1950-01-01 00:00:00"                                         |
-| end         | 可选择的最晚日期时间           | string                      | "2050-12-31 23:59:59"                                         |
+| 参数             | 说明                           | 类型                        | 可选值                                                        | 默认值                               |
+| ---------------- | ------------------------------ | --------------------------- | ------------------------------------------------------------- | ------------------------------------ |
+| pt               | 样式穿透配置                   | [PassThrough](#passthrough) | -                                                             | -                                    |
+| modelValue       | 双向绑定的日期值               | string                      | -                                                             | -                                    |
+| title            | 选择器弹窗顶部标题             | string                      | -                                                             | "请选择"                             |
+| placeholder      | 输入框占位符文本               | string                      | -                                                             | "请选择"                             |
+| headers          | 选择器列表头部标题数组         | string[]                    | -                                                             | ['年', '月', '日', '时', '分', '秒'] |
+| showTrigger      | 是否显示默认的选择器触发元素   | boolean                     | true / false                                                  | true                                 |
+| disabled         | 是否禁用选择器，禁用后无法操作 | boolean                     | true / false                                                  | false                                |
+| type             | 选择器类型，控制日期选择的精度 | string                      | "year" \| "month" \| "date" \| "hour" \| "minute" \| "second" | "second"                             |
+| confirmText      | 确认按钮显示文本               | string                      | "确定"                                                        |                                      |
+| showConfirm      | 是否显示确认按钮               | boolean                     | true                                                          |                                      |
+| cancelText       | 取消按钮显示文本               | string                      | "取消"                                                        |                                      |
+| showCancel       | 是否显示取消按钮               | boolean                     | true                                                          |                                      |
+| labelFormat      | 选中值在触发器中的显示格式     | string                      | ""                                                            |                                      |
+| valueFormat      | 输出值的格式化规则             | string                      | ""                                                            |                                      |
+| start            | 可选择的最早日期时间           | string                      | "1950-01-01 00:00:00"                                         |                                      |
+| end              | 可选择的最晚日期时间           | string                      | "2050-12-31 23:59:59"                                         |                                      |
+| rangeable        | 是否范围选择                   | boolean                     |                                                               | false                                |
+| startPlaceholder | 开始日期占位符                 | string                      |                                                               | "开始日期"                           |
+| endPlaceholder   | 结束日期占位符                 | string                      |                                                               | "结束日期"                           |
+| rangeSeparator   | 范围分隔符                     | string                      |                                                               | "至"                                 |
+| showShortcuts    | 是否显示快捷选项               | boolean                     |                                                               | true                                 |
+| shortcuts        | 快捷选项                       | ClSelectDateShortcut[]      |                                                               | []                                   |
 
 ## 事件
 
-| 事件名称 | 说明                     | 回调参数      |
-| -------- | ------------------------ | ------------- |
-| change   | 日期选择完成后触发的事件 | value: string |
+| 事件名称          | 说明                                  | 回调参数        |
+| ----------------- | ------------------------------------- | --------------- |
+| update:modelValue | 范围选择完成后更新绑定值 `modelValue` | value: string   |
+| change            | 日期选择完成后触发的事件              | value: string   |
+| update:values     | 范围选择完成后更新绑定值 `values`     | value: string[] |
+| range-change      | 范围选择完成后触发的事件              | value: string[] |
 
 ## 方法
 
-| 方法名 | 说明     | 参数                           |
-| ------ | -------- | ------------------------------ |
-| open   | 打开弹窗 | callback: (value: any) => void |
-| close  | 关闭弹窗 |                                |
+| 方法名    | 说明         | 参数                           |
+| --------- | ------------ | ------------------------------ |
+| open      | 打开弹窗     | callback: (value: any) => void |
+| close     | 关闭弹窗     |                                |
+| clear     | 清空         |                                |
+| setValue  | 设置值       | value: string                  |
+| setValues | 设置范围值   | value: string[]                |
+| setRange  | 设置范围索引 | index: number                  |
+| confirm   | 确认         |                                |
 
 ## PassThrough
 
@@ -172,7 +186,62 @@
 ### 禁用状态
 
 ```html
-<cl-select-date v-model="disabledDate" disabled placeholder="此选择器已禁用" />
+<cl-select-date
+  v-model="disabledDate"
+  disabled
+  placeholder="此选择器已禁用"
+></cl-select-date>
+```
+
+### 范围选择
+
+- 绑定值是 `v-model:values`，并且是 `string[]` 类型
+- 添加 `rangeable`
+
+```html
+<cl-select-date v-model:values="values" rangeable></cl-select-date>
+```
+
+### 自定义快捷选项
+
+- 添加参数 `shortcuts`，并且是 `ClSelectDateShortcut[]` 类型
+
+```vue
+<cl-select-date
+  v-model:values="values"
+  rangeable
+  :shortcuts="shortcuts"
+></cl-select-date>
+
+<script setup lang="ts">
+import { ref } from "vue";
+import { type ClSelectDateShortcut } from "@/uni_modules/cool-ui";
+import { dayUts } from "@/cool";
+
+const shortcuts = ref<ClSelectDateShortcut[]>([
+  {
+    label: "昨日",
+    value: [
+      dayUts().subtract(1, "day").format("YYYY-MM-DD"),
+      dayUts().format("YYYY-MM-DD"),
+    ],
+  },
+  {
+    label: "本周",
+    value: [
+      dayUts().startOf("week").format("YYYY-MM-DD"),
+      dayUts().endOf("week").format("YYYY-MM-DD"),
+    ],
+  },
+  {
+    label: "本月",
+    value: [
+      dayUts().startOf("month").format("YYYY-MM-DD"),
+      dayUts().endOf("month").format("YYYY-MM-DD"),
+    ],
+  },
+]);
+</script>
 ```
 
 ## 注意事项
