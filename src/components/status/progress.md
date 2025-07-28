@@ -4,13 +4,25 @@
 
 ## 基础参数
 
-| 参数         | 说明                      | 类型    | 可选值             | 默认值 |
-| ------------ | ------------------------- | ------- | ------------------ | ------ |
-| value        | 当前进度值（0-100）       | number  | 0-100              | 0      |
-| strokeWidth  | 进度条线条宽度（单位 px） | number  | -                  | 12     |
-| showText     | 是否显示进度百分比文本    | boolean |                    | true   |
-| color        | 进度条颜色                | string  |                    | -      |
-| unColor      | 进度条背景色              | string  |                    | -      |
+| 参数        | 说明                      | 类型                        | 可选值 | 默认值 |
+| ----------- | ------------------------- | --------------------------- | ------ | ------ |
+| pt          | 样式透传配置对象          | [PassThrough](#passthrough) | -      | -      |
+| value       | 当前进度值（0-100）       | number                      | 0-100  | 0      |
+| strokeWidth | 进度条线条宽度（单位 px） | number                      | -      | 12     |
+| showText    | 是否显示进度百分比文本    | boolean                     |        | true   |
+| color       | 进度条颜色                | string                      |        | -      |
+| unColor     | 进度条背景色              | string                      |        | -      |
+
+## PassThrough 样式透传
+
+样式穿透配置，用于自定义组件内部元素的样式。
+
+| 属性名    | 说明               | 类型                                                        |
+| --------- | ------------------ | ----------------------------------------------------------- |
+| className | 组件根元素样式     | string                                                      |
+| outer     | 外层进度条元素配置 | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| inner     | 内层进度条元素配置 | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| text      | 文本元素配置       | [PassThroughProps](/src/components/doc.md#passthroughprops) |
 
 ## 基础用法
 

@@ -1,0 +1,1 @@
+import{_ as e}from"./item.uvue_vue_type_style_index_0_scoped_f51a3be8_lang.Dl9fq3Ln.js";import{c as _}from"./cl-page.uvue_vue_type_script_setup_true_lang.B8PcFQeN.js";const s=_(e,[["__scopeId","data-v-f51a3be8"]]);export{s as D};

@@ -4,18 +4,28 @@
 
 ## 基础参数
 
-| 参数        | 说明                      | 类型    | 可选值 | 默认值       |
-| ----------- | ------------------------- | ------- | ------ | ------------ |
-| value       | 当前进度值（0-100）       | number  | 0-100  | 0            |
-| strokeWidth | 进度条线条宽度（单位 px） | number  | -      | 8            |
-| size        | 进度条大小                | number  |        | 120          |
-| showText    | 是否显示进度百分比文本    | boolean |        | true         |
-| unit        | 单位                      | string  |        | "%"          |
-| color       | 进度条颜色                | string  |        | -            |
-| unColor     | 进度条背景色              | string  |        | -            |
-| startAngle  | 起始角度 (弧度)           | number  |        | -Math.PI / 2 |
-| clockwise   | 是否顺时针                | boolean |        | true         |
-| duration    | 动画时长                  | string  |        | 500          |
+| 参数        | 说明                      | 类型                        | 可选值 | 默认值       |
+| ----------- | ------------------------- | --------------------------- | ------ | ------------ |
+| pt          | 样式透传配置对象          | [PassThrough](#passthrough) | -      | -            |
+| value       | 当前进度值（0-100）       | number                      | 0-100  | 0            |
+| strokeWidth | 进度条线条宽度（单位 px） | number                      | -      | 8            |
+| size        | 进度条大小                | number                      |        | 120          |
+| showText    | 是否显示进度百分比文本    | boolean                     |        | true         |
+| unit        | 单位                      | string                      |        | "%"          |
+| color       | 进度条颜色                | string                      |        | -            |
+| unColor     | 进度条背景色              | string                      |        | -            |
+| startAngle  | 起始角度 (弧度)           | number                      |        | -Math.PI / 2 |
+| clockwise   | 是否顺时针                | boolean                     |        | true         |
+| duration    | 动画时长                  | string                      |        | 500          |
+
+## PassThrough 样式透传
+
+样式穿透配置，用于自定义组件内部元素的样式。
+
+| 属性名    | 说明           | 类型                                                        |
+| --------- | -------------- | ----------------------------------------------------------- |
+| className | 组件根元素样式 | string                                                      |
+| text      | 文本元素配置   | [PassThroughProps](/src/components/doc.md#passthroughprops) |
 
 ## 基础用法
 

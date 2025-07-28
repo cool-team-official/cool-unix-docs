@@ -294,6 +294,10 @@ export default defineConfig({
                 text: "Timeline 时间轴",
                 link: "/src/components/data/timeline.md",
               },
+              {
+                text: "Draggable 拖拽排序",
+                link: "/src/components/data/draggable.md",
+              },
             ],
           },
           {
