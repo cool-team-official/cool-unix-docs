@@ -365,6 +365,10 @@ export default defineConfig({
                 text: "Qrcode 二维码",
                 link: "/src/components/other/qrcode.md",
               },
+              {
+                text: "Sign 签名",
+                link: "/src/components/other/sign.md",
+              },
             ],
           },
         ],

@@ -22,7 +22,7 @@
 
 ### 基础用法
 
-生成一个简单的二维码：
+生成一个简单的二维码
 
 ```html
 <cl-qrcode text="https://cool-js.com/"></cl-qrcode>
@@ -30,7 +30,7 @@
 
 ### 添加 LOGO
 
-在二维码中心添加 LOGO 图片：
+在二维码中心添加 LOGO 图片
 
 ```html
 <cl-qrcode
@@ -43,7 +43,7 @@
 
 ### 圆角定位点
 
-设置定位点为圆角样式：
+设置定位点为圆角样式
 
 ```html
 <cl-qrcode text="https://cool-js.com/" :pd-radius="50"> </cl-qrcode>
@@ -51,7 +51,7 @@
 
 ### 自定义颜色
 
-自定义二维码和定位点的颜色：
+自定义二维码和定位点的颜色
 
 ```html
 <cl-qrcode
@@ -81,7 +81,7 @@
 
 ### 导出图片
 
-将二维码导出为图片格式：
+将二维码导出为图片格式
 
 ```html
 <template>
