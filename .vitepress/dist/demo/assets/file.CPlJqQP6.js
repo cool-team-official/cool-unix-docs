@@ -1,1 +1,0 @@
-import{aH as e}from"./index-D_tQ-ve6.js";function a(a){return new Promise((n=>{var o,r;n(URL.createObjectURL(e(null!==(r=null===(o=a.canvasRef.querySelector("canvas"))||void 0===o?void 0:o.toDataURL("image/png",1))&&void 0!==r?r:"")))}))}export{a as c};

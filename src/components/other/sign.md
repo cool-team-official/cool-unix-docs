@@ -4,24 +4,24 @@
 
 ## 基础参数
 
-| 参数                | 说明             | 类型    | 可选值 | 默认值  |
-| ------------------- | ---------------- | ------- | ------ | ------- |
-| width               | 画布宽度         | number  | -      | 300     |
-| height              | 画布高度         | number  | -      | 200     |
-| strokeColor         | 线条颜色         | string  | -      | #000000 |
-| strokeWidth         | 线条宽度         | number  | -      | 3       |
-| backgroundColor     | 背景颜色         | string  | -      | #ffffff |
-| enableBrush         | 是否启用毛笔效果 | boolean | -      | true    |
-| minStrokeWidth      | 最小线条宽度     | number  | -      | 1       |
-| maxStrokeWidth      | 最大线条宽度     | number  | -      | 6       |
-| velocitySensitivity | 速度敏感度       | number  | -      | 0.7     |
+| 参数                | 说明             | 类型    | 可选值 | 默认值      |
+| ------------------- | ---------------- | ------- | ------ | ----------- |
+| width               | 画布宽度         | number  | -      | windowWidth |
+| height              | 画布高度         | number  | -      | 200         |
+| strokeColor         | 线条颜色         | string  | -      | #000000     |
+| strokeWidth         | 线条宽度         | number  | -      | 3           |
+| backgroundColor     | 背景颜色         | string  | -      | #ffffff     |
+| enableBrush         | 是否启用毛笔效果 | boolean | -      | true        |
+| minStrokeWidth      | 最小线条宽度     | number  | -      | 1           |
+| maxStrokeWidth      | 最大线条宽度     | number  | -      | 6           |
+| velocitySensitivity | 速度敏感度       | number  | -      | 0.7         |
 
 ## 方法
 
-| 方法名 | 说明     | 参数        |
-| ------ | -------- | ----------- |
-| clear  | 清空     |             |
-| toPng  | 生成图片 | url: string |
+| 方法名 | 说明     | 参数 | 返回值｜          |
+| ------ | -------- | ---- | ----------------- |
+| clear  | 清空     |      |                   |
+| toPng  | 生成图片 |      | `Promise<string>` |
 
 ## 示例
 
@@ -41,17 +41,25 @@
 <cl-sign enable-brush></cl-sign>
 ```
 
-### 全屏
+### 设置高宽
 
 配置参数 `width` 和 `height`
 
 ```vue
 <template>
-  <cl-sign :width="windowWidth" :height="windowHeight"></cl-sign>
+  <cl-sign :width="width" :height="height"></cl-sign>
 </template>
 
 <script setup lang="ts">
-const { windowWidth, windowHeight } = uni.getWindowInfo();
+const height = ref(0);
+const width = ref(0);
+
+onReady(() => {
+  const { windowWidth, windowHeight } = uni.getWindowInfo();
+
+  height.value = windowHeight;
+  width.value = windowWidth;
+});
 </script>
 ```
 

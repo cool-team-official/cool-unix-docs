@@ -369,6 +369,10 @@ export default defineConfig({
                 text: "Sign 签名",
                 link: "/src/components/other/sign.md",
               },
+              {
+                text: "Cropper 图片裁剪",
+                link: "/src/components/other/cropper.md",
+              },
             ],
           },
         ],

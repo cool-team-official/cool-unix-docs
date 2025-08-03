@@ -35,10 +35,10 @@
 
 样式穿透配置对象，用于深度自定义组件内部元素的样式。
 
-| 参数    | 说明           | 类型                       |
-| ------- | -------------- | -------------------------- |
-| trigger | 选择器样式配置 | ClSelectTriggerPassThrough |
-| popup   | 弹窗样式配置   | [ClPopupPassThrough]       |
+| 参数    | 说明           | 类型                                                                |
+| ------- | -------------- | ------------------------------------------------------------------- |
+| trigger | 选择器样式配置 | ClSelectTriggerPassThrough                                          |
+| popup   | 弹窗样式配置   | [ClPopupPassThrough](/src/components/feedback/popup.md#passthrough) |
 
 ```ts
 type ClSelectTriggerPassThrough = {

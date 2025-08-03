@@ -57,7 +57,7 @@
 | 参数    | 说明                   | 类型                       |
 | ------- | ---------------------- | -------------------------- |
 | trigger | 选择器触发元素样式配置 | ClSelectTriggerPassThrough |
-| popup   | 弹窗容器样式配置       | [ClPopupPassThrough]       |
+| popup   | 弹窗容器样式配置       | [ClPopupPassThrough](/src/components/feedback/popup.md#passthrough)       |
 
 ## 示例
 

@@ -346,11 +346,18 @@ console.log(user?.name);
 
 ### 窗口高度获取问题
 
+进入页面最好在 onReady 或者 onMounted 后获取窗口信息，不然会显示 0
+
 ```ts
 // ❌ 问题：获取的高度为 0
 const { windowHeight } = uni.getWindowInfo();
 
-// ✅ 解决方案：使用屏幕高度
+// ✅ 解决方案1：使用屏幕高度
+onReady(() => {
+  const { screenHeight } = uni.getWindowInfo();
+});
+
+// ✅ 解决方案2：使用屏幕高度，手动减去导航了、安全区域等
 const { screenHeight } = uni.getWindowInfo();
 ```
 
@@ -370,18 +377,6 @@ onMounted(() => {
     // 获取准确值
   }, 50);
 });
-```
-
-## Android 平台
-
-### 安全区域获取问题
-
-```ts
-// ❌ 问题：首个页面底部安全区域为 0
-const safeAreaBottom = uni.getSystemInfoSync().safeAreaInsets?.bottom;
-
-// ✅ 解决方案：使用默认值或延迟获取
-const safeBottom = safeAreaBottom || 20; // 提供默认值
 ```
 
 ## 相关资源
