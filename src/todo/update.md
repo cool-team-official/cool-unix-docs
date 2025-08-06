@@ -4,7 +4,17 @@
 
 如果本项目对您有所帮助，欢迎点击 ⭐ **Star** 支持我们，这将是我们前进路上最大的动力！
 
----
+- [欢迎在 uniapp 插件市场为我们点赞支持](https://ext.dcloud.net.cn/plugin?id=24497#rating)
+
+- [欢迎在 GitHub 上为我们点 Star](https://github.com/cool-team-official/cool-unix)
+
+## v8.0.6 - 2025.08.06
+
+- [功能]添加 `cl-form`、`cl-form-item` 表单验证组件
+- [功能] `cl-select-time` 支持类型选择
+- [修复] `cl-select-date` 文本无法清空问题
+- [优化] `useParent` 方法支持 `useParent<ClFormComponentPublicInstance>('cl-form')` 类型定义和目标组件名
+- [优化] 补充多语言
 
 ## v8.0.5 - 2025.08.03
 

@@ -169,6 +169,10 @@ export default defineConfig({
             text: "表单组件",
             items: [
               {
+                text: "Form 表单验证",
+                link: "/src/components/form/form.md",
+              },
+              {
                 text: "Input 输入框",
                 link: "/src/components/form/input.md",
               },

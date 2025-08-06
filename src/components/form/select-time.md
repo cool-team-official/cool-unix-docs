@@ -4,16 +4,21 @@
 
 ## 参数
 
-| 参数        | 说明                           | 类型                        | 可选值     | 默认值                   |
-| ----------- | ------------------------------ | --------------------------- | ---------- | ------------------------ |
-| pt          | 样式穿透配置                   | [PassThrough](#passthrough) | -          | -                        |
-| modelValue  | 双向绑定的时间值               | string                      | -          | -                        |
-| title       | 选择器弹窗顶部标题             | string                      | -          | "请选择"                 |
-| placeholder | 输入框占位符文本               | string                      | -          | "请选择"                 |
-| headers     | 选择器列表头部标题数组         | string[]                    | -          | ['小时', '分钟', '秒数'] |
-| showTrigger | 是否显示默认的选择器触发元素   | boolean                     | true/false | true                     |
-| disabled    | 是否禁用选择器，禁用后无法操作 | boolean                     | true/false | false                    |
-| labelFormat | 时间标签格式化字符串           | string                      | -          | "{H}:{m}:{s}"            |
+| 参数        | 说明                           | 类型                        | 可选值                         | 默认值                   |
+| ----------- | ------------------------------ | --------------------------- | ------------------------------ | ------------------------ |
+| pt          | 样式穿透配置                   | [PassThrough](#passthrough) | -                              | -                        |
+| modelValue  | 双向绑定的时间值               | string                      | -                              | -                        |
+| title       | 选择器弹窗顶部标题             | string                      | -                              | "请选择"                 |
+| placeholder | 输入框占位符文本               | string                      | -                              | "请选择"                 |
+| headers     | 选择器列表头部标题数组         | string[]                    | -                              | ['小时', '分钟', '秒数'] |
+| showTrigger | 是否显示默认的选择器触发元素   | boolean                     | true/false                     | true                     |
+| disabled    | 是否禁用选择器，禁用后无法操作 | boolean                     | true/false                     | false                    |
+| labelFormat | 时间标签格式化字符串           | string                      | -                              | "{H}:{m}:{s}"            |
+| type        | 选择类型                       | string                      | "hour" \| "minute" \| "second" | "second"                 |
+
+:::warning 提示
+`labelFormat` 参数会根据 `type` 的不同，智能切换为 `{H}:{m}:{s}`、`{H}:{m}` 或 `{H}` 作为默认显示格式，无需手动设置。
+:::
 
 ## 事件
 
@@ -32,10 +37,10 @@
 
 样式穿透配置对象，用于深度自定义组件内部元素的样式。
 
-| 参数    | 说明                   | 类型                       |
-| ------- | ---------------------- | -------------------------- |
-| trigger | 选择器触发元素样式配置 | ClSelectTriggerPassThrough |
-| popup   | 弹窗容器样式配置       | [ClPopupPassThrough](/src/components/feedback/popup.md#passthrough)       |
+| 参数    | 说明                   | 类型                                                                |
+| ------- | ---------------------- | ------------------------------------------------------------------- |
+| trigger | 选择器触发元素样式配置 | ClSelectTriggerPassThrough                                          |
+| popup   | 弹窗容器样式配置       | [ClPopupPassThrough](/src/components/feedback/popup.md#passthrough) |
 
 ## 示例
 
