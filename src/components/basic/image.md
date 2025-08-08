@@ -9,7 +9,6 @@
 | pt                     | 样式穿透配置       | [PassThrough](#passthrough) |        |              |
 | src                    | 图片资源地址       | string                      |        |              |
 | [mode](#mode-裁剪模式) | 图片裁剪、缩放模式 | string                      |        | "aspectFill" |
-| border                 | 是否显示边框       | boolean                     |        | false        |
 | preview                | 是否启用预览功能   | boolean                     |        | false        |
 | preview-list           | 预览图片列表       | string[]                    |        | []           |
 | height                 | 图片高度           | string \| number            |        | 120          |
