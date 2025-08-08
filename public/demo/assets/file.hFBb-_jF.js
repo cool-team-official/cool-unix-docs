@@ -1,0 +1,1 @@
+import{aJ as e}from"./index-Dq8L0aBz.js";function a(a){return new Promise((n=>{var o;n(URL.createObjectURL(e(null!==(o=null==a?void 0:a.toDataURL("image/png",1))&&void 0!==o?o:"")))}))}export{a as c};
