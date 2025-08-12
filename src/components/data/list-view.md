@@ -4,16 +4,25 @@
 
 ## 基础参数
 
-| 参数         | 说明                                         | 类型                        | 可选值 | 默认值 |
-| ------------ | -------------------------------------------- | --------------------------- | ------ | ------ |
-| pt           | 样式透传配置，用于自定义组件内部元素样式     | [PassThrough](#passthrough) | -      | -      |
-| data         | 列表数据源，支持分组数据结构                 | ClListViewItem[]            | -      | []     |
-| itemHeight   | 单个列表项的固定高度（虚拟渲染必需）         | number                      | -      | 50     |
-| headerHeight | 分组标题的固定高度                           | number                      | -      | 32     |
-| topHeight    | 列表顶部预留空间高度，可用于放置搜索框等     | number                      | -      | 0      |
-| bottomHeight | 列表底部预留空间高度，可用于放置加载更多按钮 | number                      | -      | 0      |
-| bufferSize   | 缓冲区大小，控制可视区域外预渲染的项目数量   | number                      | -      | 5      |
-| virtual      | 是否启用虚拟列表渲染，关闭后为普通列表       | boolean                     | -      | true   |
+| 参数                    | 说明                                         | 类型                        | 可选值 | 默认值         |
+| ----------------------- | -------------------------------------------- | --------------------------- | ------ | -------------- |
+| pt                      | 样式透传配置，用于自定义组件内部元素样式     | [PassThrough](#passthrough) | -      | -              |
+| data                    | 列表数据源，支持分组数据结构                 | ClListViewItem[]            | -      | []             |
+| itemHeight              | 单个列表项的固定高度（虚拟渲染必需）         | number                      | -      | 50             |
+| headerHeight            | 分组标题的固定高度                           | number                      | -      | 32             |
+| topHeight               | 列表顶部预留空间高度，可用于放置搜索框等     | number                      | -      | 0              |
+| bottomHeight            | 列表底部预留空间高度，可用于放置加载更多按钮 | number                      | -      | 0              |
+| bufferSize              | 缓冲区大小，控制可视区域外预渲染的项目数量   | number                      | -      | 5              |
+| virtual                 | 是否启用虚拟列表渲染，关闭后为普通列表       | boolean                     | -      | true           |
+| scrollIntoView          | 滚动到指定位置                               | string                      | -      | ""             |
+| scrollWithAnimation     | 是否启用滚动动画                             | boolean                     | -      | false          |
+| showScrollbar           | 是否显示滚动条                               | boolean                     | -      | false          |
+| refresherEnabled        | 是否启用下拉刷新                             | boolean                     | -      | false          |
+| refresherThreshold      | 下拉刷新触发距离，相当于下拉内容高度         | number                      | -      | 50             |
+| refresherBackground     | 下拉刷新区域背景色                           | string                      | -      | "transparent"  |
+| refresherDefaultText    | 下拉刷新默认文案                             | string                      | -      | "下拉刷新"     |
+| refresherPullingText    | 释放刷新文案                                 | string                      | -      | "释放立即刷新" |
+| refresherRefreshingText | 正在刷新文案                                 | string                      | -      | "加载中"       |
 
 :::warning 性能优化建议
 
@@ -28,19 +37,20 @@
 
 ## 事件
 
-| 事件名   | 说明             | 回调参数          |
-| -------- | ---------------- | ----------------- |
-| item-tap | 列表项点击时触发 | item: VirtualItem |
+| 事件名   | 说明             | 回调参数                    |
+| -------- | ---------------- | --------------------------- |
+| item-tap | 列表项点击时触发 | item: ClListViewVirtualItem |
 
 ## 插槽
 
-| 插槽名 | 说明               | 参数                                          | 使用场景                   |
-| ------ | ------------------ | --------------------------------------------- | -------------------------- |
-| top    | 顶部内容插槽       | -                                             | 搜索框、筛选器等           |
-| header | 分组标题插槽       | `{ index: string }`                           | 自定义分组标题样式         |
-| item   | 列表项内容插槽     | `{ data: ClListViewItem; item: VirtualItem }` | 自定义列表项布局和内容     |
-| bottom | 底部内容插槽       | -                                             | 加载更多、底部提示信息等   |
-| index  | 右侧索引栏项目插槽 | `{ index: string }`                           | 自定义索引栏字母或图标样式 |
+| 插槽名    | 说明               | 参数                                                    | 使用场景                   |
+| --------- | ------------------ | ------------------------------------------------------- | -------------------------- |
+| top       | 顶部内容插槽       | -                                                       | 搜索框、筛选器等           |
+| header    | 分组标题插槽       | `{ index: string }`                                     | 自定义分组标题样式         |
+| item      | 列表项内容插槽     | `{ data: ClListViewItem; item: ClListViewVirtualItem }` | 自定义列表项布局和内容     |
+| bottom    | 底部内容插槽       | -                                                       | 加载更多、底部提示信息等   |
+| index     | 右侧索引栏项目插槽 | `{ index: string }`                                     | 自定义索引栏字母或图标样式 |
+| refresher | 下拉刷新插槽       | `{ status: ClListViewRefresherStatus; text: string }`   | 下拉刷新自定义文字和图标   |
 
 ## PassThrough
 
@@ -50,38 +60,37 @@
 | --------- | ------------------------ | ---------------------------------------------------------- |
 | className | 组件根容器样式类名       | string                                                     |
 | item      | 列表项容器的样式配置     | [PassThroughProps](/src/components/pt.md#passthroughprops) |
+| itemHover | 列表项容器按下的样式配置 | [PassThroughProps](/src/components/pt.md#passthroughprops) |
+| list      | 列表容器的样式配置       | [PassThroughProps](/src/components/pt.md#passthroughprops) |
+| scroller  | 滚动容器的样式配置       | [PassThroughProps](/src/components/pt.md#passthroughprops) |
+| refresher | 下拉刷新容器的样式配置   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
 | indexBar  | 右侧索引栏容器的样式配置 | [PassThroughProps](/src/components/pt.md#passthroughprops) |
 
 ## 类型定义
 
 ```ts
-// 虚拟列表单项数据结构
-type VirtualItem = {
-  // 唯一标识符，用于 Vue 的 v-for key 优化
+type ClListViewItem = {
+  label?: string;
+  value?: any;
+  index?: string;
+  children?: ClListViewItem[];
+};
+
+type ClListViewGroup = {
+  index: string;
+  children: ClListViewItem[];
+};
+
+type ClListViewVirtualItem = {
   key: string;
-  // 项目类型：header=分组标题，item=普通列表项
   type: "header" | "item";
-  // 在整个虚拟列表中的绝对索引位置
   index: number;
-  // 该项距离列表容器顶部的精确像素距离
   top: number;
-  // 该项的渲染高度（header 和 item 可以不同）
   height: number;
-  // 该项绑定的原始数据
   data: ClListViewItem;
 };
 
-// 列表数据项基础结构
-type ClListViewItem = {
-  // 显示文本，支持多语言
-  label: string;
-  // 附加数据，可存储任意类型的业务数据
-  value?: any;
-  // 分组索引标识，用于右侧索引栏定位
-  index?: string;
-  // 子项数据，支持嵌套分组结构
-  children?: ClListViewItem[];
-};
+type ClListViewRefresherStatus = "default" | "pulling" | "refreshing";
 ```
 
 ## 示例

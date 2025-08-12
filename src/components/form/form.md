@@ -3,23 +3,39 @@
 表单组件用于数据录入与校验，支持多种校验规则、错误提示、禁用状态等功能。
 
 :::tip 提示
-已封装好简便的使用方式，无需像其他 UI 库那样编写繁琐的代码
+表单的 `disabled` 禁用状态会影响包括以下组件：（自定义组件可以使用 `useForm` 去获取表单的禁用状态）
+
+- cl-input（输入框）
+- cl-input-number（数字输入框）
+- cl-checkbox（复选框）
+- cl-radio（单选框）
+- cl-rate（评分）
+- cl-textarea（文本域）
+- cl-select（选择器）
+- cl-select-date（日期选择器）
+- cl-select-time（时间选择器）
+- cl-cascader（级联选择器）
+- cl-switch（开关）
+- cl-upload（上传）
+- cl-slider（滑块）
+
 :::
 
 ## cl-form
 
 ### 参数
 
-| 参数          | 说明             | 类型                         | 可选值                     | 默认值   |
-| ------------- | ---------------- | ---------------------------- | -------------------------- | -------- |
-| pt            | 样式穿透配置     | [PassThrough](#passthrough)  | —                          | —        |
-| modelValue    | 表单数据模型     | any                          | —                          | {}       |
-| rules         | 表单规则         | Map<string, ClFormRule[]>    | —                          | []       |
-| labelPosition | 标签位置         | [ClFormLabelPosition](#类型) | 'top' \| 'left' \| 'right' | 'top'    |
-| labelWidth    | 标签宽度         | string                       | —                          | '120rpx' |
-| showAsterisk  | 是否显示必填星号 | boolean                      | —                          | true     |
-| showMessage   | 是否显示错误信息 | boolean                      | —                          | true     |
-| disabled      | 是否禁用整个表单 | boolean                      | —                          | false    |
+| 参数          | 说明                 | 类型                         | 可选值                     | 默认值   |
+| ------------- | -------------------- | ---------------------------- | -------------------------- | -------- |
+| pt            | 样式穿透配置         | [PassThrough](#passthrough)  | —                          | —        |
+| modelValue    | 表单数据模型         | any                          | —                          | {}       |
+| rules         | 表单规则             | Map<string, ClFormRule[]>    | —                          | []       |
+| labelPosition | 标签位置             | [ClFormLabelPosition](#类型) | 'top' \| 'left' \| 'right' | 'top'    |
+| labelWidth    | 标签宽度             | string                       | —                          | '120rpx' |
+| showAsterisk  | 是否显示必填星号     | boolean                      | —                          | true     |
+| showMessage   | 是否显示错误信息     | boolean                      | —                          | true     |
+| disabled      | 是否禁用整个表单     | boolean                      | —                          | false    |
+| scrollToError | 滚动到第一个错误位置 | boolean                      | —                          | true     |
 
 ### 插槽
 
@@ -94,6 +110,46 @@ const { formRef, disabled, addField } = useForm();
 | clearValidate | 清空所有字段的验证     | `() => void`                                                                  |
 | validateField | 验证指定字段           | `(prop: string) => string` \| null                                            |
 | validate      | 验证所有字段           | `(callback: (valid: boolean, errors: ClFormValidateError[]) => void) => void` |
+| isError       | 检查字段是否存在错误   | `(prop: string) => boolean`                                                   |
+
+## useFormItem
+
+表单项的钩子函数，用于获取当前表单项的状态。
+
+```ts
+const { isError } = useFormItem();
+```
+
+### 示例
+
+当需要根据表单字段验证结果为 `input` 组件添加红色边框样式时：
+
+:::warning 重要
+
+- 需要将 `input` 组件放置在 `cl-form-item` 组件内部
+- `isError` 状态仅在表单配置了验证规则时生效
+  :::
+
+```vue
+<template>
+  <cl-form-item prop="name">
+    <input :class="{ 'border-red-500': isError }"></input>
+  </cl-form-item>
+</template>
+
+<script setup lang="ts">
+import { useFormItem } from "@/uni_modules/cool-ui";
+
+const { isError } = useFormItem();
+</script>
+```
+
+### 返回值
+
+| 参数        | 说明                    | 类型                                           |
+| ----------- | ----------------------- | ---------------------------------------------- |
+| formItemRef | `cl-form-item` 组件实例 | [ClFormComponentPublicInstance](#cl-form-item) |
+| isError     | 字段是否存在错误        | `boolean`                                      |
 
 ## 验证规则
 

@@ -60,6 +60,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "介绍", link: "/src/introduce/index.md", noIcon: false },
+      { text: "版本 8.0.7", link: "/src/todo/update.md", noIcon: false },
       { text: "教程", link: "/src/introduce/quick.md" },
       { text: "组件库", link: "/src/components/basic/button.md" },
       { text: "插件市场", link: "https://cool-js.com/plugin" },
@@ -119,6 +120,14 @@ export default defineConfig({
           {
             text: "兼容问题",
             link: "/src/introduce/help.md",
+          },
+        ],
+      },
+      {
+        items: [
+          {
+            text: "纯净版本",
+            link: "/src/introduce/clean.md",
           },
           {
             text: "对接 cool-admin",
@@ -281,6 +290,10 @@ export default defineConfig({
               {
                 text: "ListView 列表视图",
                 link: "/src/components/data/list-view.md",
+              },
+              {
+                text: "ListViewRefresh 列表刷新",
+                link: "/src/components/data/list-view-refresh.md",
               },
               {
                 text: "Waterfall 瀑布流",

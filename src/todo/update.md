@@ -8,6 +8,18 @@
 
 - [欢迎在 GitHub 上为我们点 Star](https://github.com/cool-team-official/cool-unix)
 
+## v8.0.7 - 2025.08.12
+
+- [功能]添加纯净版本，[文档](/src/introduce/clean.md)
+- [功能] `cl-form` 表单验证组件支持滚动到错误位置
+- [功能] `cl-form` 表单内组件支持红框错误提示
+- [功能]重新实现 `usePage()`，支持监听页面滚动及跳转等事件
+- [功能] `cl-list-view` 添加下拉刷新功能
+- [功能]添加 `usePager()` 页面刷新操作
+- [功能]添加 `cl-back-top` 回到顶部组件
+- [优化]优化 `cl-button` `cl-loading` 组件颜色的控制
+- [优化]优化 `cl-select-date` 组件的选择操作体验（不回到首个）
+
 ## v8.0.6 - 2025.08.06
 
 - [功能]添加 `cl-form`、`cl-form-item` 表单验证组件
