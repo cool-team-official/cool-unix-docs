@@ -10,6 +10,7 @@
 | value      | 文本内容           | string                      |                                                                 |
 | color      | 字体颜色           | string                      | "primary" \| "success" \| "error" \| "warn" \| "info"           |           |
 | type       | 文本类型           | string                      | "default" \| "phone" \| "name" \| "amount" \| "card" \| "email" | "default" |
+| size       | 字体大小           | string \| number            |                                                                 | null      |
 | mask       | 是否开启脱敏处理   | boolean                     |                                                                 | false     |
 | currency   | 金额货币符号       | string                      |                                                                 | "¥"       |
 | precision  | 金额小数位数       | number                      |                                                                 | 2         |

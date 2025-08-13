@@ -8,6 +8,10 @@
 
 - [欢迎在 GitHub 上为我们点 Star](https://github.com/cool-team-official/cool-unix)
 
+## v8.0.8 - 2025.08.13
+
+- [功能]新增全局字号设置功能，支持动态调整文字大小，适用于 `cl-text` 和 `cl-icon` 组件
+
 ## v8.0.7 - 2025.08.12
 
 - [功能]添加纯净版本，[文档](/src/introduce/clean.md)
@@ -26,7 +30,7 @@
 - [功能] `cl-select-time` 支持类型选择
 - [修复] `cl-select-date` 文本无法清空问题
 - [优化] `useParent` 方法支持 `useParent<ClFormComponentPublicInstance>('cl-form')` 类型定义和目标组件名
-- [优化] 补充多语言
+- [优化]补充多语言
 
 ## v8.0.5 - 2025.08.03
 
@@ -34,9 +38,9 @@
 - [修复] `cl-popup` 内容区域去掉滑动事件
 - [修复] `locale-set` 点击掉帧问题
 - [修复] `canvasToPng` 参数优化，仅需一个 `canvasRef`
-- [优化] 登录页细节调整
-- [优化] 补充多语言
-- [优化] 画布高清处理
+- [优化]登录页细节调整
+- [优化]补充多语言
+- [优化]画布高清处理
 
 ## v8.0.4 - 2025.07.29
 
