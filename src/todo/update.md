@@ -8,6 +8,11 @@
 
 - [欢迎在 GitHub 上为我们点 Star](https://github.com/cool-team-official/cool-unix)
 
+## v8.0.9 - 2025.08.15
+
+- [功能] `cl-form` 支持动态表单验证，如 prop="contacts[0].phone"
+- [功能] `cl-form-item` 支持配置 `rules` 参数
+
 ## v8.0.8 - 2025.08.13
 
 - [功能]新增全局字号设置功能，支持动态调整文字大小，适用于 `cl-text` 和 `cl-icon` 组件

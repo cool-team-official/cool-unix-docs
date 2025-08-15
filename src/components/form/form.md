@@ -45,20 +45,23 @@
 
 ### 方法
 
-| 方法名        | 说明                   | 参数                                                                          |
-| ------------- | ---------------------- | ----------------------------------------------------------------------------- |
-| addField      | 添加某个验证字段       | `(prop: string) => void`                                                      |
-| removeField   | 移除某个验证字段       | `(prop: string) => void`                                                      |
-| getValue      | 获取指定字段的表单值   | `(prop: string) => any \| null`                                               |
-| setError      | 设置指定字段的错误提示 | `(prop: string, error: string) => void`                                       |
-| getError      | 获取指定字段的错误提示 | `(prop: string) => string`                                                    |
-| removeError   | 移除指定字段的错误提示 | `(prop: string) => void`                                                      |
-| clearErrors   | 清空所有错误提示       | `() => void`                                                                  |
-| getRule       | 获取指定字段的规则     | `(prop: string) => ClFormRule[]`                                              |
-| validateRule  | 验证指定字段的规则     | `(value: any \| null, rule: ClFormRule) => string \| null`                    |
-| clearValidate | 清空所有字段的验证     | `() => void`                                                                  |
-| validateField | 验证指定字段           | `(prop: string) => string` \| null                                            |
-| validate      | 验证所有字段           | `(callback: (valid: boolean, errors: ClFormValidateError[]) => void) => void` |
+| 方法名        | 说明                                 | 参数                                                                                   |
+| ------------- | ------------------------------------ | -------------------------------------------------------------------------------------- |
+| addField      | 添加某个验证字段                     | `(prop: string) => void`                                                               |
+| removeField   | 移除某个验证字段                     | `(prop: string) => void`                                                               |
+| getValue      | 获取指定字段的表单值                 | `(prop: string) => any \| null`                                                        |
+| setError      | 设置指定字段的错误提示               | `(prop: string, error: string) => void`                                                |
+| getError      | 获取指定字段的错误提示               | `(prop: string) => string`                                                             |
+| getErrors     | 获得错误信息，并滚动到第一个错误位置 | `() => Promise<ClFormValidateError[]>`                                                 |
+| removeError   | 移除指定字段的错误提示               | `(prop: string) => void`                                                               |
+| clearErrors   | 清空所有错误提示                     | `() => void`                                                                           |
+| getRule       | 获取指定字段的规则                   | `(prop: string) => ClFormRule[]`                                                       |
+| setRule       | 设置字段规则                         | `(prop: string, rules: ClFormRule[]) => void`                                          |
+| removeRule    | 移除字段规则                         | `(prop: string) => void`                                                               |
+| validateRule  | 验证指定字段的规则                   | `(value: any \| null, rule: ClFormRule) => string \| null`                             |
+| clearValidate | 清空所有字段的验证                   | `() => void`                                                                           |
+| validateField | 验证指定字段                         | `(prop: string) => string` \| null                                                     |
+| validate      | 验证所有字段                         | `(callback: (valid: boolean, errors: ClFormValidateError[]) => void) => Promise<void>` |
 
 ## cl-form-item
 
@@ -66,16 +69,17 @@
 
 ### 参数
 
-| 参数          | 说明             | 类型                         | 可选值                     | 默认值 |
-| ------------- | ---------------- | ---------------------------- | -------------------------- | ------ |
-| pt            | 样式穿透配置     | [PassThrough](#passthrough)  | —                          | —      |
-| label         | 字段标签         | string                       | —                          | ''     |
-| prop          | 字段名称         | string                       | —                          | ''     |
-| labelPosition | 标签位置         | [ClFormLabelPosition](#类型) | 'top' \| 'left' \| 'right' | null   |
-| labelWidth    | 标签宽度         | string                       | —                          | null   |
-| showAsterisk  | 是否显示必填星号 | boolean                      | —                          | null   |
-| showMessage   | 是否显示错误信息 | boolean                      | —                          | null   |
-| required      | 是否必填         | boolean                      | —                          | false  |
+| 参数          | 说明             | 类型                             | 可选值                     | 默认值 |
+| ------------- | ---------------- | -------------------------------- | -------------------------- | ------ |
+| pt            | 样式穿透配置     | [PassThrough](#passthrough)      | —                          | —      |
+| label         | 字段标签         | string                           | —                          | ''     |
+| prop          | 字段名称         | string                           | —                          | ''     |
+| rules         | 验证规则         | [ClFormRule](#类型定义)          | —                          | []     |
+| labelPosition | 标签位置         | [ClFormLabelPosition](#类型定义) | 'top' \| 'left' \| 'right' | null   |
+| labelWidth    | 标签宽度         | string                           | —                          | null   |
+| showAsterisk  | 是否显示必填星号 | boolean                          | —                          | null   |
+| showMessage   | 是否显示错误信息 | boolean                          | —                          | null   |
+| required      | 是否必填         | boolean                          | —                          | false  |
 
 ### 插槽
 
@@ -94,23 +98,26 @@ const { formRef, disabled, addField } = useForm();
 
 ### 返回值
 
-| 参数          | 说明                   | 类型                                                                          |
-| ------------- | ---------------------- | ----------------------------------------------------------------------------- |
-| formRef       | `cl-form` 组件实例     | [ClFormComponentPublicInstance](#cl-form)                                     |
-| disabled      | 表单是否禁用           | boolean                                                                       |
-| addField      | 添加某个验证字段       | `(prop: string) => void`                                                      |
-| removeField   | 移除某个验证字段       | `(prop: string) => void`                                                      |
-| getValue      | 获取指定字段的表单值   | `(prop: string) => any \| null`                                               |
-| setError      | 设置指定字段的错误提示 | `(prop: string, error: string) => void`                                       |
-| getError      | 获取指定字段的错误提示 | `(prop: string) => string`                                                    |
-| removeError   | 移除指定字段的错误提示 | `(prop: string) => void`                                                      |
-| clearErrors   | 清空所有错误提示       | `() => void`                                                                  |
-| getRule       | 获取指定字段的规则     | `(prop: string) => ClFormRule[]`                                              |
-| validateRule  | 验证指定字段的规则     | `(value: any \| null, rule: ClFormRule) => string \| null`                    |
-| clearValidate | 清空所有字段的验证     | `() => void`                                                                  |
-| validateField | 验证指定字段           | `(prop: string) => string` \| null                                            |
-| validate      | 验证所有字段           | `(callback: (valid: boolean, errors: ClFormValidateError[]) => void) => void` |
-| isError       | 检查字段是否存在错误   | `(prop: string) => boolean`                                                   |
+| 参数          | 说明                                 | 类型                                                                                   |
+| ------------- | ------------------------------------ | -------------------------------------------------------------------------------------- |
+| formRef       | `cl-form` 组件实例                   | [ClFormComponentPublicInstance](#cl-form)                                              |
+| disabled      | 表单是否禁用                         | boolean                                                                                |
+| addField      | 添加某个验证字段                     | `(prop: string) => void`                                                               |
+| removeField   | 移除某个验证字段                     | `(prop: string) => void`                                                               |
+| getValue      | 获取指定字段的表单值                 | `(prop: string) => any \| null`                                                        |
+| setError      | 设置指定字段的错误提示               | `(prop: string, error: string) => void`                                                |
+| getError      | 获取指定字段的错误提示               | `(prop: string) => string`                                                             |
+| getErrors     | 获得错误信息，并滚动到第一个错误位置 | `() => Promise<ClFormValidateError[]>`                                                 |
+| removeError   | 移除指定字段的错误提示               | `(prop: string) => void`                                                               |
+| clearErrors   | 清空所有错误提示                     | `() => void`                                                                           |
+| getRule       | 获取指定字段的规则                   | `(prop: string) => ClFormRule[]`                                                       |
+| setRule       | 设置字段规则                         | `(prop: string, rules: ClFormRule[]) => void`                                          |
+| removeRule    | 移除字段规则                         | `(prop: string) => void`                                                               |
+| validateRule  | 验证指定字段的规则                   | `(value: any \| null, rule: ClFormRule) => string \| null`                             |
+| clearValidate | 清空所有字段的验证                   | `() => void`                                                                           |
+| validateField | 验证指定字段                         | `(prop: string) => string` \| null                                                     |
+| validate      | 验证所有字段                         | `(callback: (valid: boolean, errors: ClFormValidateError[]) => void) => Promise<void>` |
+| isError       | 检查字段是否存在错误                 | `(prop: string) => boolean`                                                            |
 
 ## useFormItem
 
@@ -257,6 +264,81 @@ const rules = new Map<string, ClFormRule[]>([
 		]
 	]
 ]
+```
+
+### 动态字段验证
+
+- 请注意，`prop` 的格式应为 `contacts[0].phone`，也支持更深层级的写法，如 `contacts[0].info.users[0].name`。
+- 另外，`rules` 必须为数组格式，并且需要显式声明类型为 `as ClFormRule[]`。
+
+```vue
+<template>
+  <cl-form-item :label="t('动态验证')" required prop="contacts">
+    <view
+      class="contacts border border-solid border-surface-200 rounded-xl p-3 dark:!border-surface-700"
+    >
+      <cl-form-item
+        v-for="(item, index) in formData.contacts"
+        :key="index"
+        :label="t('联系人') + ` - ${index + 1}`"
+        :prop="`contacts[${index}].phone`"
+        :rules="
+          [
+            {
+              required: true,
+              message: t('手机号不能为空')
+            }
+          ] as ClFormRule[]
+        "
+        required
+      >
+        <view class="flex flex-row items-center">
+          <cl-input
+            :pt="{
+              className: 'flex-1 mr-2',
+            }"
+            v-model="item.phone"
+            :placeholder="t('请输入手机号')"
+          ></cl-input>
+
+          <cl-button
+            type="light"
+            icon="subtract-line"
+            @tap="removeContact(index)"
+          ></cl-button>
+        </view>
+      </cl-form-item>
+
+      <cl-button icon="add-line" @tap="addContact">{{
+        t("添加联系人")
+      }}</cl-button>
+    </view>
+  </cl-form-item>
+</template>
+
+<script lang="ts" setup>
+type FormData = {
+  // ...
+  contacts: Contact[];
+};
+
+const formData = ref<FormData>({
+  // ...
+  contacts: [],
+}) as Ref<FormData>;
+
+// 添加一个联系人
+function addContact() {
+  formData.value.contacts.push({
+    phone: "",
+  });
+}
+
+// 移除联系人
+function removeContact(index: number) {
+  formData.value.contacts.splice(index, 1);
+}
+</script>
 ```
 
 更多规则参考 `/pages/demo/form/form.uvue` 中的写法
