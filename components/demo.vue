@@ -99,13 +99,13 @@ onMounted(() => {
 <style lang="scss" scoped>
 .demo {
   position: relative;
-  width: 364px;
+  width: 444px;
   border-radius: 50px;
   margin-left: 50px;
 
   .bg {
     position: relative;
-    height: 727px;
+    height: 884px;
     width: 100%;
     z-index: 2;
     pointer-events: none;
@@ -124,7 +124,7 @@ onMounted(() => {
     position: absolute;
     left: 24px;
     top: 42px;
-    height: 664px;
+    height: 816px;
     width: calc(100% - 48px);
   }
 
