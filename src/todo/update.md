@@ -8,6 +8,11 @@
 
 - [欢迎在 GitHub 上为我们点 Star](https://github.com/cool-team-official/cool-unix)
 
+## v8.0.10 - 2025.08.19
+
+- [功能]添加 `cl-canvas` 组件，支持图片裁剪、文字多行省略、变形转换等功能
+- [优化]解决 `cl-topbar` 的 `pt` 和 `background-color` 互斥问题
+
 ## v8.0.9 - 2025.08.15
 
 - [功能] `cl-form` 支持动态表单验证，如 prop="contacts[0].phone"

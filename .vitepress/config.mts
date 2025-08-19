@@ -60,7 +60,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "介绍", link: "/src/introduce/index.md", noIcon: false },
-      { text: "版本 8.0.9", link: "/src/todo/update.md", noIcon: false },
+      { text: "版本 8.0.10", link: "/src/todo/update.md", noIcon: false },
       { text: "教程", link: "/src/introduce/quick.md" },
       { text: "组件库", link: "/src/components/basic/button.md" },
       { text: "插件市场", link: "https://cool-js.com/plugin" },
@@ -389,6 +389,10 @@ export default defineConfig({
               {
                 text: "Cropper 图片裁剪",
                 link: "/src/components/other/cropper.md",
+              },
+              {
+                text: "Canvas 画布",
+                link: "/src/components/other/canvas.md",
               },
             ],
           },
