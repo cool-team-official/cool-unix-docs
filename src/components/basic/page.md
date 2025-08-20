@@ -45,7 +45,7 @@ const ui = useUi();
 | [showTips](/src/components/feedback/confirm.md)    | 显示确认提示弹窗 | `(message: string, callback: (action: ClConfirmAction) => void)` |
 | [showToast](/src/components/feedback/toast.md)     | 显示提示弹窗     | `(options: ClToastOptions)`                                      |
 | showLoading                                        | 显示加载框       | `(text: string \| null = null)`                                  |
-| hideLoading                                        | 隐藏贾樟柯       | `()`                                                             |
+| hideLoading                                        | 隐藏加载框       | `()`                                                             |
 
 ### 使用示例
 

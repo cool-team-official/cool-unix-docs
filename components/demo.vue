@@ -6,9 +6,12 @@
     }"
     v-if="isShow"
   >
-    <img class="bg" src="/phone-bg.png" />
+    <img class="bg" src="/phone-bg2.png" />
+
+    <span class="time">{{ currentTime }}</span>
 
     <div class="safe-top"></div>
+    <div class="safe-bottom"></div>
 
     <iframe class="preview" :src="`/demo/index.html#/${path}`" />
     <!-- <iframe class="preview" :src="`http://localhost:9900/#/${path}`" /> -->
@@ -28,7 +31,7 @@
 </template>
 
 <script setup>
-import { computed, onMounted } from "vue";
+import { computed, onMounted, ref } from "vue";
 
 const props = defineProps({
   isHome: Boolean,
@@ -46,7 +49,32 @@ const isShow = computed(() => {
   return props.path;
 });
 
+const currentTime = ref("");
+
+function getTime() {
+  // 格式化时间
+  function formatTime(date) {
+    const h = date.getHours().toString().padStart(2, "0");
+    const m = date.getMinutes().toString().padStart(2, "0");
+    return `${h}:${m}`;
+  }
+
+  // 每秒更新一次时间，但只在分钟变化时才更新DOM，减少性能消耗
+  function updateTime() {
+    const now = new Date();
+    const formatted = formatTime(now);
+    if (currentTime.value !== formatted) {
+      currentTime.value = formatted;
+    }
+  }
+
+  updateTime();
+  // setInterval(updateTime, 1000);
+}
+
 onMounted(() => {
+  getTime();
+
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
       if (mutation.attributeName === "class") {
@@ -75,10 +103,11 @@ onMounted(() => {
     "message",
     (e) => {
       if (e.data.type == "theme-change") {
-        document.querySelector(".demo .safe-top").style.backgroundColor = e.data
-          .isDark
-          ? "rgb(25, 25, 25)"
-          : "#fff";
+        const color = e.data.isDark ? "rgb(25, 25, 25)" : "transparent";
+
+        document.querySelector(".demo .safe-top").style.backgroundColor = color;
+        document.querySelector(".demo .safe-bottom").style.backgroundColor =
+          color;
       }
     },
     false
@@ -103,6 +132,15 @@ onMounted(() => {
   border-radius: 50px;
   margin-left: 50px;
 
+  .time {
+    position: absolute;
+    top: 30px;
+    left: 54px;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 99;
+  }
+
   .bg {
     position: relative;
     height: 884px;
@@ -112,20 +150,31 @@ onMounted(() => {
   }
 
   .safe-top {
-    height: 20px;
-    width: calc(100% - 48px);
+    height: 44px;
+    width: calc(100% - 40px);
     position: absolute;
-    top: 22px;
-    left: 24px;
+    top: 10px;
+    left: 20px;
+    border-radius: 24px 24px 0 0;
+  }
+
+  .safe-bottom {
+    height: 30px;
+    width: calc(100% - 60px);
+    position: absolute;
+    top: 850px;
+    left: 30px;
+    border-radius: 0 0 60px 60px;
+    z-index: 9;
   }
 
   .preview {
     border: 0;
     position: absolute;
-    left: 24px;
-    top: 42px;
-    height: 816px;
-    width: calc(100% - 48px);
+    left: 16px;
+    top: 54px;
+    height: 800px;
+    width: calc(100% - 32px);
   }
 
   .view {
