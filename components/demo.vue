@@ -103,11 +103,18 @@ onMounted(() => {
     "message",
     (e) => {
       if (e.data.type == "theme-change") {
-        const color = e.data.isDark ? "rgb(25, 25, 25)" : "transparent";
+        const isDark = e.data.isDark;
 
-        document.querySelector(".demo .safe-top").style.backgroundColor = color;
+        document.querySelector(".demo .time").style.color = isDark
+          ? "#fff"
+          : "#000";
+
+        const safeColor = isDark ? "rgb(25, 25, 25)" : "transparent";
+
+        document.querySelector(".demo .safe-top").style.backgroundColor =
+          safeColor;
         document.querySelector(".demo .safe-bottom").style.backgroundColor =
-          color;
+          safeColor;
       }
     },
     false
@@ -159,12 +166,12 @@ onMounted(() => {
   }
 
   .safe-bottom {
-    height: 30px;
+    height: 22px;
     width: calc(100% - 60px);
     position: absolute;
     top: 850px;
     left: 30px;
-    border-radius: 0 0 60px 60px;
+    border-radius: 0 0 80px 80px;
     z-index: 9;
   }
 
