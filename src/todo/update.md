@@ -8,6 +8,16 @@
 
 - [欢迎在 GitHub 上为我们点 Star](https://github.com/cool-team-official/cool-unix)
 
+## v8.0.13 - 2025.08.21
+
+- [功能]添加 `购物车` 和 `商品分类` 模板页
+- [优化]解决 `cl-text` 参数 `size` 未生效问题
+- [优化]解决小程序上 `cl-badge` 字体样式失效问题
+- [优化]解决 `cl-input-number` 首次触发 `onChange` 的问题
+- [优化]解决 cl-input 事件丢失问题
+- [优化]解决 `cl-select-date` 快捷按钮需点击两次的问题
+- [优化]解决 cl-noticebar 等待时间过长显示的问题
+
 ## v8.0.10 - 2025.08.19
 
 - [功能]添加 `cl-canvas` 组件，支持图片裁剪、文字多行省略、变形转换等功能
