@@ -8,13 +8,23 @@
 
 - [欢迎在 GitHub 上为我们点 Star](https://github.com/cool-team-official/cool-unix)
 
+## v8.0.15 - 2025.08.22
+
+- [功能]添加 `cl-filter-item` 筛选栏组件
+
+## v8.0.14 - 2025.08.21
+
+- [优化]修复 `cl-picker-view` 边界值溢出的问题
+- [优化]修复 `cl-select` 和 `cl-select-time` 打开时未设置当前值的问题
+- [优化]修复 `cl-select` 和 `cl-select-time` 中 `text` 显示异常的问题
+
 ## v8.0.13 - 2025.08.21
 
 - [功能]添加 `购物车` 和 `商品分类` 模板页
 - [优化]解决 `cl-text` 参数 `size` 未生效问题
 - [优化]解决小程序上 `cl-badge` 字体样式失效问题
 - [优化]解决 `cl-input-number` 首次触发 `onChange` 的问题
-- [优化]解决 cl-input 事件丢失问题
+- [优化]解决 `cl-input` 事件丢失问题
 - [优化]解决 `cl-select-date` 快捷按钮需点击两次的问题
 - [优化]解决 cl-noticebar 等待时间过长显示的问题
 
