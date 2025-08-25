@@ -398,6 +398,10 @@ export default defineConfig({
                 text: "Canvas 画布",
                 link: "/src/components/other/canvas.md",
               },
+              {
+                text: "Svg 图标",
+                link: "/src/components/other/svg.md",
+              },
             ],
           },
         ],
@@ -407,14 +411,14 @@ export default defineConfig({
           {
             text: "目录结构",
             items: [
-              {
-                text: ".cool",
-                link: "/src/guide/.cool.md",
-              },
-              {
-                text: ".cursor",
-                link: "/src/guide/.cursor.md",
-              },
+              // {
+              //   text: ".cool",
+              //   link: "/src/guide/.cool.md",
+              // },
+              // {
+              //   text: ".cursor",
+              //   link: "/src/guide/.cursor.md",
+              // },
               {
                 text: "components",
                 link: "/src/guide/components.md",
@@ -463,7 +467,6 @@ export default defineConfig({
               { text: "static", link: "/src/guide/static.md" },
               {
                 text: "uni_modules",
-                link: "/src/guide/uni_modules.md",
                 items: [
                   {
                     text: "cool-open-web",

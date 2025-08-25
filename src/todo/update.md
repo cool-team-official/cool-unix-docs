@@ -8,6 +8,13 @@
 
 - [欢迎在 GitHub 上为我们点 Star](https://github.com/cool-team-official/cool-unix)
 
+## v8.0.16 - 2025.08.25
+
+- [功能]添加 `cl-svg` 组件，支持 `base64`、`本地文件`、`svg标签`
+- [优化]多语言方案已优化，成功解决 APP 端 Method too large 的问题，`cool-ui` 语言包现已独立分离
+- [优化]更新依赖 `@cool-vue/ai` 版本 `1.1.6`
+- [优化]更新依赖 `@cool-vue/vite-plugin` 版本 `8.2.7`
+
 ## v8.0.15 - 2025.08.22
 
 - [功能]添加 `cl-filter-item` 筛选栏组件
