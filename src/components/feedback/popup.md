@@ -19,6 +19,7 @@
 | swipeCloseThreshold | 拖拽关闭触发距离（单位：px）             | number                                             | -      | 150      |
 | pointerEvents       | 触摸事件响应方式                         | "auto" \| "none"                                   | -      | "auto"   |
 | keepAlive           | 是否启用内容缓存                         | boolean                                            | -      | false    |
+| enablePortal        | 是否插入到最外层                         | boolean                                            | -      | true     |
 
 :::warning 注意事项
 
