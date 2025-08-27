@@ -114,6 +114,10 @@ export default defineConfig({
             link: "/src/introduce/i18n.md",
           },
           {
+            text: "Service 请求",
+            link: "/src/introduce/service.md",
+          },
+          {
             text: "常见问题",
             link: "/src/introduce/question.md",
           },
