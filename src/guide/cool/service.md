@@ -1,6 +1,12 @@
 # Service 请求服务
 
-智能化的 API 服务管理，自动扫描服务端接口并生成可直接访问的对象。
+:::warning
+
+- `service.xx` 请求方式目前已下线，后续版本将以更优的方式重新提供。
+- 当前推荐使用 `request` 方法进行接口请求。
+  :::
+
+<!-- 智能化的 API 服务管理，自动扫描服务端接口并生成可直接访问的对象。
 
 :::warning
 当接口服务发生变更时,需要重新编译 HBuilderX 以更新 service 的数据内容和接口描述信息。我们正在优化这一点,未来版本将支持实时自动更新。
@@ -15,7 +21,7 @@
 
 <img src="/public/images/service.gif" />
 
-## 类型定义
+## 类型定义 -->
 
 ### 请求配置
 
@@ -45,6 +51,7 @@ type Response = {
 
 ## 使用指南
 
+<!--
 ### 基本用法
 
 通过自动生成的 service 对象调用 API 接口：
@@ -80,9 +87,7 @@ service.user.address
       message: (err as Response).message!,
     });
   });
-```
-
-### 自定义请求
+``` -->
 
 当需要更灵活的请求配置时，可以使用`request`方法：
 
@@ -90,15 +95,24 @@ service.user.address
 - `request` 必须带返回值类型
 
 ```ts
-import { request, Response, type UserAddressEntity } from "@/cool";
+import { request, Response, type UserAddressEntity, parse } from "@/cool";
 import { useUi } from "@/uni_modules/cool-ui";
 import { ref } from "vue";
 
 const ui = useUi();
-const list = ref<UserAddressEntity[]>([]);
+
+// 返回值类型，根据实际场景去修改
+type PageResponse = {
+  list: UTSJSONObject[];
+  pagination: {
+    total: number;
+    page: number;
+    size: number;
+  };
+};
 
 // 自定义请求配置
-request<UTSJSONObject>({
+request({
   url: "/app/user/address/page", // URL会自动拼接config中的baseUrl
   method: "POST",
   data: {
@@ -108,7 +122,7 @@ request<UTSJSONObject>({
 })
   .then((res) => {
     // 需要手动进行类型转换
-    list.value = res.list as UserAddressEntity[];
+    const { list, pagination } = parse<PageResponse>(res)!;
   })
   .catch((err) => {
     // 统一的错误处理

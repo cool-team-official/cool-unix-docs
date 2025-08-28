@@ -65,6 +65,11 @@ watch(
       return;
     }
 
+    if (val.includes("/src/components/other/request")) {
+      path.value = "pages/template/shop/address";
+      return;
+    }
+
     if (
       val.includes("/components/pt") ||
       val.includes("/components/doc") ||
