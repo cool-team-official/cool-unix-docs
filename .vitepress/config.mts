@@ -60,7 +60,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "介绍", link: "/src/introduce/index.md", noIcon: false },
-      { text: "版本 8.0.16", link: "/src/todo/update.md", noIcon: false },
+      { text: "版本 8.0.19", link: "/src/todo/update.md", noIcon: false },
       { text: "教程", link: "/src/introduce/quick.md" },
       { text: "组件库", link: "/src/components/basic/button.md" },
       { text: "插件市场", link: "https://cool-js.com/plugin" },
@@ -115,7 +115,7 @@ export default defineConfig({
           },
           {
             text: "Service 请求",
-            link: "/src/introduce/service.md",
+            link: "/src/guide/cool/service.md",
           },
           {
             text: "常见问题",
@@ -406,6 +406,14 @@ export default defineConfig({
                 text: "Svg 图标",
                 link: "/src/components/other/svg.md",
               },
+              {
+                text: "SlideVerify 滑动验证",
+                link: "/src/components/other/slide-verify.md",
+              },
+              // {
+              //   text: "Request 请求",
+              //   link: "/src/components/other/request.md",
+              // },
             ],
           },
         ],
