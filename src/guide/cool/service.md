@@ -95,20 +95,22 @@ service.user.address
 - `request` 必须带返回值类型
 
 ```ts
-import { request, Response, type UserAddressEntity, parse } from "@/cool";
+import { request, type Response, type UserAddressEntity, parse } from "@/cool";
 import { useUi } from "@/uni_modules/cool-ui";
 import { ref } from "vue";
 
 const ui = useUi();
 
 // 返回值类型，根据实际场景去修改
+type Pagination = {
+  total: number;
+  page: number;
+  size: number;
+};
+
 type PageResponse = {
   list: UTSJSONObject[];
-  pagination: {
-    total: number;
-    page: number;
-    size: number;
-  };
+  pagination: Pagination;
 };
 
 // 自定义请求配置
@@ -121,8 +123,10 @@ request({
   },
 })
   .then((res) => {
-    // 需要手动进行类型转换
-    const { list, pagination } = parse<PageResponse>(res)!;
+    if (res != null) {
+      // 需要手动进行类型转换
+      const { list, pagination } = parse<PageResponse>(res)!;
+    }
   })
   .catch((err) => {
     // 统一的错误处理

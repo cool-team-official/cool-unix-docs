@@ -2,6 +2,10 @@
 
 ### 运行时控制台提示 uni_modules[cool-svg] 存在第三方依赖或资源引用
 
+:::tip HBuilderX 出现以下提示，请安装 Gradle（8.5 版本）
+Configuring project':app' without an existing directory is not allowed. The configured318626/app' does not exist，can't be written to or is not a directory
+:::
+
 按照参考文档配置：https://uniapp.dcloud.net.cn/tutorial/run/uts-development-android.html
 
 `Mac` 运行配置参考如下：

@@ -6,7 +6,11 @@
 - **本地文件**：传入本地 `.svg` 文件路径（如 `/static/xxx.svg`），适合项目内静态资源管理。
 - **svg 标签**：直接传入 svg 标签字符串，支持自定义样式和颜色，灵活性更高。
 
-:::danger 重要提示
+:::tip 兼容提示
+`IOS` 和 `鸿蒙` 暂时只能配置本地文件
+:::
+
+:::warning 重要提示
 运行时控制台提示 `uni_modules[cool-svg] 存在第三方依赖或资源引用`，请按 [Android UTS 扩展开发](https://uniapp.dcloud.net.cn/tutorial/run/uts-development-android.html) 文档的方式配置。
 
 - 配置完成后请重新编译项目，若仍然出现相关报错，可尝试在云端打基座后再次编译。

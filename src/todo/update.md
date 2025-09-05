@@ -8,6 +8,16 @@
 
 - [欢迎在 GitHub 上为我们点 Star](https://github.com/cool-team-official/cool-unix)
 
+## v8.0.20 - 2025.09.05
+
+- [功能]添加 `cl-tree` 树形组件，支持 `multiple` 多选
+- [优化]解决 `ios` 端 `cl-cropper` 高和宽为 0 时不触发 load 事件
+- [优化]解决 `ios` 端 `cl-draggable` 拖动异常问题
+- [优化]解决 `ios` 端 `cl-loading` 旋转动画异常问题
+- [优化]解决 `ios` 端底部自定义栏不显示问题
+- [优化]解决 `ios` 端图标异常?问题
+- [优化]解决鸿蒙 `svg` 渲染问题
+
 ## v8.0.19 - 2025.08.28
 
 - [功能]添加 `cl-slide-verify` 滑动验证组件，支持图片转正
