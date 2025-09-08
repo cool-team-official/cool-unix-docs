@@ -8,6 +8,11 @@
 
 - [欢迎在 GitHub 上为我们点 Star](https://github.com/cool-team-official/cool-unix)
 
+## v8.0.21 - 2025.09.08
+- [功能]添加 `animation` 动画库，优化组件动画
+- [优化] `cl-text` 组件的字体大小和颜色，在 `pt` 配置中无需添加 `!` 符号
+- [优化] `cl-list-item` 组件添加 `image` 参数，添加 `slot`
+
 ## v8.0.20 - 2025.09.05
 
 - [功能]添加 `cl-tree` 树形组件，支持 `multiple` 多选
