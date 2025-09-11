@@ -60,7 +60,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "介绍", link: "/src/introduce/index.md", noIcon: false },
-      { text: "版本 8.0.21", link: "/src/todo/update.md", noIcon: false },
+      { text: "版本 8.0.23", link: "/src/todo/update.md", noIcon: false },
       { text: "教程", link: "/src/introduce/quick.md" },
       { text: "组件库", link: "/src/components/basic/button.md" },
       { text: "插件市场", link: "https://cool-js.com/plugin" },
@@ -245,6 +245,10 @@ export default defineConfig({
                 text: "Upload 文件上传",
                 link: "/src/components/form/upload.md",
               },
+              {
+                text: "Calendar 日历",
+                link: "/src/components/form/calendar.md",
+              },
             ],
           },
           {
@@ -413,6 +417,10 @@ export default defineConfig({
               {
                 text: "SlideVerify 滑动验证",
                 link: "/src/components/other/slide-verify.md",
+              },
+              {
+                text: "Animation 动画",
+                link: "/src/components/other/animation.md",
               },
               // {
               //   text: "Request 请求",

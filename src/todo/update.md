@@ -8,7 +8,27 @@
 
 - [欢迎在 GitHub 上为我们点 Star](https://github.com/cool-team-official/cool-unix)
 
+## v8.0.23 - 2025.09.11
+
+- [优化]解决图标脚本命名不一致问题
+- [优化]鸿蒙圆形进度条显示异常问题
+- [优化] `cl-countdown` 添加 `auto` 参数
+- [优化] `cl-calendar` 支持添加上下文案
+
+## v8.0.22 - 2025.09.09
+
+- [功能]添加 `cl-calendar` 组件
+- [优化]添加 `dayUts` 方法
+- [优化] `cl-text` 支持多行省略号
+
 ## v8.0.21 - 2025.09.08
+
+- [功能]添加 `animation` 动画库，优化组件动画
+- [优化] `cl-text` 组件的字体大小和颜色，在 `pt` 配置中无需添加 `!` 符号
+- [优化] `cl-list-item` 组件添加 `image` 参数，添加 `slot`
+
+## v8.0.21 - 2025.09.08
+
 - [功能]添加 `animation` 动画库，优化组件动画
 - [优化] `cl-text` 组件的字体大小和颜色，在 `pt` 配置中无需添加 `!` 符号
 - [优化] `cl-list-item` 组件添加 `image` 参数，添加 `slot`

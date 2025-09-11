@@ -46,6 +46,7 @@ type ClListItemPassThrough = {
 | --------- | ---------------- | ---------------------------- | -------------------- | ------ |
 | pt        | 样式透传配置     | [PassThrough](#passthrough)  | -                    | -      |
 | icon      | 左侧图标名称     | string                       | -                    | -      |
+| image     | 左侧图片链接     | string                       | -                    | -      |
 | label     | 标签文本         | string                       | -                    | -      |
 | justify   | 内容对齐方式     | "start" \| "center" \| "end" | start / center / end | end    |
 | arrow     | 是否显示右侧箭头 | boolean                      | true / false         | false  |
@@ -65,7 +66,16 @@ type ClListItemPassThrough = {
 | label     | 标签文本样式配置      | [PassThroughProps](/src/components/doc.md#passthroughprops) |
 | content   | 内容区域样式配置      | [PassThroughProps](/src/components/doc.md#passthroughprops) |
 | icon      | 图标样式配置          | [ClIconProps](/src/components/basic/icon.md#passthrough)    |
+| image     | 图片样式配置          | [ClImageProps](/src/components/basic/image.md#passthrough)  |
 | collapse  | 折叠内容样式配置      | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+
+## 插槽
+
+| 插槽名  | 说明     |
+| ------- | -------- |
+| icon    | 图标内容 |
+| image   | 图片内容 |
+| default | 默认内容 |
 
 ## 使用示例
 
@@ -103,9 +113,28 @@ type ClListItemPassThrough = {
 
 通过 `icon` 属性添加左侧图标，增强视觉效果。
 
-```html
+```vue
 <cl-list-item label="余额" icon="wallet-line">
   <cl-text>10,000</cl-text>
+</cl-list-item>
+```
+
+### 带图片
+
+通过 `image` 属性添加左侧图图片，增强视觉效果。
+
+```vue
+<cl-list-item
+  arrow
+  :pt="{
+    image: {
+      width: 48,
+      height: 48,
+    },
+  }"
+  label="神仙都没用"
+  image="https://unix.cool-js.com/images/demo/avatar.jpg"
+>
 </cl-list-item>
 ```
 
