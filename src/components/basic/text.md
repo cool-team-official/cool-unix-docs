@@ -4,21 +4,22 @@
 
 ## 参数
 
-| 参数       | 说明               | 类型                        | 可选值                                                          | 默认值    |
-| ---------- | ------------------ | --------------------------- | --------------------------------------------------------------- | --------- |
-| pt         | 样式穿透配置       | [PassThrough](#passthrough) |                                                                 |           |
-| value      | 文本内容           | string                      |                                                                 |
-| color      | 字体颜色           | string                      | "primary" \| "success" \| "error" \| "warn" \| "info"           |           |
-| type       | 文本类型           | string                      | "default" \| "phone" \| "name" \| "amount" \| "card" \| "email" | "default" |
-| size       | 字体大小           | string \| number            |                                                                 | null      |
-| mask       | 是否开启脱敏处理   | boolean                     |                                                                 | false     |
-| currency   | 金额货币符号       | string                      |                                                                 | "¥"       |
-| precision  | 金额小数位数       | number                      |                                                                 | 2         |
-| maskStart  | 脱敏起始位置       | number                      |                                                                 | 3         |
-| maskEnd    | 脱敏结束位置       | number                      |                                                                 | 4         |
-| maskChar   | 脱敏替换字符       | string                      |                                                                 | "\*"      |
-| ellipsis   | 是否启用省略号显示 | boolean                     |                                                                 | false     |
-| selectable | 是否允许选择文本   | boolean                     |                                                                 | false     |
+| 参数       | 说明                               | 类型                        | 可选值                                                          | 默认值    |
+| ---------- | ---------------------------------- | --------------------------- | --------------------------------------------------------------- | --------- |
+| pt         | 样式穿透配置                       | [PassThrough](#passthrough) |                                                                 |           |
+| value      | 文本内容                           | string                      |                                                                 |
+| color      | 字体颜色                           | string                      | "primary" \| "success" \| "error" \| "warn" \| "info"           |           |
+| type       | 文本类型                           | string                      | "default" \| "phone" \| "name" \| "amount" \| "card" \| "email" | "default" |
+| size       | 字体大小                           | string \| number            |                                                                 | null      |
+| mask       | 是否开启脱敏处理                   | boolean                     |                                                                 | false     |
+| currency   | 金额货币符号                       | string                      |                                                                 | "¥"       |
+| precision  | 金额小数位数                       | number                      |                                                                 | 2         |
+| maskStart  | 脱敏起始位置                       | number                      |                                                                 | 3         |
+| maskEnd    | 脱敏结束位置                       | number                      |                                                                 | 4         |
+| maskChar   | 脱敏替换字符                       | string                      |                                                                 | "\*"      |
+| ellipsis   | 是否启用省略号显示                 | boolean                     |                                                                 | false     |
+| lines      | 最大行数，只在 `ellipsis` 启用有效 | number                      |                                                                 | 1         |
+| selectable | 是否允许选择文本                   | boolean                     |                                                                 | false     |
 
 ## PassThrough
 
@@ -106,4 +107,12 @@
 <cl-text ellipsis>
   锦瑟无端五十弦，一弦一柱思华年。庄生晓梦迷蝴蝶，望帝春心托杜鹃。沧海月明珠有泪，蓝田日暖玉生烟。此情可待成追忆，只是当时已惘然。
 </cl-text>
+```
+
+多行省略号配置 `lines` 参数
+
+```html
+<cl-text ellipsis :lines="2"
+  >云想衣裳花想容，春风拂槛露华浓。若非群玉山头见，会向瑶台月下逢。天阶夜色凉如水，卧看牵牛织女星。人生若只如初见，何事秋风悲画扇。山有木兮木有枝，心悦君兮君不知。</cl-text
+>
 ```
