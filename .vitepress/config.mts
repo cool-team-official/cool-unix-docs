@@ -60,7 +60,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "介绍", link: "/src/introduce/index.md", noIcon: false },
-      { text: "版本 8.0.23", link: "/src/todo/update.md", noIcon: false },
+      { text: "版本 8.0.24", link: "/src/todo/update.md", noIcon: false },
       { text: "教程", link: "/src/introduce/quick.md" },
       { text: "组件库", link: "/src/components/basic/button.md" },
       { text: "插件市场", link: "https://cool-js.com/plugin" },
@@ -292,6 +292,10 @@ export default defineConfig({
                 link: "/src/components/data/avatar.md",
               },
               {
+                text: "ReadMore 查看更多",
+                link: "/src/components/data/read-more.md",
+              },
+              {
                 text: "List 列表",
                 link: "/src/components/data/list.md",
               },
@@ -310,6 +314,10 @@ export default defineConfig({
               {
                 text: "Banner 轮播图",
                 link: "/src/components/data/banner.md",
+              },
+              {
+                text: "Marquee 跑马灯",
+                link: "/src/components/data/marquee.md",
               },
               {
                 text: "Pagination 分页",
@@ -476,6 +484,10 @@ export default defineConfig({
                       {
                         text: "storage",
                         link: "/src/guide/cool/utils/storage.md",
+                      },
+                      {
+                        text: "parse",
+                        link: "/src/guide/cool/utils/parse.md",
                       },
                     ],
                   },

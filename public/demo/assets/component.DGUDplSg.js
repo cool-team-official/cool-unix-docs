@@ -1,0 +1,1 @@
+import{N as a}from"./index-CENV6PjS.js";function n(n){return n.map((n=>a(Object.assign(Object.assign({},n),{value:n}))))}function s(n){return n.map((n=>a(n)))}function t(n){return n.map((n=>a(Object.assign(Object.assign({},n),{value:n}))))}export{n as a,t as b,s as u};

@@ -8,6 +8,15 @@
 
 - [欢迎在 GitHub 上为我们点 Star](https://github.com/cool-team-official/cool-unix)
 
+## v8.0.24 - 2025.09.13
+
+- [优化] `locale` 现已支持自定义语言配置，详情请见[文档](/src/guide/locale.md#自定义)
+- [优化] `cl-calendar` 日历设置自定义语言
+- [优化] `cl-text` 参数 `lines` 修改为仅在 `ellipsis` 时生效
+- [功能] 添加 `cl-marquee` 跑马灯组件
+- [功能] 添加 `cl-read-more` 查看更多组件
+- [优化] `cl-footer` 添加 `pt` 参数，默认 `overflow-visible`
+
 ## v8.0.23 - 2025.09.11
 
 - [优化]解决图标脚本命名不一致问题
