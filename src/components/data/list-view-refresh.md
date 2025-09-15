@@ -38,25 +38,11 @@
 
   - `usePager(cb)` 的参数是一个方法，用于调用获取列表的接口
 
-    - 可以使用 [service](/src/guide/cool/service.md) 的方式调用
+    ```ts
+    type PagerCallback = (params: UTSJSONObject, ctx: Pager) => void | Promise<void>;
 
-      ```ts
-      usePager((params) => {
-        return service.user.address.page(params);
-      });
-      ```
-
-    - 也可以自定义 `request`，但是返回类型必须是：
-      ```ts
-      Promise<{
-        list: any[];
-        pagination: {
-          size: number;
-          page: number;
-          total: number;
-        };
-      }>;
-      ```
+    type usePager(cb: PagerCallback): Pager
+    ```
 
   - `refresh(params)` 刷新列表数据的方法
     - `params` 参数对象不能为空,可传入空对象 `{}`
@@ -65,6 +51,7 @@
   - `listView` 列表数据,类型为 `ClListViewItem[]`,专用于 `cl-list-view` 组件的 `data` 属性
   - `loading` 布尔值,表示是否正在加载数据
   - `loadmore()` 加载下一页数据的方法
+  - `render()` 渲染列表数据，如下示例代码格式
 
 - `onPull()` 下拉刷新事件处理函数
   - 在刷新完成后需调用 `stopRefresh()` 停止刷新动画
@@ -111,11 +98,11 @@ const listViewRef = ref<ClListViewComponentPublicInstance | null>(null);
 
 let id = 0;
 
-const { refresh, list, listView, loading, loadMore } = usePager((params) => {
-  return new Promise((resolve) => {
+const { refresh, list, listView, loading, loadMore } = usePager(
+  (params, { render }) => {
     // 模拟请求
     setTimeout(() => {
-      resolve({
+      render({
         list: [
           {
             id: id++,
@@ -144,8 +131,8 @@ const { refresh, list, listView, loading, loadMore } = usePager((params) => {
 
       ui.hideLoading();
     }, 1000);
-  });
-});
+  }
+);
 
 async function onPull() {
   await refresh({ page: 1 });
