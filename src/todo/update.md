@@ -8,6 +8,13 @@
 
 - [欢迎在 GitHub 上为我们点 Star](https://github.com/cool-team-official/cool-unix)
 
+## v8.0.25 - 2025.09.18
+
+- [功能]组件库现已独立发布，欢迎前往[插件市场](https://ext.dcloud.net.cn/plugin?id=24497)查看与体验
+- [优化]解决 `cl-read-more` 动态内容不显示展开问题
+- [优化]解决 `cl-input-opt` 在小程序兼容问题
+- [优化]解决 `router/index.ts` 路径判断错误问题
+
 ## v8.0.24 - 2025.09.13
 
 - [优化] `locale` 现已支持自定义语言配置，详情请见[文档](/src/guide/locale.md#自定义)

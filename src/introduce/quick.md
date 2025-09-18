@@ -34,8 +34,7 @@ git clone https://gitee.com/cool-team-official/cool-unix.git
 pnpm i
 
 # 或者使用其他包管理器
-npm install
-# yarn
+yarn
 ```
 
 > **⚡ 性能提示**：推荐使用 `pnpm`，它具有以下优势：
