@@ -8,6 +8,19 @@
 
 - [欢迎在 GitHub 上为我们点 Star](https://github.com/cool-team-official/cool-unix)
 
+## v8.0.26 - 2025.10.15
+
+- [优化]修复 `cl-popup` 关闭按钮在小程序端的兼容问题
+- [优化]修复了在 HBuilder 新版本中，`cl-banner` 组件第三张及之后的图片无法显示的问题
+- [优化]修复 `cool-vibrate` 鸿蒙权限文件书写错误问题
+- [优化]修复 `easycom` 解析异常的问题
+- [优化]优化 `cl-cascader` 选择效果
+- [优化] `cl-calendar-select` 添加提示
+- [优化] `cl-calendar` 支持配置 `start`、`end` 可选日期
+- [优化]修复 `cl-select-date` 组件在范围选择模式下首次渲染时内容未显示的问题
+- [优化]优化 `router`，支持 `isAuth`，并添加示例
+- [优化]解决 Illegal '/' in tags 异常
+
 ## v8.0.25 - 2025.09.18
 
 - [功能]组件库现已独立发布，欢迎前往[插件市场](https://ext.dcloud.net.cn/plugin?id=24497)查看与体验
