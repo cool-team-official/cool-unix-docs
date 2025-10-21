@@ -92,6 +92,7 @@ const page = usePage();
 | `scrollTo`     | 滚动到指定位置   | `(top: number)`                     | -        |
 | `scrollToTop`  | 回到顶部         | `()`                                | -        |
 | `onScroll`     | 监听页面滚动     | `(callback: (top: number) => void)` | -        |
+| `offScroll`    | 取消监听页面滚动 | `(callback: (top: number) => void)` | -        |
 
 :::tip 提示
 `onScroll` 可以在任意子组件中使用，不仅解决了 `onPageScroll` 的兼容性问题，还提供了更灵活的页面滚动监听能力

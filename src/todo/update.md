@@ -8,6 +8,17 @@
 
 - [欢迎在 GitHub 上为我们点 Star](https://github.com/cool-team-official/cool-unix)
 
+## v8.0.27 - 2025.10.21
+
+- [功能]添加帖子详情模板
+- [优化] `cl-list-item` 组件添加 `pt.wrapper` 参数
+- [优化] `cl-topbar` 组件添加 backable 控制返回按钮是否可用
+- [优化] `cl-select` 组件添加空选项提示
+- [优化] `isPressing` 修改为 `ref<boolean>`
+- [优化] `usePage()` 添加 `offScroll` 方法
+- [优化]修复 `cl-timeline-item` 时间线不显示问题
+- [优化]解决 `:deep` 失效问题
+
 ## v8.0.26 - 2025.10.15
 
 - [优化]修复 `cl-popup` 关闭按钮在小程序端的兼容问题
