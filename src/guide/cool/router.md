@@ -84,9 +84,9 @@ router.push({
 });
 
 // 在目标页面接收参数
-const params = router.params;
-console.log(params.id); // 123
-console.log(params.name); // '张三'
+const query = router.query();
+console.log(query.id); // 123
+console.log(query.name); // '张三'
 ```
 
 ### 不同跳转模式

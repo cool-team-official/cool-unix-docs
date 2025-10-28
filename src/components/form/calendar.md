@@ -6,18 +6,28 @@
 
 ### 基础参数
 
-| 参数           | 说明                            | 类型                              | 可选值 | 默认值   |
-| -------------- | ------------------------------- | --------------------------------- | ------ | -------- |
-| pt             | 样式穿透配置                    | [PassThrough](#passthrough)       | -      | -        |
-| modelValue     | 当前选中的日期值（单选模式）    | string \| null                    | -      | null     |
-| date           | 选中的日期数组（多选/范围模式） | string[]                          | -      | []       |
-| mode           | 日期选择模式                    | "single" \| "multiple" \| "range" | -      | "single" |
-| dateConfig     | 日期配置                        | ClCalendarDateConfig[]            |        | []       |
-| year           | 设置年份（首次定位）            | number                            |        | 0        |
-| month          | 设置月份（首次定位）            | number                            |        | 0        |
-| showOtherMonth | 是否显示其他月份的日期          | boolean                           |        | true     |
-| showHeader     | 是否显示头部导航栏              | boolean                           |        | true     |
-| showWeeks      | 是否显示星期                    | boolean                           |        | true     |
+| 参数                | 说明                            | 类型                              | 可选值 | 默认值    |
+| ------------------- | ------------------------------- | --------------------------------- | ------ | --------- |
+| pt                  | 样式穿透配置                    | [PassThrough](#passthrough)       | -      | -         |
+| modelValue          | 当前选中的日期值（单选模式）    | string \| null                    | -      | null      |
+| date                | 选中的日期数组（多选/范围模式） | string[]                          | -      | []        |
+| mode                | 日期选择模式                    | "single" \| "multiple" \| "range" | -      | "single"  |
+| dateConfig          | 日期配置                        | ClCalendarDateConfig[]            |        | []        |
+| year                | 设置年份（首次定位）            | number                            |        | 0         |
+| month               | 设置月份（首次定位）            | number                            |        | 0         |
+| showOtherMonth      | 是否显示其他月份的日期          | boolean                           |        | true      |
+| showHeader          | 是否显示头部导航栏              | boolean                           |        | true      |
+| showWeeks           | 是否显示星期                    | boolean                           |        | true      |
+| cellHeight          | 单元格高度                      | number                            |        | 66        |
+| cellGap             | 单元格间距                      | number                            |        | 0         |
+| color               | 主色                            | string                            |        | ""        |
+| textColor           | 当前月份日期颜色                | string                            |        | ""        |
+| textOtherMonthColor | 其他月份日期颜色                | string                            |        | ""        |
+| textDisabledColor   | 禁用日期颜色                    | string                            |        | ""        |
+| textTodayColor      | 今天日期颜色                    | string                            |        | "#ff6b6b" |
+| textSelectedColor   | 选中日期颜色                    | string                            |        | "#ffffff" |
+| bgSelectedColor     | 选中日期背景颜色                | string                            |        | ""        |
+| bgRangeColor        | 范围选择背景颜色                | string                            |        | ""        |
 
 ### 事件
 

@@ -8,6 +8,19 @@
 
 - [欢迎在 GitHub 上为我们点 Star](https://github.com/cool-team-official/cool-unix)
 
+## v8.0.29 - 2025.10.28
+
+- [功能]添加 `商品详情` 模板页面
+- [优化]优化 `router.query` 取值
+- [优化] `cl-banner` 添加 `image-mode` 参数
+- [优化]修复 `cl-tabs` 底横线位置异常问题
+- [优化] `cl-calendar` 添加颜色、大小等参数
+
+## v8.0.28 - 2025.10.26
+
+- [功能]添加 `cl-watermark` 水印组件
+- [优化]解决打包后 `cl-icon` 颜色异常问题
+
 ## v8.0.27 - 2025.10.21
 
 - [功能]添加帖子详情模板
