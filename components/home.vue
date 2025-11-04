@@ -30,7 +30,7 @@
       <demo is-home />
     </div>
 
-    <join ref="joinRef" img="http://localhost:5173/show/wechat.png" />
+    <join ref="joinRef" img="/show/wechat.png" />
   </div>
 </template>
 
