@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <p class="tag">✨ Cool unix 项目脚手架</p>
+    <p class="tag">✨ Cool unix 项目脚手架 · 官方赛事一等奖</p>
     <p class="title">开源免费、uvue组件库、多语言、深色模式、Ai编码</p>
     <p class="sub-title"></p>
 
@@ -21,26 +21,40 @@
 
       <button v-if="tabInfo.demo" @click="open(tabInfo.demo)">查看演示</button>
       <button v-if="tabInfo.doc" @click="open(tabInfo.doc)">查看文档</button>
+      <button v-if="tabInfo.btn" @click="openBtn(tabInfo)">
+        {{ tabInfo.btn }}
+      </button>
     </div>
 
     <div class="demo">
       <demo is-home />
     </div>
+
+    <join ref="joinRef" img="http://localhost:5173/show/wechat.png" />
   </div>
 </template>
 
 <script setup>
 import Demo from "./demo.vue";
-import { reactive, onMounted, computed } from "vue";
+import Join from "./join.vue";
+import { reactive, onMounted, computed, ref } from "vue";
+
+const joinRef = ref(null);
 
 const tab = reactive({
-  active: "eps",
+  active: "join",
   list: [
+    // {
+    //   label: "Eps",
+    //   value: "eps",
+    //   content: "一键生成接口服务层代码，自动完成类型定义",
+    //   doc: "https://unix.cool-js.com/src/guide/cool/service.html",
+    // },
     {
-      label: "Eps",
-      value: "eps",
-      content: "一键生成接口服务层代码，自动完成类型定义",
-      doc: "https://unix.cool-js.com/src/guide/cool/service.html",
+      label: "开发交流群",
+      value: "join",
+      content: "欢迎加入我们的开发交流群，共同打造更优秀的项目！",
+      btn: "点击加入",
     },
     {
       label: "tailwindcss",
@@ -75,6 +89,12 @@ const tabInfo = computed(() => {
   return tab.list.find((item) => item.value == tab.active);
 });
 
+function openBtn(item) {
+  if (item.value == "join") {
+    joinRef.value.open();
+  }
+}
+
 function open(url) {
   window.open(url, "_blank");
 }
@@ -102,6 +122,10 @@ onMounted(() => {});
   font-weight: 600;
   user-select: none;
   line-height: 50px;
+  background: -webkit-linear-gradient(315deg, #42d392 25%, #647eff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .sub-title {
