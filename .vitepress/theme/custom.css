@@ -92,6 +92,10 @@ table {
   z-index: 1000;
 }
 
+.VPContent .container {
+  justify-content: flex-start !important;
+}
+
 .VPContent .container > .content {
   padding: 0;
 }
