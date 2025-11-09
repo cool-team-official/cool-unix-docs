@@ -8,6 +8,18 @@
 
 - [欢迎在 GitHub 上为我们点 Star](https://github.com/cool-team-official/cool-unix)
 
+## v8.0.30 - 2025.11.10
+
+- [功能]添加 `cool-share` 系统分享插件
+- [优化]优化 `router.query` 取值
+- [优化]修复 `cl-banner` 1处bug、优化手势操作、增加touch代理功能
+- [优化]修复 `cl-input-number` 在特殊情况下输入框高度不一致问题
+- [优化]修复 `cl-select-date` 初始值未显示问题
+- [优化]修复 `cl-text` 设置超大号字体时导致的多行重叠和web端显示不全的问题
+- [优化] `cl-form-item` 支持根据规则自动判断必填状态
+- [优化] `cl-input` 添加数字输入精度控制功能
+- [优化][脚本]支持读取 `iconfont` 图标前缀并生成对应ts文件
+
 ## v8.0.29 - 2025.10.28
 
 - [功能]添加 `商品详情` 模板页面
