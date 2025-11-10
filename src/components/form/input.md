@@ -25,6 +25,7 @@
 | confirmType      | 设置键盘右下角按钮的文字             | string                      | "done" \| "go" \| "next" \| "search" \| "send"                                      | done     |
 | adjustPosition   | 键盘弹起时，是否自动上推页面         | boolean                     |                                                                                     | true     |
 | holdKeyboard     | 是否保持键盘不收起                   | boolean                     |                                                                                     | false    |
+| precision        | 保留精度                             | number                      |                                                                                     | 0        |
 
 ## 插槽
 
@@ -88,6 +89,14 @@
 
 ```html
 <cl-input clearable></cl-input>
+```
+
+## 保留精度
+
+当 `type` 为 `digit` 时，可设置 `precision` 属性来保留精度
+
+```html
+<cl-input type="digit" :precision="precision"></cl-input>
 ```
 
 ### 使用前后插槽

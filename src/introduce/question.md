@@ -2,17 +2,17 @@
 
 ### 运行时控制台提示 uni_modules[cool-svg] 存在第三方依赖或资源引用
 
-:::tip HBuilderX 出现以下提示，请安装 Gradle（8.5 版本）
-Configuring project':app' without an existing directory is not allowed. The configured318626/app' does not exist，can't be written to or is not a directory
-:::
-
-按照参考文档配置：https://uniapp.dcloud.net.cn/tutorial/run/uts-development-android.html
+需要打包自定义基座，并配置运行环境[https://uniapp.dcloud.net.cn/tutorial/run/uts-development-android.html](https://uniapp.dcloud.net.cn/tutorial/run/uts-development-android.html)
 
 `Mac` 运行配置参考如下：
 
 - Gradle（8.5 版本）：`/Users/icssoa/Desktop/coding/env/gradle-8.5/bin/gradle`
 - JDK 路径：`/Library/Java/JavaVirtualMachines/amazon-corretto-21.jdk/Contents/Home`
 - 安卓 SDK 路径：`/Users/icssoa/Library/Android/sdk`
+
+### Configuring project':app' without an existing directory is not allowed.
+
+HBuilderX 出现该提示，请安装 Gradle（8.5 版本）
 
 ### loadFontFace: fail, font-family or src is null
 

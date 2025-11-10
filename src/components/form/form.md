@@ -79,7 +79,7 @@
 | labelWidth    | 标签宽度         | string                           | —                          | null   |
 | showAsterisk  | 是否显示必填星号 | boolean                          | —                          | null   |
 | showMessage   | 是否显示错误信息 | boolean                          | —                          | null   |
-| required      | 是否必填         | boolean                          | —                          | false  |
+| required      | 是否必填         | boolean                          | —                          | null   |
 
 ### 插槽
 
