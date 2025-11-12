@@ -68,7 +68,7 @@ router.to("/pages/user/profile");
 
 // 等同于 uni.navigateTo
 router.push({
-  url: "/pages/user/profile",
+  path: "/pages/user/profile",
 });
 ```
 
@@ -76,7 +76,7 @@ router.push({
 
 ```typescript
 router.push({
-  url: "/pages/user/profile",
+  path: "/pages/user/profile",
   query: {
     id: 123,
     name: "张三",
@@ -94,26 +94,26 @@ console.log(query.name); // '张三'
 ```typescript
 // 保留当前页面，跳转到新页面（默认）
 router.push({
-  url: "/pages/detail",
-  type: "navigateTo",
+  path: "/pages/detail",
+  mode: "navigateTo",
 });
 
 // 关闭当前页面，跳转到新页面
 router.push({
-  url: "/pages/detail",
-  type: "redirectTo",
+  path: "/pages/detail",
+  mode: "redirectTo",
 });
 
 // 关闭所有页面，跳转到新页面
 router.push({
-  url: "/pages/home",
-  type: "reLaunch",
+  path: "/pages/home",
+  mode: "reLaunch",
 });
 
 // 跳转到 tab 页面
 router.push({
-  url: "/pages/tabbar/home",
-  type: "switchTab",
+  path: "/pages/tabbar/home",
+  mode: "switchTab",
 });
 ```
 
