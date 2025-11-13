@@ -111,20 +111,25 @@ const date = ref("2025-10-01");
 
 ```vue
 <template>
-  <cl-calendar-select v-model="date" ref="calendarRef"></cl-calendar-select>
+  <cl-calendar-select
+    v-model="date"
+    ref="calendarSelectRef"
+  ></cl-calendar-select>
 </template>
 
 <script lang="ts" setup>
-const calendarRef = ref<ClCalendarComponentPublicInstance | null>(null);
+const calendarSelectRef = ref<ClCalendarSelectComponentPublicInstance | null>(
+  null
+);
 
 const date = ref("2025-10-01");
 </script>
 ```
 
-- 使用 `calendarRef` 时，请务必为其指定类型：`ClCalendarComponentPublicInstance | null`，以确保类型安全和智能提示。
+- 使用 `calendarSelectRef` 时，请务必为其指定类型：`ClCalendarSelectComponentPublicInstance | null`，以确保类型安全和智能提示。
 
   ```ts
-  calendarRef.value!.open((date) => {
+  calendarSelectRef.value!.open((date) => {
     // 注意 date 的类型是 string | string[] | null
     // 使用的时候记得 as
   });
