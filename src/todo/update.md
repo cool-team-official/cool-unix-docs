@@ -8,6 +8,29 @@
 
 - [欢迎在 GitHub 上为我们点 Star](https://github.com/cool-team-official/cool-unix)
 
+## v8.0.31 - 2025.12.02
+
+- [功能]更新 `icon` 脚本
+- [优化]修复 `cl-select` 组件在异步获取 `options` 时不显示数据的问题，以及仅有单个选项时无法正确触发更新值的问题
+- [优化]修复 `cl-noticebar` 在 鸿蒙 端动画无效问题
+- [优化]修复 `cl-tabs` 在 鸿蒙 端下划线不显示问题
+- [优化]修复 `cl-popup` 在拖动关闭位置错误问题
+- [优化]修复 `cl-textarea` 在 鸿蒙 端不弹出键盘问题
+- [优化]修复 `cl-switch` 在 `IOS` 端切换 `disabled` 被隐藏问题
+- [优化]修复 `cl-input-opt` 光标动画重复创建问题
+- [优化]修复 `cl-input` 在 鸿蒙 端不弹出键盘问题
+- [优化]修复 `cl-input` 参数 `clear` 在 `IOS` 端失效问题
+- [优化]修复 `cl-input-opt` 在 鸿蒙 端边框不显示问题
+- [优化]修复 `cl-float-view` 禁用不生效问题
+- [优化]修复 `cl-float-view` 拖动错位问题
+- [优化]修复 `cl-textarea` 在 鸿蒙 端不弹出键盘问题
+- [优化]修复 `cl-calendar-select` 在 mode=range 确认选择时错误提示的问题
+- [优化]修复 `cl-watermark` 在 `IOS` 端不生效问题
+- [优化]优化 `cl-list-item` 左右滑动
+- [优化]修复 `cl-topbar` 层级过低问题
+- [优化]修复 `cl-picker-view` 在 `IOS` 错位问题，默认 `itemHeight=50`
+- [优化]修复 `tailwindcss` 隔离问题（更新依赖 @cool-vue/vite-plugin@8.2.19）
+
 ## v8.0.30 - 2025.11.10
 
 - [功能]添加 `cool-share` 系统分享插件

@@ -18,31 +18,21 @@
 
 ## 配置文件
 
-打开目录 `uni_modules/cool-unix/配置文件`
+首先全局安装
 
-- 将 `uni_modules/cool-unix` 目录复制到你的项目的 `uni_modules/` 文件夹下。
+```shell
+npm install -g @cool-vue/unix
+```
 
-- 将 `package.json` 文件复制到项目根目录。
+然后在你的项目根目录下初始化配置
 
-- 在 `main.ts` 文件中引入相关代码。
+```shell
+unix-init
+```
 
-- 在 `App.uvue` 文件中引入相关代码。
+执行完成后，所需的配置与依赖文件会被自动集成到你的项目中，无需手动操作。
 
-- 将 `vite.config.ts` 文件复制到项目根目录。
-
-- 将 `tailwind.config.ts` 文件复制到项目根目录。
-
-#### 没有使用 `vscode | cursor` 编辑器则忽略以下
-
-- 将 `tsconfig.json` 文件复制到项目根目录。
-
-- 将 `settings.json` 目录复制到项目 `.vscode` 目录中。
-
-## 运行
-
-### 1. 安装依赖
-
-进入项目根目录，安装项目依赖：
+如遇依赖未自动安装的情况，请手动执行以下命令
 
 ```shell
 # 推荐使用 pnpm（更快，更节省空间）
