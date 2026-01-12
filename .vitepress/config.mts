@@ -442,6 +442,10 @@ export default defineConfig({
                 text: "Animation 动画",
                 link: "/src/components/other/animation.md",
               },
+              {
+                text: "SelectSeat 座位选择",
+                link: "/src/components/other/select-seat.md",
+              },
               // {
               //   text: "Request 请求",
               //   link: "/src/components/other/request.md",
