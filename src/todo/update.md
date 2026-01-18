@@ -19,6 +19,7 @@
 - [功能] 优化并升级 `unix-i18n`、`unix-ui-types`、`unix-icons` 命令的使用体验和功能完善
 - [优化] 解决 `cl-cropper` 在 APP 端首次加载图片时出现模糊的问题
 - [优化] 修复 `cl-text` 在多端下的对齐异常
+- [优化] 修复 `cl-input` 在 APP 端 `placeholder` 字体大小异常问题
 - [优化] 修复 `cl-icon` 在多端下的对齐异常
 - [优化] 修复 `cl-button` 在 IOS 端 `light` 按下样式异常问题
 - [优化] 优化 `cl-picker-view` 在不同端的样式一致性
