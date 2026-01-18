@@ -20,7 +20,7 @@
 | readonly         | 是否为只读状态                       | boolean                     |                                                                                     | false    |
 | clearable        | 是否可清空内容                       | boolean                     |                                                                                     | false    |
 | maxlength        | 最大输入长度限制                     | number                      |                                                                                     | 140      |
-| cursorSpacing    | 指定光标与键盘的距离（单位：px）     | number                      |                                                                                     | 5        |
+| cursorSpacing    | 指定光标与键盘的距离(px)             | number                      |                                                                                     | 5        |
 | confirmHold      | 点击键盘确认按钮时是否保持键盘不收起 | boolean                     |                                                                                     | false    |
 | confirmType      | 设置键盘右下角按钮的文字             | string                      | "done" \| "go" \| "next" \| "search" \| "send"                                      | done     |
 | adjustPosition   | 键盘弹起时，是否自动上推页面         | boolean                     |                                                                                     | true     |
@@ -105,30 +105,30 @@
 
 ```html
 <cl-input>
-  <template #append>
-    <cl-button
-      type="primary"
-      size="small"
-      icon="send-plane-fill"
-      :pt="{
+	<template #append>
+		<cl-button
+			type="primary"
+			size="small"
+			icon="send-plane-fill"
+			:pt="{
 			className: 'ml-2'
 		}"
-    ></cl-button>
-  </template>
+		></cl-button>
+	</template>
 </cl-input>
 
 <cl-input>
-  <template #prepend>
-    <cl-button
-      type="primary"
-      size="small"
-      icon="search-line"
-      :pt="{
-			className: 'mr-2'
-		}"
-      @tap="toAlert"
-    ></cl-button>
-  </template>
+	<template #prepend>
+		<cl-button
+			type="primary"
+			size="small"
+			icon="search-line"
+			:pt="{
+			    className: 'mr-2'
+		    }"
+			@tap="toAlert"
+		></cl-button>
+	</template>
 </cl-input>
 ```
 
@@ -138,11 +138,11 @@
 
 ```vue
 <cl-input
-  :pt="{
-    className: '!bg-sky-100 !border-sky-700',
-    inner: {
-      className: '!text-sky-700',
-    },
-  }"
+	:pt="{
+		className: '!bg-sky-100 !border-sky-700',
+		inner: {
+			className: '!text-sky-700'
+		}
+	}"
 ></cl-input>
 ```

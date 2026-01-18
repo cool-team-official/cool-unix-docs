@@ -10,8 +10,8 @@
 | modelValue | 绑定值           | boolean                     | -      | -      |
 | disabled   | 是否禁用         | boolean                     | -      | false  |
 | loading    | 是否显示加载状态 | boolean                     | -      | false  |
-| height     | 开关高度（px）   | number                      | -      | 24     |
-| width      | 开关宽度（px）   | number                      | -      | 40     |
+| height     | 开关高度(px)     | number                      | -      | 24     |
+| width      | 开关宽度(px)     | number                      | -      | 40     |
 
 ## 事件
 
@@ -23,13 +23,12 @@
 
 样式穿透配置对象，用于深度自定义组件内部元素的样式。
 
-| 参数      | 说明             | 类型                                                        |
-| --------- | ---------------- | ----------------------------------------------------------- |
-| className | 组件根元素样式   | string                                                      |
-| track     | 开关轨道元素配置 | [PassThroughProps](/src/components/doc.md#passthroughprops) |
-| thumb     | 开关滑块元素配置 | [PassThroughProps](/src/components/doc.md#passthroughprops) |
-| label     | 标签文本元素配置 | [PassThroughProps](/src/components/doc.md#passthroughprops) |
-| loading   | 加载图标元素配置 | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| 参数      | 说明             | 类型                                                                |
+| --------- | ---------------- | ------------------------------------------------------------------- |
+| className | 组件根元素样式   | string                                                              |
+| track     | 开关轨道元素配置 | [PassThroughProps](/src/components/doc.md#passthroughprops)         |
+| thumb     | 开关滑块元素配置 | [PassThroughProps](/src/components/doc.md#passthroughprops)         |
+| loading   | 加载图标元素配置 | [ClLoadingProps](/src/components/basic/loading.md#passthroughprops) |
 
 ## 示例
 
@@ -71,14 +70,14 @@
 
 ```vue
 <cl-switch
-  :pt="{
-    track: {
-      className: '!bg-blue-100 data-[state=checked]:!bg-blue-500',
-    },
-    thumb: {
-      className: '!bg-white',
-    },
-  }"
+	:pt="{
+		track: {
+			className: '!bg-blue-100 data-[state=checked]:!bg-blue-500'
+		},
+		thumb: {
+			className: '!bg-white'
+		}
+	}"
 ></cl-switch>
 ```
 
@@ -88,13 +87,13 @@
 
 ```vue
 <cl-switch
-  :pt="{
-    track: {
-      className: '!rounded-md',
-    },
-    thumb: {
-      className: '!rounded-sm',
-    },
-  }"
+	:pt="{
+		track: {
+			className: '!rounded-md'
+		},
+		thumb: {
+			className: '!rounded-sm'
+		}
+	}"
 ></cl-switch>
 ```

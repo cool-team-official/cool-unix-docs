@@ -35,19 +35,17 @@
 <cl-button @click="toggle">{{ visible ? '收起' : '展开' }}</cl-button>
 
 <cl-collapse v-model="visible">
-  <cl-text>
-    云想衣裳花想容，春风拂槛露华浓，若非群玉山头见，会向瑶台月下逢。
-  </cl-text>
+	<cl-text> 云想衣裳花想容，春风拂槛露华浓，若非群玉山头见，会向瑶台月下逢。 </cl-text>
 </cl-collapse>
 
 <script lang="ts" setup>
-  import { ref } from "vue";
+	import { ref } from "vue";
 
-  const visible = ref(false);
+	const visible = ref(false);
 
-  function toggle() {
-    visible.value = !visible.value;
-  }
+	function toggle() {
+		visible.value = !visible.value;
+	}
 </script>
 ```
 
@@ -59,19 +57,17 @@
 <cl-button @click="toggle">切换状态</cl-button>
 
 <cl-collapse ref="collapseRef">
-  <cl-text>
-    云想衣裳花想容，春风拂槛露华浓，若非群玉山头见，会向瑶台月下逢。
-  </cl-text>
+	<cl-text> 云想衣裳花想容，春风拂槛露华浓，若非群玉山头见，会向瑶台月下逢。 </cl-text>
 </cl-collapse>
 
 <script lang="ts" setup>
-  import { ref } from "vue";
+	import { ref } from "vue";
 
-  // 注意：类型必须为 ClCollapseComponentPublicInstance | null，默认值不能省略
-  const collapseRef = ref<ClCollapseComponentPublicInstance | null>(null);
+	// 注意：类型必须为 ClCollapseComponentPublicInstance | null，默认值不能省略
+	const collapseRef = ref<ClCollapseComponentPublicInstance | null>(null);
 
-  function toggle() {
-    collapseRef.value?.toggle();
-  }
+	function toggle() {
+		collapseRef.value!.toggle();
+	}
 </script>
 ```

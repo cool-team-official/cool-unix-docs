@@ -9,31 +9,31 @@
 ### 基础配置
 
 ```ts
-import { router, useStore } from "@/cool";
+import { router, useStore } from "@/.cool";
 
 // 定义无需token验证的页面路径
 const ignoreToken = [
-  "/pages/index/home", // 首页
-  "/pages/index/my", // 个人中心
-  "/pages/user/login", // 登录页
-  "/pages/user/doc", // 文档页
+	"/pages/index/home", // 首页
+	"/pages/index/my", // 个人中心
+	"/pages/user/login", // 登录页
+	"/pages/user/doc" // 文档页
 ];
 
 // 配置路由守卫
 router.beforeEach((to, next) => {
-  const { user } = useStore();
+	const { user } = useStore();
 
-  // 检查是否为无需验证的页面或演示页面
-  if (ignoreToken.includes(to.path) || to.path.startsWith("/pages/demo")) {
-    next(); // 直接通过
-  } else {
-    // 需要验证登录状态
-    if (!user.isNull()) {
-      next(); // 已登录，允许访问
-    } else {
-      router.login(); // 未登录，跳转到登录页
-    }
-  }
+	// 检查是否为无需验证的页面或演示页面
+	if (ignoreToken.includes(to.path) || to.path.startsWith("/pages/demo")) {
+		next(); // 直接通过
+	} else {
+		// 需要验证登录状态
+		if (!user.isNull()) {
+			next(); // 已登录，允许访问
+		} else {
+			router.login(); // 未登录，跳转到登录页
+		}
+	}
 });
 ```
 
@@ -41,8 +41,8 @@ router.beforeEach((to, next) => {
 
 - **to**: 即将要进入的目标路由对象
 - **next**: 用于控制路由跳转的函数
-  - `next()`: 进行管道中的下一个钩子
-  - `next('/login')`: 跳转到指定路径
+    - `next()`: 进行管道中的下一个钩子
+    - `next('/login')`: 跳转到指定路径
 
 ### 最佳实践
 

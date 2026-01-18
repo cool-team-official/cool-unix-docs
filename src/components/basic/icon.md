@@ -8,10 +8,10 @@
 | ------ | ------------ | --------------------------- | ----------------------------------------------------- | ------ |
 | pt     | 样式穿透配置 | [PassThrough](#passthrough) |                                                       |        |
 | name   | 图标名称     | string                      | 支持 iconfont 和 remixicon 图标名                     |        |
-| size   | 图标尺寸     | string \| number            | 任意有效的尺寸值                                      | 32     |
+| size   | 图标尺寸(px) | number                      | 任意有效的尺寸值                                      | 16     |
 | color  | 图标颜色     | string                      | "primary" \| "success" \| "error" \| "warn" \| "info" |        |
-| height | 图标高度     | string \| number            | 自定义高度，优先级高于 size                           |        |
-| width  | 图标宽度     | string \| number            | 自定义宽度，优先级高于 size                           |        |
+| height | 图标高度(px) | number                      | 自定义高度，优先级高于 size                           |        |
+| width  | 图标宽度(px) | number                      | 自定义宽度，优先级高于 size                           |        |
 
 ## PassThrough
 
@@ -29,6 +29,8 @@
 
 ```html
 <cl-icon name="heart-fill"></cl-icon>
+
+<cl-icon name="heart-fill" :pt="{ className: 'ml-2' }"></cl-icon>
 ```
 
 ### 设置尺寸
@@ -36,8 +38,9 @@
 通过 `size` 属性控制图标大小，支持数字和字符串格式。
 
 ```html
-<cl-icon name="heart-fill" :size="40"></cl-icon>
-<cl-icon name="heart-fill" size="50rpx"></cl-icon>
+<cl-icon name="heart-fill" :size="18"></cl-icon>
+
+<cl-icon name="heart-fill" :size="20"></cl-icon>
 ```
 
 ### 设置颜色
@@ -46,6 +49,8 @@
 
 ```html
 <cl-icon name="heart-fill" color="primary"></cl-icon>
+
 <cl-icon name="close-line" color="error"></cl-icon>
+
 <cl-icon name="check-line" color="success"></cl-icon>
 ```

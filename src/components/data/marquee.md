@@ -4,15 +4,15 @@ Marquee 跑马灯组件用于展示图片或内容的循环滚动效果，支持
 
 ## 基础参数
 
-| 参数       | 说明                                      | 类型                        | 可选值 | 默认值       |
-| ---------- | ----------------------------------------- | --------------------------- | ------ | ------------ |
-| pt         | 样式透传配置，用于自定义组件内部元素样式  | [PassThrough](#passthrough) | -      | -            |
-| list       | 图片列表                                  | string[]                    | -      | []           |
-| direction  | 滚动方向                                  | "horizontal" \| "vertical"  | -      | "horizontal" |
-| duration   | 一次滚动的持续时间                        | number                      | -      | 5000         |
-| itemHeight | 图片高度                                  | number \| string            | -      | 200          |
-| itemWidth  | 图片宽度（仅横向滚动时生效，纵向为 100%） | number \| string            | -      | 300          |
-| gap        | 间距                                      | number \| string            | -      | 20           |
+| 参数           | 说明                                      | 类型                        | 可选值 | 默认值       |
+| -------------- | ----------------------------------------- | --------------------------- | ------ | ------------ |
+| pt             | 样式透传配置，用于自定义组件内部元素样式  | [PassThrough](#passthrough) | -      | -            |
+| list           | 图片列表                                  | string[]                    | -      | []           |
+| direction      | 滚动方向                                  | "horizontal" \| "vertical"  | -      | "horizontal" |
+| duration       | 一次滚动的持续时间                        | number                      | -      | 5000         |
+| itemHeight(px) | 图片高度                                  | number \| string            | -      | 100          |
+| itemWidth(px)  | 图片宽度（仅横向滚动时生效，纵向为 100%） | number \| string            | -      | 150          |
+| gap(px)        | 间距                                      | number \| string            | -      | 10           |
 
 ## 方法
 
@@ -45,8 +45,8 @@ Marquee 跑马灯组件用于展示图片或内容的循环滚动效果，支持
 
 ```ts
 type MarqueeItem = {
-  url: string;
-  originalIndex: number;
+	url: string;
+	originalIndex: number;
 };
 ```
 
@@ -60,22 +60,22 @@ type MarqueeItem = {
 
 ```vue
 <template>
-  <cl-marquee
-    :list="list"
-    direction="horizontal"
-    :item-height="200"
-    :item-width="360"
-    :pt="{
-      className: 'h-[200rpx] rounded-xl',
-    }"
-  ></cl-marquee>
+	<cl-marquee
+		:list="list"
+		direction="horizontal"
+		:item-height="100"
+		:item-width="180"
+		:pt="{
+			className: 'h-[100px] rounded-xl'
+		}"
+	></cl-marquee>
 </template>
 
 <script setup lang="ts">
 const list = ref<string[]>([
-  "https://uni-docs.cool-js.com/demo/pages/demo/static/bg1.png",
-  "https://uni-docs.cool-js.com/demo/pages/demo/static/bg2.png",
-  "https://uni-docs.cool-js.com/demo/pages/demo/static/bg3.png",
+	"https://uni-docs.cool-js.com/demo/pages/demo/static/bg1.png",
+	"https://uni-docs.cool-js.com/demo/pages/demo/static/bg2.png",
+	"https://uni-docs.cool-js.com/demo/pages/demo/static/bg3.png"
 ]);
 </script>
 ```
@@ -90,21 +90,21 @@ const list = ref<string[]>([
 
 ```vue
 <template>
-  <cl-marquee
-    :list="list"
-    direction="vertical"
-    :item-height="200"
-    :pt="{
-      className: 'h-[200rpx] rounded-xl',
-    }"
-  ></cl-marquee>
+	<cl-marquee
+		:list="list"
+		direction="vertical"
+		:item-height="100"
+		:pt="{
+			className: 'h-[100px] rounded-xl'
+		}"
+	></cl-marquee>
 </template>
 
 <script setup lang="ts">
 const list = ref<string[]>([
-  "https://uni-docs.cool-js.com/demo/pages/demo/static/bg1.png",
-  "https://uni-docs.cool-js.com/demo/pages/demo/static/bg2.png",
-  "https://uni-docs.cool-js.com/demo/pages/demo/static/bg3.png",
+	"https://uni-docs.cool-js.com/demo/pages/demo/static/bg1.png",
+	"https://uni-docs.cool-js.com/demo/pages/demo/static/bg2.png",
+	"https://uni-docs.cool-js.com/demo/pages/demo/static/bg3.png"
 ]);
 </script>
 ```
@@ -117,34 +117,34 @@ const list = ref<string[]>([
 
 ```vue
 <template>
-  <cl-marquee
-    ref="marqueeRef"
-    :list="list"
-    direction="vertical"
-    :item-height="200"
-    :pt="{
-      className: 'h-[200rpx] rounded-xl',
-    }"
-  ></cl-marquee>
+	<cl-marquee
+		ref="marqueeRef"
+		:list="list"
+		direction="vertical"
+		:item-height="130"
+		:pt="{
+			className: 'h-[250px] rounded-xl'
+		}"
+	></cl-marquee>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
 
 const list = ref<string[]>([
-  "https://uni-docs.cool-js.com/demo/pages/demo/static/bg1.png",
-  "https://uni-docs.cool-js.com/demo/pages/demo/static/bg2.png",
-  "https://uni-docs.cool-js.com/demo/pages/demo/static/bg3.png",
+	"https://uni-docs.cool-js.com/demo/pages/demo/static/bg1.png",
+	"https://uni-docs.cool-js.com/demo/pages/demo/static/bg2.png",
+	"https://uni-docs.cool-js.com/demo/pages/demo/static/bg3.png"
 ]);
 
 const marqueeRef = ref<ClMarqueeComponentPublicInstance | null>(null);
 
 function play() {
-  marqueeRef.value!.play();
+	marqueeRef.value!.play();
 }
 
 function pause() {
-  marqueeRef.value!.pause();
+	marqueeRef.value!.pause();
 }
 </script>
 ```

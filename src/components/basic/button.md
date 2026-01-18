@@ -4,18 +4,19 @@
 
 ## 参数
 
-| 参数     | 说明             | 类型                        | 可选值                                                                     | 默认值    |
-| -------- | ---------------- | --------------------------- | -------------------------------------------------------------------------- | --------- |
-| pt       | 样式穿透配置     | [PassThrough](#passthrough) |                                                                            |           |
-| size     | 按钮尺寸         | string                      | "normal" \| "small" \| "large"                                             | "normal"  |
-| type     | 按钮主题类型     | string                      | "primary" \| "success" \| "error" \| "warn" \| "info" \| "light" \| "dark" | "primary" |
-| text     | 是否为纯文本按钮 | boolean                     |                                                                            | false     |
-| border   | 是否显示边框     | boolean                     |                                                                            | false     |
-| rounded  | 是否显示圆角     | boolean                     |                                                                            | false     |
-| loading  | 是否显示加载状态 | boolean                     |                                                                            | false     |
-| disabled | 是否禁用按钮     | boolean                     |                                                                            | false     |
-| icon     | 图标名称         | string                      |                                                                            |           |
-| color    | 自定义文字颜色   | string                      |                                                                            |           |
+| 参数     | 说明               | 类型                        | 可选值                                                                     | 默认值    |
+| -------- | ------------------ | --------------------------- | -------------------------------------------------------------------------- | --------- |
+| pt       | 样式穿透配置       | [PassThrough](#passthrough) |                                                                            |           |
+| size     | 按钮尺寸           | string                      | "normal" \| "small" \| "large"                                             | "normal"  |
+| type     | 按钮主题类型       | string                      | "primary" \| "success" \| "error" \| "warn" \| "info" \| "light" \| "dark" | "primary" |
+| text     | 是否为纯文本按钮   | boolean                     |                                                                            | false     |
+| border   | 是否显示边框       | boolean                     |                                                                            | false     |
+| rounded  | 是否显示圆角       | boolean                     |                                                                            | false     |
+| loading  | 是否显示加载状态   | boolean                     |                                                                            | false     |
+| disabled | 是否禁用按钮       | boolean                     |                                                                            | false     |
+| icon     | 图标名称           | string                      |                                                                            |           |
+| color    | 自定义文字颜色     | string                      |                                                                            |           |
+| fluid    | 是否为 flex-1 布局 | boolean                     |                                                                            | false     |
 
 [更多参数查阅](https://doc.dcloud.net.cn/uni-app-x/component/button.html)
 
@@ -23,12 +24,12 @@
 
 样式穿透配置，用于自定义组件内部元素的样式。
 
-| 参数      | 说明             | 类型                                                           |
-| --------- | ---------------- | -------------------------------------------------------------- |
+| 参数      | 说明           | 类型                                                           |
+| --------- | -------------- | -------------------------------------------------------------- |
 | className | 组件根元素样式 | string                                                         |
-| label     | 文本元素配置     | [PassThroughProps](/src/components/doc.md#passthroughprops)    |
-| icon      | 图标元素配置     | [ClIconProps](/src/components/basic/icon.md#passthrough)       |
-| loading   | 加载元素配置     | [ClLoadingProps](/src/components/basic/loading.md#passthrough) |
+| label     | 文本元素配置   | [ClTextProps](/src/components/basic/text.md#passthroughprops)  |
+| icon      | 图标元素配置   | [ClIconProps](/src/components/basic/icon.md#passthrough)       |
+| loading   | 加载元素配置   | [ClLoadingProps](/src/components/basic/loading.md#passthrough) |
 
 ## 示例
 

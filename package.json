@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "prettier": "^3.8.0",
     "sass": "1.77.8",
     "vitepress": "^1.6.3"
   },

@@ -1,0 +1,1 @@
+import{_}from"./item.uvue_vue_type_style_index_0_scoped_4878fabb_lang.l7ZF2y0r.js";import{d as e}from"./cl-page.uvue_vue_type_script_setup_true_lang.qoXehFaO.js";const t=e(_,[["__scopeId","data-v-4878fabb"]]);export{t as D};

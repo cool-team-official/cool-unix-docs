@@ -132,7 +132,7 @@ export default {
 ### API 调用
 
 ```ts
-import { isDark, toggleTheme, setIsAuto, setTheme } from "@/cool";
+import { isDark, toggleTheme, setIsAuto, setTheme } from "@/.cool";
 
 // 状态检查
 console.log(isDark.value); // 当前是否为深色模式
@@ -154,7 +154,7 @@ setIsAuto(true); // 跟随系统主题
 
 ```html
 <view class="bg-surface-100 dark:!bg-surface-900">
-  <text class="text-surface-700 dark:!text-white">自适应文本</text>
+	<text class="text-surface-700 dark:!text-white">自适应文本</text>
 </view>
 ```
 
@@ -164,21 +164,28 @@ setIsAuto(true); // 跟随系统主题
 
 ```html
 <view class="bg-surface-100" :class="{ '!bg-surface-900': isDark }">
-  <text class="text-surface-700" :class="{ '!text-white': isDark }"
-    >响应式文本</text
-  >
+	<text class="text-surface-700" :class="{ '!text-white': isDark }">响应式文本</text>
 </view>
 ```
 
-### 在 SCSS 中使用
+### 在 scss 中使用
 
 ```html
 <style lang="scss" scoped>
-  .custom-component {
-    @apply text-md bg-primary-500;
-    @apply h-10 w-10 fixed right-10 top-10;
-  }
+	.custom-component {
+		@apply text-md bg-primary-500;
+		@apply h-10 w-10 fixed right-10 top-10;
+	}
 </style>
+```
+
+### 在 script 中使用
+
+```js
+import { getColor } from "@/.cool";
+
+getColor("primary-500"); // = text-primary-500
+getColor("surface-500"); // = text-surface-500
 ```
 
 ## ⚠️ 重要注意事项
@@ -203,25 +210,25 @@ setIsAuto(true); // 跟随系统主题
 
 ```html
 <view class="box" :class="{ 'active': isActive }">
-  <text class="text">文本</text>
+	<text class="text">文本</text>
 </view>
 
 <style lang="scss" scoped>
-  .box {
-    @apply bg-white;
+	.box {
+		@apply bg-white;
 
-    .text {
-      @apply text-surface-700;
-    }
+		.text {
+			@apply text-surface-700;
+		}
 
-    &.active {
-      @apply bg-black; /* ✅ 生效 */
+		&.active {
+			@apply bg-black; /* ✅ 生效 */
 
-      .text {
-        @apply text-white; /* ❌ 不生效 */
-      }
-    }
-  }
+			.text {
+				@apply text-white; /* ❌ 不生效 */
+			}
+		}
+	}
 </style>
 ```
 
@@ -229,25 +236,25 @@ setIsAuto(true); // 跟随系统主题
 
 ```html
 <view class="box" :class="{ 'active': isActive }">
-  <text class="text" :class="{ 'active': isActive }">文本</text>
+	<text class="text" :class="{ 'active': isActive }">文本</text>
 </view>
 
 <style lang="scss" scoped>
-  .box {
-    @apply bg-white;
+	.box {
+		@apply bg-white;
 
-    .text {
-      @apply text-surface-700;
+		.text {
+			@apply text-surface-700;
 
-      &.active {
-        @apply text-white; /* ✅ 生效 */
-      }
-    }
+			&.active {
+				@apply text-white; /* ✅ 生效 */
+			}
+		}
 
-    &.active {
-      @apply bg-black;
-    }
-  }
+		&.active {
+			@apply bg-black;
+		}
+	}
 </style>
 ```
 

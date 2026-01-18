@@ -4,12 +4,12 @@
 
 ## 基础参数
 
-| 参数    | 说明                 | 类型                        | 可选值     | 默认值 |
-| ------- | -------------------- | --------------------------- | ---------- | ------ |
-| pt      | 样式穿透配置         | [PassThrough](#passthrough) | -          | -      |
-| src     | 头像图片地址         | string                      | -          | -      |
-| size    | 头像尺寸大小（像素） | number                      | -          | 80     |
-| rounded | 是否显示为圆形头像   | boolean                     | true/false | false  |
+| 参数    | 说明               | 类型                        | 可选值     | 默认值 |
+| ------- | ------------------ | --------------------------- | ---------- | ------ |
+| pt      | 样式穿透配置       | [PassThrough](#passthrough) | -          | -      |
+| src     | 头像图片地址       | string                      | -          | -      |
+| size    | 头像尺寸大小(px)   | number                      | -          | 40     |
+| rounded | 是否显示为圆形头像 | boolean                     | true/false | false  |
 
 ## PassThrough
 
@@ -40,10 +40,10 @@
 
 ```html
 <!-- 设置头像尺寸为120像素 -->
-<cl-avatar src="https://example.com/avatar.jpg" :size="120"></cl-avatar>
+<cl-avatar src="https://example.com/avatar.jpg" :size="60"></cl-avatar>
 
 <!-- 小尺寸头像 -->
-<cl-avatar src="https://example.com/avatar.jpg" :size="40"></cl-avatar>
+<cl-avatar src="https://example.com/avatar.jpg" :size="30"></cl-avatar>
 ```
 
 ### 图标占位
@@ -51,9 +51,9 @@
 ```html
 <!-- 当没有图片时，使用图标作为占位符 -->
 <cl-avatar
-  :pt="{
+	:pt="{
     icon: {
-        size: 60,
+        size: 30,
         name: 'user-line'
     }
 }"
@@ -65,14 +65,14 @@
 ```html
 <!-- 大尺寸圆形头像配合自定义图标 -->
 <cl-avatar
-  :size="150"
-  rounded
-  :pt="{
-    className: 'custom-avatar',
-    icon: {
-        size: 80,
-        name: 'account-circle-line'
-    }
+	:size="150"
+	rounded
+	:pt="{
+      className: 'custom-avatar',
+      icon: {
+          size: 60,
+          name: 'account-circle-line'
+      }
 }"
 ></cl-avatar>
 ```

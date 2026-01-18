@@ -8,10 +8,10 @@
 | ----------------------- | -------------------------------------------- | --------------------------- | ------ | -------------- |
 | pt                      | 样式透传配置，用于自定义组件内部元素样式     | [PassThrough](#passthrough) | -      | -              |
 | data                    | 列表数据源，支持分组数据结构                 | ClListViewItem[]            | -      | []             |
-| itemHeight              | 单个列表项的固定高度（虚拟渲染必需）         | number                      | -      | 50             |
-| headerHeight            | 分组标题的固定高度                           | number                      | -      | 32             |
-| topHeight               | 列表顶部预留空间高度，可用于放置搜索框等     | number                      | -      | 0              |
-| bottomHeight            | 列表底部预留空间高度，可用于放置加载更多按钮 | number                      | -      | 0              |
+| itemHeight(px)          | 单个列表项的固定高度（虚拟渲染必需）         | number                      | -      | 50             |
+| headerHeight(px)        | 分组标题的固定高度                           | number                      | -      | 32             |
+| topHeight(px)           | 列表顶部预留空间高度，可用于放置搜索框等     | number                      | -      | 0              |
+| bottomHeight(px)        | 列表底部预留空间高度，可用于放置加载更多按钮 | number                      | -      | 0              |
 | bufferSize              | 缓冲区大小，控制可视区域外预渲染的项目数量   | number                      | -      | 5              |
 | virtual                 | 是否启用虚拟列表渲染，关闭后为普通列表       | boolean                     | -      | true           |
 | scrollIntoView          | 滚动到指定位置                               | string                      | -      | ""             |
@@ -28,9 +28,9 @@
 
 - **虚拟列表模式**：启用虚拟列表渲染时，必须设置固定的 `itemHeight` 和 `headerHeight`，这是虚拟滚动计算的基础
 - **缓冲区配置**：
-  - **原生 APP**：性能较高，`bufferSize` 可设置为 `3-5`
-  - **小程序平台**：建议设置为 `10-15` 以获得更流畅的滚动体验
-  - **H5 平台**：推荐 `5-8`，根据设备性能调整
+    - **原生 APP**：性能较高，`bufferSize` 可设置为 `3-5`
+    - **小程序平台**：建议设置为 `10-15` 以获得更流畅的滚动体验
+    - **H5 平台**：推荐 `5-8`，根据设备性能调整
 - **数据量建议**：超过 100 条数据时建议启用虚拟列表
 
 :::
@@ -70,24 +70,24 @@
 
 ```ts
 type ClListViewItem = {
-  label?: string;
-  value?: any;
-  index?: string;
-  children?: ClListViewItem[];
+	label?: string;
+	value?: any;
+	index?: string;
+	children?: ClListViewItem[];
 };
 
 type ClListViewGroup = {
-  index: string;
-  children: ClListViewItem[];
+	index: string;
+	children: ClListViewItem[];
 };
 
 type ClListViewVirtualItem = {
-  key: string;
-  type: "header" | "item";
-  index: number;
-  top: number;
-  height: number;
-  data: ClListViewItem;
+	key: string;
+	type: "header" | "item";
+	index: number;
+	top: number;
+	height: number;
+	data: ClListViewItem;
 };
 
 type ClListViewRefresherStatus = "default" | "pulling" | "refreshing";
@@ -109,24 +109,24 @@ type ClListViewRefresherStatus = "default" | "pulling" | "refreshing";
 <cl-list-view :data="data"> </cl-list-view>
 
 <script lang="ts" setup>
-  data.value = useListView([
-    {
-      index: "F",
-      label: "福建",
-    },
-    {
-      index: "G",
-      label: "广东",
-    },
-    {
-      index: "J",
-      label: "江西",
-    },
-    {
-      index: "B",
-      label: "北京",
-    },
-  ]);
+	data.value = useListView([
+		{
+			index: "F",
+			label: "福建"
+		},
+		{
+			index: "G",
+			label: "广东"
+		},
+		{
+			index: "J",
+			label: "江西"
+		},
+		{
+			index: "B",
+			label: "北京"
+		}
+	]);
 </script>
 ```
 
@@ -139,23 +139,23 @@ type ClListViewRefresherStatus = "default" | "pulling" | "refreshing";
 <cl-list-view :data="data"> </cl-list-view>
 
 <script lang="ts" setup>
-  import { request } from "@/cool";
-  import { ref } from "vue";
+	import { request } from "@/.cool";
+	import { ref } from "vue";
 
-  const data = ref<ClListViewItem[]>([]);
+	const data = ref<ClListViewItem[]>([]);
 
-  onReady(() => {
-    // 根据实际情况调整数据的类型
-    request<UTSJSONObject[]>({
-      url: "https://cool-service.oss-cn-shanghai.aliyuncs.com/app%2Fbase%2Fb1957e07f1254de99f44b5a711f277d2_pca_flat.json",
-    })
-      .then((res) => {
-        data.value = useListView(res);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  });
+	onReady(() => {
+		// 根据实际情况调整数据的类型
+		request<UTSJSONObject[]>({
+			url: "https://cool-service.oss-cn-shanghai.aliyuncs.com/app%2Fbase%2Fb1957e07f1254de99f44b5a711f277d2_pca_flat.json"
+		})
+			.then((res) => {
+				data.value = useListView(res);
+			})
+			.catch((err) => {
+				console.error(err);
+			});
+	});
 </script>
 ```
 
@@ -165,7 +165,7 @@ type ClListViewRefresherStatus = "default" | "pulling" | "refreshing";
 
 ```html
 <cl-list-view
-  :pt="{
+	:pt="{
     indexBar: {
       className: '!fixed',
     },

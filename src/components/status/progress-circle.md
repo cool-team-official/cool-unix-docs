@@ -4,19 +4,19 @@
 
 ## 基础参数
 
-| 参数        | 说明                      | 类型                        | 可选值 | 默认值       |
-| ----------- | ------------------------- | --------------------------- | ------ | ------------ |
-| pt          | 样式透传配置对象          | [PassThrough](#passthrough) | -      | -            |
-| value       | 当前进度值（0-100）       | number                      | 0-100  | 0            |
-| strokeWidth | 进度条线条宽度（单位 px） | number                      | -      | 8            |
-| size        | 进度条大小                | number                      |        | 120          |
-| showText    | 是否显示进度百分比文本    | boolean                     |        | true         |
-| unit        | 单位                      | string                      |        | "%"          |
-| color       | 进度条颜色                | string                      |        | -            |
-| unColor     | 进度条背景色              | string                      |        | -            |
-| startAngle  | 起始角度 (弧度)           | number                      |        | -Math.PI / 2 |
-| clockwise   | 是否顺时针                | boolean                     |        | true         |
-| duration    | 动画时长                  | string                      |        | 500          |
+| 参数        | 说明                   | 类型                        | 可选值 | 默认值       |
+| ----------- | ---------------------- | --------------------------- | ------ | ------------ |
+| pt          | 样式透传配置对象       | [PassThrough](#passthrough) | -      | -            |
+| value       | 当前进度值（0-100）    | number                      | 0-100  | 0            |
+| strokeWidth | 进度条线条宽度(px)     | number                      | -      | 8            |
+| size        | 进度条大小(px)         | number                      |        | 120          |
+| showText    | 是否显示进度百分比文本 | boolean                     |        | true         |
+| unit        | 单位                   | string                      |        | "%"          |
+| color       | 进度条颜色             | string                      |        | -            |
+| unColor     | 进度条背景色           | string                      |        | -            |
+| startAngle  | 起始角度 (弧度)        | number                      |        | -Math.PI / 2 |
+| clockwise   | 是否顺时针             | boolean                     |        | true         |
+| duration    | 动画时长               | string                      |        | 500          |
 
 ## PassThrough 样式透传
 
@@ -51,18 +51,10 @@
 
 ```html
 <!-- 红色主题 -->
-<cl-progress-circle
-  :value="30"
-  color="red"
-  un-color="#f7bfbf"
-></cl-progress-circle>
+<cl-progress-circle :value="30" color="red" un-color="#f7bfbf"></cl-progress-circle>
 
 <!-- 绿色主题 -->
-<cl-progress-circle
-  :value="80"
-  color="#52c41a"
-  un-color="#f6ffed"
-></cl-progress-circle>
+<cl-progress-circle :value="80" color="#52c41a" un-color="#f6ffed"></cl-progress-circle>
 ```
 
 ### 自定义宽度
@@ -70,11 +62,7 @@
 调整进度条的粗细，适应不同的设计需求。
 
 ```html
-<cl-progress-circle
-  :value="40"
-  :stroke-width="6"
-  :size="80"
-></cl-progress-circle>
+<cl-progress-circle :value="40" :stroke-width="6" :size="80"></cl-progress-circle>
 
 <cl-progress-circle :value="60" :stroke-width="20"></cl-progress-circle>
 ```

@@ -77,8 +77,7 @@
 设置 `rounded` 属性显示为圆角样式。
 
 ```html
-<cl-tag rounded>圆角标签</cl-tag>
-<cl-tag type="success" rounded>圆角成功</cl-tag>
+<cl-tag rounded>圆角标签</cl-tag> <cl-tag type="success" rounded>圆角成功</cl-tag>
 ```
 
 ### 可关闭标签
@@ -104,12 +103,12 @@
 
 ```vue
 <cl-tag
-  :pt="{
-    className: '!bg-sky-200',
-    text: {
-      className: '!text-sky-700',
-    },
-  }"
+	:pt="{
+		className: '!bg-sky-200',
+		text: {
+			className: '!text-sky-700'
+		}
+	}"
 >
   自定义颜色
 </cl-tag>

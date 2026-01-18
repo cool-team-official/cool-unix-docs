@@ -16,8 +16,8 @@
 | text       | 上传按钮显示的文字 | string                      | -                          | "上传/拍摄"                |
 | sizeType   | 图片压缩方式       | string[]                    | "original" \| "compressed" | ["original", "compressed"] |
 | sourceType | 图片选择来源       | string[]                    | "album" \| "camera"        | ["album", "camera"]        |
-| height     | 上传区域高度       | string \| number            | -                          | 150                        |
-| width      | 上传区域宽度       | string \| number            | -                          | 150                        |
+| height     | 上传区域高度       | string \| number            | -                          | 72                         |
+| width      | 上传区域宽度       | string \| number            | -                          | 72                         |
 | multiple   | 是否支持多文件上传 | boolean                     | -                          | false                      |
 | limit      | 最大上传文件数量   | number                      | -                          | 9                          |
 | disabled   | 是否禁用上传功能   | boolean                     | -                          | false                      |
@@ -34,10 +34,10 @@
 
 ```ts
 type ClUploadItem = {
-  uid: string;
-  preview: string;
-  url: string;
-  progress: number;
+	uid: string;
+	preview: string;
+	url: string;
+	progress: number;
 };
 ```
 
@@ -45,13 +45,14 @@ type ClUploadItem = {
 
 样式穿透配置允许您自定义组件内部各个元素的样式，实现更灵活的外观定制。
 
-| 参数      | 说明           | 类型                                                       |
-| --------- | -------------- | ---------------------------------------------------------- |
-| className | 组件根元素样式 | string                                                     |
-| item      | 文件项容器配置 | [PassThroughProps](/src/components/pt.md#passthroughprops) |
-| add       | 添加按钮配置   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
-| image     | 图片预览配置   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
-| text      | 按钮文本配置   | [PassThroughProps](/src/components/pt.md#passthroughprops) |
+| 参数      | 说明           | 类型                                                          |
+| --------- | -------------- | ------------------------------------------------------------- |
+| className | 组件根元素样式 | string                                                        |
+| item      | 文件项容器配置 | [PassThroughProps](/src/components/pt.md#passthroughprops)    |
+| add       | 添加按钮配置   | [PassThroughProps](/src/components/pt.md#passthroughprops)    |
+| image     | 图片预览配置   | [PassThroughProps](/src/components/pt.md#passthroughprops)    |
+| text      | 按钮文本配置   | [ClTextProps](/src/components/basic/text.md#passthroughprops) |
+| icon      | 图标配置       | [ClIconProps](/src/components/basic/icon.md#passthroughprops) |
 
 ## 使用示例
 
@@ -93,7 +94,7 @@ type ClUploadItem = {
 
 ```vue
 <template>
-  <cl-upload v-model="urls" multiple></cl-upload>
+	<cl-upload v-model="urls" multiple></cl-upload>
 </template>
 
 <script lang="ts" setup>
@@ -109,12 +110,7 @@ const urls = ref<string[]>([]);
 
 ```vue
 <template>
-  <cl-upload
-    v-model="urls"
-    multiple
-    :limit="3"
-    @exceed="handleExceed"
-  ></cl-upload>
+	<cl-upload v-model="urls" multiple :limit="3" @exceed="handleExceed"></cl-upload>
 </template>
 
 <script lang="ts" setup>
@@ -124,7 +120,7 @@ import type { ClUploadItem } from "@/uni_modules/cool-ui";
 const urls = ref<string[]>([]);
 
 function handleExceed(list: ClUploadItem[]) {
-  console.log("超出文件数量限制", list);
+	console.log("超出文件数量限制", list);
 }
 </script>
 ```
@@ -135,12 +131,12 @@ function handleExceed(list: ClUploadItem[]) {
 
 ```vue
 <template>
-  <cl-upload
-    v-model="url"
-    @progress="handleProgress"
-    @success="handleSuccess"
-    @error="handleError"
-  ></cl-upload>
+	<cl-upload
+		v-model="url"
+		@progress="handleProgress"
+		@success="handleSuccess"
+		@error="handleError"
+	></cl-upload>
 </template>
 
 <script lang="ts" setup>
@@ -149,15 +145,15 @@ import { ref } from "vue";
 const url = ref<string>("");
 
 function handleProgress(progress: number) {
-  console.log("上传进度:", progress);
+	console.log("上传进度:", progress);
 }
 
 function handleSuccess(url: string) {
-  console.log("上传成功:", url);
+	console.log("上传成功:", url);
 }
 
 function handleError(message: string) {
-  console.error("上传失败:", message);
+	console.error("上传失败:", message);
 }
 </script>
 ```

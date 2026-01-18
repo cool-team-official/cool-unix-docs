@@ -7,11 +7,13 @@
 
 ## 基础参数
 
-| 参数      | 说明                             | 类型                        | 可选值 | 默认值 |
-| --------- | -------------------------------- | --------------------------- | ------ | ------ |
-| pt        | 样式穿透配置，用于自定义组件样式 | [PassThrough](#passthrough) | -      | -      |
-| minHeight | 最小高度，低于此值时组件不显示   | number                      | -      | 30     |
-| vt        | 监听值，用于触发组件重新计算     | number                      | -      | 0      |
+| 参数            | 说明                             | 类型                        | 可选值 | 默认值 |
+| --------------- | -------------------------------- | --------------------------- | ------ | ------ |
+| pt              | 样式穿透配置，用于自定义组件样式 | [PassThrough](#passthrough) | -      | -      |
+| minHeight       | 最小高度，低于此值时组件不显示   | number                      | -      | 30     |
+| vt              | 监听值，用于触发组件重新计算     | number                      | -      | 0      |
+| height          | 固定的内容高度                   | number                      | -      |        |
+| backgroundColor | 背景颜色                         | number                      | -      |        |
 
 :::warning
 当按钮隐藏时,组件会保留一定的内间距高度,默认不超过 `30px`。如果需要调整这个高度,可以通过修改 `minHeight` 参数来实现。
@@ -34,11 +36,11 @@
 
 ```html
 <cl-list>
-  <cl-list-item :label="`列表项 ${i}`" v-for="i in 50" :key="i"></cl-list-item>
+	<cl-list-item :label="`列表项 ${i}`" v-for="i in 50" :key="i"></cl-list-item>
 </cl-list>
 
 <cl-footer>
-  <cl-button type="primary" size="large" @tap="handleSubmit"> 提交 </cl-button>
+	<cl-button type="primary" size="large" @tap="handleSubmit"> 提交 </cl-button>
 </cl-footer>
 ```
 
@@ -50,65 +52,50 @@
 
 ```html
 <cl-list>
-  <cl-list-item :label="`列表项 ${i}`" v-for="i in 50" :key="i"></cl-list-item>
+	<cl-list-item :label="`列表项 ${i}`" v-for="i in 50" :key="i"></cl-list-item>
 </cl-list>
 
 <cl-footer :vt="cache.key">
-  <template v-if="status == 0">
-    <view class="flex flex-row">
-      <cl-button
-        :pt="{ className: 'flex-1' }"
-        text
-        border
-        size="large"
-        @tap="cancel"
-      >
-        取消订单
-      </cl-button>
+	<template v-if="status == 0">
+		<view class="flex flex-row">
+			<cl-button :pt="{ className: 'flex-1' }" text border size="large" @tap="cancel">
+				取消订单
+			</cl-button>
 
-      <cl-button
-        :pt="{ className: 'flex-1' }"
-        type="primary"
-        size="large"
-        @tap="buy"
-      >
-        立即购买
-      </cl-button>
-    </view>
-  </template>
+			<cl-button :pt="{ className: 'flex-1' }" type="primary" size="large" @tap="buy">
+				立即购买
+			</cl-button>
+		</view>
+	</template>
 
-  <cl-button type="error" size="large" @tap="confirm" v-if="status == 1">
-    确认收货
-  </cl-button>
+	<cl-button type="error" size="large" @tap="confirm" v-if="status == 1"> 确认收货 </cl-button>
 
-  <cl-button type="success" size="large" @tap="comment" v-if="status == 2">
-    评价
-  </cl-button>
+	<cl-button type="success" size="large" @tap="comment" v-if="status == 2"> 评价 </cl-button>
 </cl-footer>
 
 <script lang="ts" setup>
-  import { useCache } from "@/cool";
-  import { ref } from "vue";
+	import { useCache } from "@/.cool";
+	import { ref } from "vue";
 
-  const status = ref(0);
+	const status = ref(0);
 
-  // useCache 可以监听多个值的变化
-  const { cache } = useCache(() => [status.value]);
+	// useCache 可以监听多个值的变化
+	const { cache } = useCache(() => [status.value]);
 
-  function cancel() {
-    status.value = 3;
-  }
+	function cancel() {
+		status.value = 3;
+	}
 
-  function buy() {
-    status.value = 1;
-  }
+	function buy() {
+		status.value = 1;
+	}
 
-  function confirm() {
-    status.value = 2;
-  }
+	function confirm() {
+		status.value = 2;
+	}
 
-  function comment() {
-    status.value = 3;
-  }
+	function comment() {
+		status.value = 3;
+	}
 </script>
 ```

@@ -10,7 +10,7 @@
 | value      | 文本内容                           | string                      |                                                                 |
 | color      | 字体颜色                           | string                      | "primary" \| "success" \| "error" \| "warn" \| "info"           |           |
 | type       | 文本类型                           | string                      | "default" \| "phone" \| "name" \| "amount" \| "card" \| "email" | "default" |
-| size       | 字体大小                           | string \| number            |                                                                 | null      |
+| size       | 字体大小(px)                       | number                      |                                                                 | 14        |
 | mask       | 是否开启脱敏处理                   | boolean                     |                                                                 | false     |
 | currency   | 金额货币符号                       | string                      |                                                                 | "¥"       |
 | precision  | 金额小数位数                       | number                      |                                                                 | 2         |
@@ -105,7 +105,7 @@
 
 ```html
 <cl-text ellipsis>
-  锦瑟无端五十弦，一弦一柱思华年。庄生晓梦迷蝴蝶，望帝春心托杜鹃。沧海月明珠有泪，蓝田日暖玉生烟。此情可待成追忆，只是当时已惘然。
+	锦瑟无端五十弦，一弦一柱思华年。庄生晓梦迷蝴蝶，望帝春心托杜鹃。沧海月明珠有泪，蓝田日暖玉生烟。此情可待成追忆，只是当时已惘然。
 </cl-text>
 ```
 
@@ -113,6 +113,6 @@
 
 ```html
 <cl-text ellipsis :lines="2"
-  >云想衣裳花想容，春风拂槛露华浓。若非群玉山头见，会向瑶台月下逢。天阶夜色凉如水，卧看牵牛织女星。人生若只如初见，何事秋风悲画扇。山有木兮木有枝，心悦君兮君不知。</cl-text
+	>云想衣裳花想容，春风拂槛露华浓。若非群玉山头见，会向瑶台月下逢。天阶夜色凉如水，卧看牵牛织女星。人生若只如初见，何事秋风悲画扇。山有木兮木有枝，心悦君兮君不知。</cl-text
 >
 ```

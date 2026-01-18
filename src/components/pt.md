@@ -67,10 +67,10 @@ PassThrough 是一种用于访问组件内部 DOM 结构的 API，它允许开�
 ```vue
 <!-- 图标和文字不同颜色 -->
 <test
-  :pt="{
-    className: 'text-white',
-    icon: { className: 'text-black' },
-  }"
+	:pt="{
+		className: 'text-white',
+		icon: { className: 'text-black' }
+	}"
 ></test>
 ```
 
@@ -97,7 +97,7 @@ PassThrough 是一种用于访问组件内部 DOM 结构的 API，它允许开�
 
 ```ts
 type PassThroughProps = {
-  className?: string;
+	className?: string;
 };
 ```
 
@@ -105,31 +105,31 @@ type PassThroughProps = {
 
 每个组件的 `pt` 可选参数都有详细说明。以 `cl-button` 的 `PassThrough` 为例：
 
-| 参数      | 说明           | 类型                                  |
-| --------- | -------------- | ------------------------------------- |
-| className | 组件根元素样式 | string                                |
-| label     | 文本标签样式   | [PassThroughProps](#passthroughprops) |
-| icon      | 图标元素样式   | [ClIconProps]                         |
-| loading   | 加载动画样式   | [ClLoadingProps]                      |
+| 参数      | 说明           | 类型                                                           |
+| --------- | -------------- | -------------------------------------------------------------- |
+| className | 组件根元素样式 | string                                                         |
+| label     | 文本标签样式   | [PassThroughProps](#passthroughprops)                          |
+| icon      | 图标元素样式   | [ClIconProps](/src/components/basic/icon.md#passthrough)       |
+| loading   | 加载动画样式   | [ClLoadingProps](/src/components/basic/loading.md#passthrough) |
 
 具体使用方式如下（在 VS Code 中点击类型链接可查看完整的参数说明和智能提示）：
 
 ```vue
 <cl-button
-  :pt="{
-    className: '!rounded-2xl',
-    icon: {
-      size: 50,
-      className: 'mr-5',
-    },
-    label: {
-      color: 'red',
-      className: 'font-bold',
-    },
-    loading: {
-      size: 50,
-    },
-  }"
+	:pt="{
+		className: '!rounded-2xl',
+		icon: {
+			size: 50,
+			className: 'mr-5'
+		},
+		label: {
+			color: 'red',
+			className: 'font-bold'
+		},
+		loading: {
+			size: 50
+		}
+	}"
 >
   点击
 </cl-button>
@@ -139,17 +139,17 @@ type PassThroughProps = {
 
 ```vue
 <cl-button
-  :pt="{
-    className: parseClass([
-      [isDark, '!bg-white', '!bg-black'], // 条件判断：[条件, 真值样式, 假值样式]
+	:pt="{
+		className: parseClass([
+			[isDark, '!bg-white', '!bg-black'], // 条件判断：[条件, 真值样式, 假值样式]
 
-      // 支持字符串和对象语法（与 :class 用法一致）
-      '!rounded-2xl p-5',
-      {
-        'mr-2': isActive,
-      },
-    ]),
-  }"
+			// 支持字符串和对象语法（与 :class 用法一致）
+			'!rounded-2xl p-5',
+			{
+				'mr-2': isActive
+			}
+		])
+	}"
 >
   点击
 </cl-button>

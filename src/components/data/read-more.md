@@ -8,7 +8,7 @@
 | ------------ | ---------------------------------------- | --------------------------- | ------ | ------------------- |
 | pt           | 样式透传配置，用于自定义组件内部元素样式 | [PassThrough](#passthrough) | -      | -                   |
 | modelValue   | 是否展开                                 | boolean                     | -      | false               |
-| height       | 收起状态下的最大高度                     | number \| string            | -      | 80                  |
+| height       | 收起状态下的最大高度(px)                 | number                      | -      | 40                  |
 | expandText   | 展开时显示的文本                         | string                      | -      | "展开"              |
 | collapseText | 收起时显示的文本                         | string                      | -      | "收起"              |
 | expandIcon   | 展开时显示的图标                         | string                      | -      | "arrow-down-s-line" |
@@ -39,13 +39,13 @@
 
 ```vue
 <template>
-  <cl-read-more>
-    <cl-text>
-      云想衣裳花想容，春风拂槛露华浓。若非群玉山头见，会向瑶台月下逢。
-      一枝红艳露凝香，云雨巫山枉断肠。借问汉宫谁得似？可怜飞燕倚新妆。
-      名花倾国两相欢，常得君王带笑看。解释春风无限恨，沉香亭北倚阑干。
-    </cl-text>
-  </cl-read-more>
+	<cl-read-more>
+		<cl-text>
+			云想衣裳花想容，春风拂槛露华浓。若非群玉山头见，会向瑶台月下逢。
+			一枝红艳露凝香，云雨巫山枉断肠。借问汉宫谁得似？可怜飞燕倚新妆。
+			名花倾国两相欢，常得君王带笑看。解释春风无限恨，沉香亭北倚阑干。
+		</cl-text>
+	</cl-read-more>
 </template>
 ```
 
@@ -55,13 +55,13 @@
 
 ```vue
 <template>
-  <cl-read-more v-model="visible">
-    <cl-text>
-      云想衣裳花想容，春风拂槛露华浓。若非群玉山头见，会向瑶台月下逢。
-      一枝红艳露凝香，云雨巫山枉断肠。借问汉宫谁得似？可怜飞燕倚新妆。
-      名花倾国两相欢，常得君王带笑看。解释春风无限恨，沉香亭北倚阑干。
-    </cl-text>
-  </cl-read-more>
+	<cl-read-more v-model="visible">
+		<cl-text>
+			云想衣裳花想容，春风拂槛露华浓。若非群玉山头见，会向瑶台月下逢。
+			一枝红艳露凝香，云雨巫山枉断肠。借问汉宫谁得似？可怜飞燕倚新妆。
+			名花倾国两相欢，常得君王带笑看。解释春风无限恨，沉香亭北倚阑干。
+		</cl-text>
+	</cl-read-more>
 </template>
 
 <script setup lang="ts">
@@ -75,46 +75,68 @@ const visible = ref(false);
 
 ```vue
 <template>
-  <cl-read-more disabled>
-    <cl-text>
-      云想衣裳花想容，春风拂槛露华浓。若非群玉山头见，会向瑶台月下逢。
-      一枝红艳露凝香，云雨巫山枉断肠。借问汉宫谁得似？可怜飞燕倚新妆。
-      名花倾国两相欢，常得君王带笑看。解释春风无限恨，沉香亭北倚阑干。
-    </cl-text>
-  </cl-read-more>
+	<cl-read-more disabled>
+		<cl-text>
+			云想衣裳花想容，春风拂槛露华浓。若非群玉山头见，会向瑶台月下逢。
+			一枝红艳露凝香，云雨巫山枉断肠。借问汉宫谁得似？可怜飞燕倚新妆。
+			名花倾国两相欢，常得君王带笑看。解释春风无限恨，沉香亭北倚阑干。
+		</cl-text>
+	</cl-read-more>
 </template>
 ```
 
 ### 自定义高度
 
-通过设置 `height` 参数，可支持三种类型的高度值，满足不同场景下的高度自定义需求
-
-- `10rpx`（rpx 单位）
-- `10`（数字，默认 rpx）
-- `10px`（带单位的字符串）。
+通过设置 `height` 参数，满足不同场景下的高度自定义需求
 
 ```vue
 <template>
-  <cl-read-more :height="300">
-    <cl-text>
-      云想衣裳花想容，春风拂槛露华浓。若非群玉山头见，会向瑶台月下逢。
-      一枝红艳露凝香，云雨巫山枉断肠。借问汉宫谁得似？可怜飞燕倚新妆。
-    </cl-text>
+	<cl-read-more :height="150">
+		<cl-text>
+			云想衣裳花想容，春风拂槛露华浓。若非群玉山头见，会向瑶台月下逢。
+			一枝红艳露凝香，云雨巫山枉断肠。借问汉宫谁得似？可怜飞燕倚新妆。
+		</cl-text>
 
-    <cl-image
-      :height="300"
-      width="100%"
-      :pt="{
-        className: 'my-3',
-      }"
-      src="https://uni-docs.cool-js.com/demo/pages/demo/static/bg1.png"
-    ></cl-image>
+		<cl-image
+			:height="150"
+			width="100%"
+			:pt="{
+				className: 'my-3'
+			}"
+			src="https://uni-docs.cool-js.com/demo/pages/demo/static/bg1.png"
+		></cl-image>
 
-    <cl-text>
-      名花倾国两相欢，常得君王带笑看。解释春风无限恨，沉香亭北倚阑干。
-    </cl-text>
-  </cl-read-more>
+		<cl-text> 名花倾国两相欢，常得君王带笑看。解释春风无限恨，沉香亭北倚阑干。 </cl-text>
+	</cl-read-more>
 </template>
+```
+
+### 动态高度
+
+内容从接口异步获取时，根据实际渲染高度自动调整展示区域，无需手动设置高度参数。
+
+```vue
+<template>
+	<cl-read-more :content="content" :show-toggle="content != ''" ref="readMoreRef">
+		<view class="flex flex-row items-center justify-center h-14" v-if="content == ''">
+			<cl-loading></cl-loading>
+		</view>
+	</cl-read-more>
+</template>
+
+<script lang="ts" setup>
+const content = ref("");
+
+function getContent() {
+	setTimeout(() => {
+		content.value =
+			"云想衣裳花想容，春风拂槛露华浓。若非群玉山头见，会向瑶台月下逢。一枝红艳露凝香，云雨巫山枉断肠。借问汉宫谁得似？可怜飞燕倚新妆。名花倾国两相欢，常得君王带笑看。解释春风无限恨，沉香亭北倚阑干。";
+
+		// 使用 slot 插入内容时，如果内容发生变化，需要重新获取高度
+		// readMoreRef.value!.getContentHeight();
+	}, 500);
+}
+</script>
 ```
 
 ### 自定义展开/收起文案、图标
@@ -123,19 +145,19 @@ const visible = ref(false);
 
 ```vue
 <template>
-  <cl-read-more
-    v-model="visible"
-    :disabled="disabled"
-    :expand-text="disabled ? '付费解锁' : '展开'"
-    :expand-icon="disabled ? 'lock-line' : 'arrow-down-s-line'"
-    @toggle="toggle"
-  >
-    <cl-text>
-      云想衣裳花想容，春风拂槛露华浓。若非群玉山头见，会向瑶台月下逢。
-      一枝红艳露凝香，云雨巫山枉断肠。借问汉宫谁得似？可怜飞燕倚新妆。
-      名花倾国两相欢，常得君王带笑看。解释春风无限恨，沉香亭北倚阑干。
-    </cl-text>
-  </cl-read-more>
+	<cl-read-more
+		v-model="visible"
+		:disabled="disabled"
+		:expand-text="disabled ? '付费解锁' : '展开'"
+		:expand-icon="disabled ? 'lock-line' : 'arrow-down-s-line'"
+		@toggle="toggle"
+	>
+		<cl-text>
+			云想衣裳花想容，春风拂槛露华浓。若非群玉山头见，会向瑶台月下逢。
+			一枝红艳露凝香，云雨巫山枉断肠。借问汉宫谁得似？可怜飞燕倚新妆。
+			名花倾国两相欢，常得君王带笑看。解释春风无限恨，沉香亭北倚阑干。
+		</cl-text>
+	</cl-read-more>
 </template>
 
 <script setup lang="ts">
@@ -148,20 +170,20 @@ const visible = ref(false);
 const disabled = ref(true);
 
 function toggle(isExpanded: boolean) {
-  ui.showConfirm({
-    title: "提示",
-    message: "需支付100元才能解锁全部内容，是否继续？",
-    callback(action) {
-      if (action == "confirm") {
-        ui.showToast({
-          message: "支付成功",
-        });
+	ui.showConfirm({
+		title: "提示",
+		message: "需支付100元才能解锁全部内容，是否继续？",
+		callback(action) {
+			if (action == "confirm") {
+				ui.showToast({
+					message: "支付成功"
+				});
 
-        disabled.value = false;
-        visible.value = true;
-      }
-    },
-  });
+				disabled.value = false;
+				visible.value = true;
+			}
+		}
+	});
 }
 </script>
 ```

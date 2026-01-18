@@ -31,55 +31,36 @@
 
 ```html
 <script lang="ts">
-  import { useStore } from "@/cool";
+	import { useStore } from "@/.cool";
 
-  export default {
-    // 应用启动时触发
-    onLaunch: function () {
-      console.log("App Launch");
-    },
+	export default {
+		// 应用启动时触发
+		onLaunch: function () {
+			console.log("App Launch");
+		},
 
-    // 应用显示时触发（从后台切换到前台）
-    onShow: function () {
-      console.log("App Show");
+		// 应用显示时触发（从后台切换到前台）
+		onShow: function () {
+			console.log("App Show");
 
-      const { dict, user } = useStore();
+			const { dict, user } = useStore();
 
-      // 获取用户信息（仅在用户已登录状态下执行）
-      user.get();
+			// 获取用户信息（仅在用户已登录状态下执行）
+			user.get();
 
-      // 刷新数据字典缓存
-      dict.refresh(null);
-    },
+			// 刷新数据字典缓存
+			dict.refresh(null);
+		},
 
-    // 应用隐藏时触发（切换到后台）
-    onHide: function () {
-      console.log("App Hide");
-    },
+		// 应用隐藏时触发（切换到后台）
+		onHide: function () {
+			console.log("App Hide");
+		},
 
-    // 应用退出时触发
-    onExit: function () {
-      console.log("App Exit");
-    },
-  };
+		// 应用退出时触发
+		onExit: function () {
+			console.log("App Exit");
+		}
+	};
 </script>
-
-<style lang="scss">
-  @import url("static/index.scss");
-  @import url("uni_modules/cool-ui/index.scss");
-
-  .safe-area-top {
-    margin-top: env(safe-area-inset-top);
-  }
-
-  .uni-tabbar {
-    // #ifdef H5
-    display: none;
-    // #endif
-
-    .uni-tabbar__icon {
-      margin-top: 0;
-    }
-  }
-</style>
 ```

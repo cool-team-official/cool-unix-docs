@@ -27,12 +27,12 @@
 ```html
 <!-- 显示骨架图 -->
 <cl-skeleton loading>
-  <cl-text>云想衣裳花想容，春风拂槛露华浓。</cl-text>
+	<cl-text>云想衣裳花想容，春风拂槛露华浓。</cl-text>
 </cl-skeleton>
 
 <!-- 隐藏骨架图，显示真实内容 -->
 <cl-skeleton :loading="false">
-  <cl-text>云想衣裳花想容，春风拂槛露华浓。</cl-text>
+	<cl-text>云想衣裳花想容，春风拂槛露华浓。</cl-text>
 </cl-skeleton>
 ```
 
@@ -42,13 +42,13 @@
 
 ```html
 <view class="flex flex-row">
-  <cl-skeleton type="button" loading>
-    <cl-button>立即购买</cl-button>
-  </cl-skeleton>
+	<cl-skeleton type="button" loading>
+		<cl-button>立即购买</cl-button>
+	</cl-skeleton>
 
-  <cl-skeleton type="button" loading class="ml-3">
-    <cl-button type="plain">加入购物车</cl-button>
-  </cl-skeleton>
+	<cl-skeleton type="button" loading class="ml-3">
+		<cl-button type="plain">加入购物车</cl-button>
+	</cl-skeleton>
 </view>
 ```
 
@@ -58,11 +58,7 @@
 
 ```html
 <cl-skeleton type="image" loading>
-  <cl-image
-    src="https://uni-docs.cool-js.com/demo/pages/demo/static/bg1.png"
-    width="200"
-    height="150"
-  ></cl-image>
+	<cl-image src="https://uni-docs.cool-js.com/demo/pages/demo/static/bg1.png"></cl-image>
 </cl-skeleton>
 ```
 
@@ -72,12 +68,10 @@
 
 ```html
 <cl-skeleton type="circle" loading>
-  <cl-image
-    :radius="100"
-    src="https://uni-docs.cool-js.com/demo/pages/demo/static/bg1.png"
-    width="80"
-    height="80"
-  ></cl-image>
+	<cl-image
+		:radius="100"
+		src="https://uni-docs.cool-js.com/demo/pages/demo/static/bg1.png"
+	></cl-image>
 </cl-skeleton>
 ```
 
@@ -87,12 +81,12 @@
 
 ```html
 <view class="flex flex-row">
-  <cl-skeleton type="image" loading> </cl-skeleton>
+	<cl-skeleton type="image" loading> </cl-skeleton>
 
-  <view class="flex-1 ml-2">
-    <cl-skeleton type="text" loading> </cl-skeleton>
-    <cl-skeleton type="text" loading class="mt-2 !w-[160rpx]"> </cl-skeleton>
-  </view>
+	<view class="flex-1 ml-2">
+		<cl-skeleton type="text" loading> </cl-skeleton>
+		<cl-skeleton type="text" loading class="mt-2 !w-[160rpx]"> </cl-skeleton>
+	</view>
 </view>
 ```
 
@@ -100,9 +94,9 @@
 
 ```html
 <cl-skeleton
-  type="text"
-  loading
-  :pt="{
+	type="text"
+	loading
+	:pt="{
     className: '!rounded-lg !bg-black',
   }"
 >

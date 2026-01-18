@@ -41,11 +41,11 @@
 <cl-countdown :datetime="datetime"></cl-countdown>
 
 <script lang="ts" setup>
-  import { ref } from "vue";
-  import { dayUts } from "@/cool";
+	import { ref } from "vue";
+	import { dayUts } from "@/.cool";
 
-  // 设置倒计时目标时间为 1 分钟后
-  const datetime = ref(dayUts().add(1, "minute").toDate());
+	// 设置倒计时目标时间为 1 分钟后
+	const datetime = ref(dayUts().add(1, "minute").toDate());
 </script>
 ```
 
@@ -106,10 +106,10 @@
 <cl-countdown :second="5" @done="onDone"></cl-countdown>
 
 <script lang="ts" setup>
-  function onDone() {
-    console.log("倒计时结束");
-    // 这里可以执行倒计时结束后的逻辑
-  }
+	function onDone() {
+		console.log("倒计时结束");
+		// 这里可以执行倒计时结束后的逻辑
+	}
 </script>
 ```
 
@@ -119,8 +119,8 @@
 
 ```html
 <cl-countdown
-  :hour="10"
-  :pt="{
+	:hour="10"
+	:pt="{
     text: {
       className: parseClass([
         'px-2 py-1 rounded-md',
@@ -134,6 +134,6 @@
 ></cl-countdown>
 
 <script lang="ts" setup>
-  import { parseClass, isDark } from "@/cool";
+	import { parseClass, isDark } from "@/.cool";
 </script>
 ```

@@ -4,14 +4,14 @@
 
 ## 基础参数
 
-| 参数        | 说明                      | 类型                        | 可选值 | 默认值 |
-| ----------- | ------------------------- | --------------------------- | ------ | ------ |
-| pt          | 样式透传配置对象          | [PassThrough](#passthrough) | -      | -      |
-| value       | 当前进度值（0-100）       | number                      | 0-100  | 0      |
-| strokeWidth | 进度条线条宽度（单位 px） | number                      | -      | 12     |
-| showText    | 是否显示进度百分比文本    | boolean                     |        | true   |
-| color       | 进度条颜色                | string                      |        | -      |
-| unColor     | 进度条背景色              | string                      |        | -      |
+| 参数        | 说明                   | 类型                        | 可选值 | 默认值 |
+| ----------- | ---------------------- | --------------------------- | ------ | ------ |
+| pt          | 样式透传配置对象       | [PassThrough](#passthrough) | -      | -      |
+| value       | 当前进度值（0-100）    | number                      | 0-100  | 0      |
+| strokeWidth | 进度条线条宽度(px)     | number                      | -      | 12     |
+| showText    | 是否显示进度百分比文本 | boolean                     |        | true   |
+| color       | 进度条颜色             | string                      |        | -      |
+| unColor     | 进度条背景色           | string                      |        | -      |
 
 ## PassThrough 样式透传
 
@@ -60,11 +60,11 @@
 
 ```html
 <!-- 细进度条 -->
-<cl-progress :value="40" :stroke-width="6"></cl-progress>
+<cl-progress :value="40" :stroke-width="4"></cl-progress>
 
 <!-- 粗进度条 -->
-<cl-progress :value="60" :stroke-width="20"></cl-progress>
+<cl-progress :value="60" :stroke-width="10"></cl-progress>
 
 <!-- 超粗进度条 -->
-<cl-progress :value="80" :stroke-width="30"></cl-progress>
+<cl-progress :value="80" :stroke-width="14"></cl-progress>
 ```

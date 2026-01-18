@@ -4,18 +4,18 @@
 
 ## 参数
 
-| 参数        | 说明                          | 类型                        | 可选值              | 默认值   |
-| ----------- | ----------------------------- | --------------------------- | ------------------- | -------- |
-| pt          | 样式穿透配置                  | [PassThrough](#passthrough) | —                   | —        |
-| modelValue  | 当前绑定的数值                | number                      | —                   | 0        |
-| step        | 每次点击加减按钮的步长        | number                      | —                   | 1        |
-| max         | 允许输入的最大数值            | number                      | —                   | 100      |
-| min         | 允许输入的最小数值            | number                      | —                   | 0        |
-| inputable   | 是否允许手动输入数值          | boolean                     | —                   | true     |
-| size        | 加减按钮的尺寸大小（单位 px） | number \| string            | —                   | 50       |
-| disabled    | 是否禁用组件                  | boolean                     | —                   | false    |
-| inputType   | 输入框的数值类型              | string                      | "digit" \| "number" | 'number' |
-| placeholder | 输入框的占位提示文本          | string                      | —                   | —        |
+| 参数        | 说明                     | 类型                        | 可选值              | 默认值   |
+| ----------- | ------------------------ | --------------------------- | ------------------- | -------- |
+| pt          | 样式穿透配置             | [PassThrough](#passthrough) | —                   | —        |
+| modelValue  | 当前绑定的数值           | number                      | —                   | 0        |
+| step        | 每次点击加减按钮的步长   | number                      | —                   | 1        |
+| max         | 允许输入的最大数值       | number                      | —                   | 100      |
+| min         | 允许输入的最小数值       | number                      | —                   | 0        |
+| inputable   | 是否允许手动输入数值     | boolean                     | —                   | true     |
+| size        | 加减按钮的尺寸大小（px） | number                      | —                   | 24       |
+| disabled    | 是否禁用组件             | boolean                     | —                   | false    |
+| inputType   | 输入框的数值类型         | string                      | "digit" \| "number" | 'number' |
+| placeholder | 输入框的占位提示文本     | string                      | —                   | —        |
 
 ## 事件
 
@@ -35,15 +35,17 @@
 
 ```ts
 type ValuePassThrough = {
-  className?: string;
-  input?: PassThroughProps;
+	className?: string;
+	input?: PassThroughProps;
 };
+```
 
+```ts
 type OpPassThrough = {
-  className?: string;
-  minus?: PassThroughProps;
-  plus?: PassThroughProps;
-  icon?: ClIconProps;
+	className?: string;
+	minus?: PassThroughProps;
+	plus?: PassThroughProps;
+	icon?: ClIconProps;
 };
 ```
 
@@ -87,13 +89,13 @@ type OpPassThrough = {
 
 ```vue
 <cl-input-number
-  :pt="{
-    op: {
-      className: '!rounded-full',
-    },
-    value: {
-      className: '!rounded-full',
-    },
-  }"
+	:pt="{
+		op: {
+			className: '!rounded-full'
+		},
+		value: {
+			className: '!rounded-full'
+		}
+	}"
 ></cl-input-number>
 ```

@@ -39,17 +39,17 @@ checkbox 多选框组件用于在一组选项中进行单一选择。支持自�
 
 ```html
 <template>
-  <cl-checkbox v-model="selectedFramework" value="vue">Vue.js</cl-checkbox>
-  <cl-checkbox v-model="selectedFramework" value="react">React</cl-checkbox>
-  <cl-checkbox v-model="selectedFramework" value="angular">Angular</cl-checkbox>
-  <cl-checkbox v-model="selectedFramework" value="svelte">Svelte</cl-checkbox>
+	<cl-checkbox v-model="selected" value="vue">Vue.js</cl-checkbox>
+	<cl-checkbox v-model="selected" value="react">React</cl-checkbox>
+	<cl-checkbox v-model="selected" value="angular">Angular</cl-checkbox>
+	<cl-checkbox v-model="selected" value="svelte">Svelte</cl-checkbox>
 </template>
 
 <script setup>
-  import { ref } from "vue";
+	import { ref } from "vue";
 
-  // 当前选中的框架
-  const selectedFramework = ref(["vue"]);
+	// 当前选中的框架
+	const selected = ref(["vue"]);
 </script>
 ```
 
@@ -59,15 +59,15 @@ checkbox 多选框组件用于在一组选项中进行单一选择。支持自�
 
 ```html
 <template>
-  <cl-checkbox v-model="tech" value="available">可用选项</cl-checkbox>
-  <cl-checkbox v-model="tech" value="disabled" disabled>禁用选项</cl-checkbox>
-  <cl-checkbox v-model="tech" value="normal">普通选项</cl-checkbox>
+	<cl-checkbox v-model="selected" value="available">可用选项</cl-checkbox>
+	<cl-checkbox v-model="selected" value="disabled" disabled>禁用选项</cl-checkbox>
+	<cl-checkbox v-model="selected" value="normal">普通选项</cl-checkbox>
 </template>
 
 <script setup>
-  import { ref } from "vue";
+	import { ref } from "vue";
 
-  const tech = ref(["avaiable"]);
+	const selected = ref(["avaiable"]);
 </script>
 ```
 
@@ -77,18 +77,14 @@ checkbox 多选框组件用于在一组选项中进行单一选择。支持自�
 
 ```html
 <template>
-  <cl-checkbox v-model="textOption" value="option1" :show-icon="false">
-    纯文本选项一
-  </cl-checkbox>
-  <cl-checkbox v-model="textOption" value="option2" :show-icon="false">
-    纯文本选项二
-  </cl-checkbox>
+	<cl-checkbox v-model="selected" value="option1" :show-icon="false"> 纯文本选项一 </cl-checkbox>
+	<cl-checkbox v-model="selected" value="option2" :show-icon="false"> 纯文本选项二 </cl-checkbox>
 </template>
 
 <script setup>
-  import { ref } from "vue";
+	import { ref } from "vue";
 
-  const textOption = ref(["option1"]);
+	const selected = ref(["option1"]);
 </script>
 ```
 
@@ -98,13 +94,13 @@ checkbox 多选框组件用于在一组选项中进行单一选择。支持自�
 
 ```html
 <template>
-  <cl-checkbox v-model="agree">同意并阅读《用户协议》</cl-checkbox>
+	<cl-checkbox v-model="agree">同意并阅读《用户协议》</cl-checkbox>
 </template>
 
 <script setup>
-  import { ref } from "vue";
+	import { ref } from "vue";
 
-  const agree = ref(false);
+	const agree = ref(false);
 </script>
 ```
 
@@ -114,28 +110,28 @@ checkbox 多选框组件用于在一组选项中进行单一选择。支持自�
 
 ```html
 <template>
-  <cl-checkbox
-    v-model="favorite"
-    value="liked"
-    active-icon="heart-fill"
-    inactive-icon="heart-line"
-  >
-    我喜欢的
-  </cl-checkbox>
-  <cl-checkbox
-    v-model="favorite"
-    value="starred"
-    active-icon="star-fill"
-    inactive-icon="star-line"
-  >
-    我收藏的
-  </cl-checkbox>
+	<cl-checkbox
+		v-model="selected"
+		value="liked"
+		active-icon="heart-fill"
+		inactive-icon="heart-line"
+	>
+		我喜欢的
+	</cl-checkbox>
+	<cl-checkbox
+		v-model="favoriselectedte"
+		value="starred"
+		active-icon="star-fill"
+		inactive-icon="star-line"
+	>
+		我收藏的
+	</cl-checkbox>
 </template>
 
 <script setup>
-  import { ref } from "vue";
+	import { ref } from "vue";
 
-  const favorite = ref(["liked"]);
+	const selected = ref(["liked"]);
 </script>
 ```
 
@@ -145,29 +141,29 @@ checkbox 多选框组件用于在一组选项中进行单一选择。支持自�
 
 ```html
 <template>
-  <cl-checkbox
-    v-for="(item, index) in frameworkOptions"
-    :key="index"
-    v-model="selectedTech"
-    :value="item.value"
-  >
-    {{ item.label }}
-  </cl-checkbox>
+	<cl-checkbox
+		v-for="(item, index) in options"
+		:key="index"
+		v-model="selected"
+		:value="item.value"
+	>
+		{{ item.label }}
+	</cl-checkbox>
 </template>
 
 <script lang="ts" setup>
-  import { ref } from "vue";
-  import { type ClCheckboxOption } from "@/uni_modules/cool-ui";
+	import { ref } from "vue";
+	import { type ClCheckboxOption } from "@/uni_modules/cool-ui";
 
-  // 定义选项数据类型
-  const frameworkOptions = ref<ClCheckboxOption[]>([
-    { label: "Vue.js", value: "vue" },
-    { label: "React", value: "react" },
-    { label: "Angular", value: "angular" },
-    { label: "Svelte", value: "svelte" },
-  ]);
+	// 定义选项数据类型
+	const options = ref<ClCheckboxOption[]>([
+		{ label: "Vue.js", value: "vue" },
+		{ label: "React", value: "react" },
+		{ label: "Angular", value: "angular" },
+		{ label: "Svelte", value: "svelte" }
+	]);
 
-  // 当前选中的技术栈
-  const selectedTech = ref(["vue"]);
+	// 当前选中的技术栈
+	const selected = ref(["vue"]);
 </script>
 ```

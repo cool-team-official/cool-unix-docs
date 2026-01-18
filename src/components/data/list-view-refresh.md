@@ -13,10 +13,9 @@
 ### list.uvue
 
 - `virtual` 属性用于控制是否启用虚拟列表渲染。启用时需要注意:
-
-  - 必须设置固定的列表项高度
-  - 需要配置 `bottomHeight` 以适配加载更多组件的显示
-  - 建议在大数据量场景下开启,小数据量场景可以关闭
+    - 必须设置固定的列表项高度
+    - 需要配置 `bottomHeight` 以适配加载更多组件的显示
+    - 建议在大数据量场景下开启,小数据量场景可以关闭
 
 - `pt.refresher` 提供下拉刷新区域的自定义样式能力
 
@@ -27,68 +26,66 @@
 - `@bottom` 监听列表滚动到底部事件,用于触发加载更多数据
 
 - `#item` 建议将列表项封装为独立组件(如 `goods-item.uvue`):
-
-  - 避免直接使用 `value["name"]` 的方式访问 `UTSJSONObject` 类型数据
-  - 提升代码可维护性和开发效率
-  - 方便复用和统一管理列表项样式
+    - 避免直接使用 `value["name"]` 的方式访问 `UTSJSONObject` 类型数据
+    - 提升代码可维护性和开发效率
+    - 方便复用和统一管理列表项样式
 
 - `#bottom` 用于自定义底部加载更多区域,通常配合 `cl-loadmore` 组件使用
 
 - `usePager` 分页钩子函数
+    - `usePager(cb)` 的参数是一个方法，用于调用获取列表的接口
 
-  - `usePager(cb)` 的参数是一个方法，用于调用获取列表的接口
+        ```ts
+        type PagerCallback = (params: UTSJSONObject, ctx: Pager) => void | Promise<void>;
 
-    ```ts
-    type PagerCallback = (params: UTSJSONObject, ctx: Pager) => void | Promise<void>;
+        type usePager(cb: PagerCallback): Pager
+        ```
 
-    type usePager(cb: PagerCallback): Pager
-    ```
-
-  - `refresh(params)` 刷新列表数据的方法
-    - `params` 参数对象不能为空,可传入空对象 `{}`
-    - 通过 `params` 可控制分页大小,如 `refresh({ size: 30 })` 设置每页显示 30 条
-  - `list` 列表数据,类型为 `UTSJSONObject[]`,可用于任意场景如 `v-for` 循环
-  - `listView` 列表数据,类型为 `ClListViewItem[]`,专用于 `cl-list-view` 组件的 `data` 属性
-  - `loading` 布尔值,表示是否正在加载数据
-  - `loadmore()` 加载下一页数据的方法
-  - `render()` 渲染列表数据，如下示例代码格式
+    - `refresh(params)` 刷新列表数据的方法
+        - `params` 参数对象不能为空,可传入空对象 `{}`
+        - 通过 `params` 可控制分页大小,如 `refresh({ size: 30 })` 设置每页显示 30 条
+    - `list` 列表数据,类型为 `UTSJSONObject[]`,可用于任意场景如 `v-for` 循环
+    - `listView` 列表数据,类型为 `ClListViewItem[]`,专用于 `cl-list-view` 组件的 `data` 属性
+    - `loading` 布尔值,表示是否正在加载数据
+    - `loadmore()` 加载下一页数据的方法
+    - `render()` 渲染列表数据，如下示例代码格式
 
 - `onPull()` 下拉刷新事件处理函数
-  - 在刷新完成后需调用 `stopRefresh()` 停止刷新动画
+    - 在刷新完成后需调用 `stopRefresh()` 停止刷新动画
 
 ```vue
 <template>
-  <cl-page>
-    <cl-list-view
-      ref="listViewRef"
-      :data="listView"
-      :virtual="false"
-      :pt="{
-        refresher: {
-          className: 'pt-3',
-        },
-      }"
-      :refresher-enabled="true"
-      @pull="onPull"
-      @bottom="loadMore"
-    >
-      <template #item="{ value }">
-        <goods-item :value="value"></goods-item>
-      </template>
+	<cl-page>
+		<cl-list-view
+			ref="listViewRef"
+			:data="listView"
+			:virtual="false"
+			:pt="{
+				refresher: {
+					className: 'pt-3'
+				}
+			}"
+			:refresher-enabled="true"
+			@pull="onPull"
+			@bottom="loadMore"
+		>
+			<template #item="{ value }">
+				<goods-item :value="value"></goods-item>
+			</template>
 
-      <template #bottom>
-        <view class="py-3">
-          <cl-loadmore :loading="loading" v-if="list.length > 0"></cl-loadmore>
-        </view>
-      </template>
-    </cl-list-view>
-  </cl-page>
+			<template #bottom>
+				<view class="py-3">
+					<cl-loadmore :loading="loading" v-if="list.length > 0"></cl-loadmore>
+				</view>
+			</template>
+		</cl-list-view>
+	</cl-page>
 </template>
 
 <script lang="ts" setup>
 import { useUi } from "@/uni_modules/cool-ui";
 import { ref } from "vue";
-import { usePager } from "@/cool";
+import { usePager } from "@/.cool";
 import GoodsItem from "../components/goods-item.uvue";
 import { t } from "@/locale";
 
@@ -98,51 +95,47 @@ const listViewRef = ref<ClListViewComponentPublicInstance | null>(null);
 
 let id = 0;
 
-const { refresh, list, listView, loading, loadMore } = usePager(
-  (params, { render }) => {
-    // 模拟请求
-    setTimeout(() => {
-      render({
-        list: [
-          {
-            id: id++,
-            title: "春日樱花盛开时节，粉色花瓣如诗如画般飘洒",
-            image: "https://unix.cool-js.com/images/demo/1.jpg",
-          },
-          {
-            id: id++,
-            title:
-              "夕阳西下的海滩边，金色阳光温柔地洒在波光粼粼的海面上，构成令人心旷神怡的日落美景",
-            image: "https://unix.cool-js.com/images/demo/2.jpg",
-          },
-          {
-            id: id++,
-            title:
-              "寒冬腊月时分，洁白雪花纷纷扬扬地覆盖着整个世界，感受冬日的宁静与美好",
-            image: "https://unix.cool-js.com/images/demo/3.jpg",
-          },
-        ],
-        pagination: {
-          page: params["page"],
-          size: params["size"],
-          total: 100,
-        },
-      });
+const { refresh, list, listView, loading, loadMore } = usePager((params, { render }) => {
+	// 模拟请求
+	setTimeout(() => {
+		render({
+			list: [
+				{
+					id: id++,
+					title: "春日樱花盛开时节，粉色花瓣如诗如画般飘洒",
+					image: "https://unix.cool-js.com/images/demo/1.jpg"
+				},
+				{
+					id: id++,
+					title: "夕阳西下的海滩边，金色阳光温柔地洒在波光粼粼的海面上，构成令人心旷神怡的日落美景",
+					image: "https://unix.cool-js.com/images/demo/2.jpg"
+				},
+				{
+					id: id++,
+					title: "寒冬腊月时分，洁白雪花纷纷扬扬地覆盖着整个世界，感受冬日的宁静与美好",
+					image: "https://unix.cool-js.com/images/demo/3.jpg"
+				}
+			],
+			pagination: {
+				page: params["page"],
+				size: params["size"],
+				total: 100
+			}
+		});
 
-      ui.hideLoading();
-    }, 1000);
-  }
-);
+		ui.hideLoading();
+	}, 1000);
+});
 
 async function onPull() {
-  await refresh({ page: 1 });
-  listViewRef.value!.stopRefresh();
+	await refresh({ page: 1 });
+	listViewRef.value!.stopRefresh();
 }
 
 onReady(() => {
-  ui.showLoading(t("加载中"));
-  // 默认请求
-  refresh({});
+	ui.showLoading(t("加载中"));
+	// 默认请求
+	refresh({});
 });
 </script>
 ```
@@ -155,38 +148,33 @@ onReady(() => {
 
 ```vue
 <template>
-  <view class="p-3 pb-0">
-    <view class="w-full p-3 bg-white rounded-xl dark:bg-surface-800">
-      <cl-image
-        :src="item?.image"
-        mode="aspectFill"
-        width="100%"
-        height="280rpx"
-      ></cl-image>
-      <cl-text :pt="{ className: 'mt-2' }">{{ item?.title }}</cl-text>
-    </view>
-  </view>
+	<view class="p-3 pb-0">
+		<view class="w-full p-3 bg-white rounded-xl dark:bg-surface-800">
+			<cl-image :src="item?.image" mode="aspectFill" width="100%" height="280rpx"></cl-image>
+			<cl-text :pt="{ className: 'mt-2' }">{{ item?.title }}</cl-text>
+		</view>
+	</view>
 </template>
 
 <script lang="ts" setup>
 import { computed } from "vue";
-import { parse } from "@/cool";
+import { parse } from "@/.cool";
 
 defineOptions({
-  name: "goods-item",
+	name: "goods-item"
 });
 
 type GoodsItem = {
-  id: number;
-  title: string;
-  image: string;
+	id: number;
+	title: string;
+	image: string;
 };
 
 const props = defineProps({
-  value: {
-    type: Object,
-    default: () => ({}),
-  },
+	value: {
+		type: Object,
+		default: () => ({})
+	}
 });
 
 const item = computed(() => parse<GoodsItem>(props.value));

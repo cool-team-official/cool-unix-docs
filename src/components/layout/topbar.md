@@ -15,7 +15,7 @@
 | backIcon        | 返回按钮使用的图标名称           | string                      | -      | "back" |
 | safeAreaTop     | 是否启用安全区域顶部边距         | boolean                     | -      | false  |
 | fixed           | 是否固定在页面顶部               | boolean                     | -      | false  |
-| height          | 导航栏内容高度                   | number \| string            | -      | -      |
+| height          | 导航栏内容高度                   | number \| string            | -      | 44px   |
 
 ### PassThrough
 
@@ -42,11 +42,7 @@
 设置自定义的文字和背景颜色。
 
 ```html
-<cl-topbar
-  title="自定义样式"
-  color="white"
-  background-color="#409EFF"
-></cl-topbar>
+<cl-topbar title="自定义样式" color="white" background-color="#409EFF"></cl-topbar>
 ```
 
 ### 自定义返回图标
@@ -55,13 +51,13 @@
 
 ```vue
 <cl-topbar
-  title="自定义返回图标"
-  back-icon="home-2-line"
-  :pt="{
-    back: {
-      size: 38,
-    },
-  }"
+	title="自定义返回图标"
+	back-icon="home-2-line"
+	:pt="{
+		back: {
+			size: 18
+		}
+	}"
 >
 </cl-topbar>
 ```
@@ -126,7 +122,7 @@
 
 ```vue
 <cl-topbar title="选项卡导航">
-    <cl-tabs v-model="type" :height="66" :list="typeList"></cl-tabs>
+    <cl-tabs v-model="type" :height="32" :list="typeList"></cl-tabs>
 </cl-topbar>
 
 <script lang="ts" setup>
@@ -135,14 +131,14 @@ import type { ClTabsItem } from "@/uni_modules/cool-ui";
 
 const type = ref("fans");
 const typeList = ref<ClTabsItem[]>([
-  {
-    label: "我的粉丝",
-    value: "fans",
-  },
-  {
-    label: "我的关注",
-    value: "follow",
-  },
+	{
+		label: "我的粉丝",
+		value: "fans"
+	},
+	{
+		label: "我的关注",
+		value: "follow"
+	}
 ]);
 </script>
 ```

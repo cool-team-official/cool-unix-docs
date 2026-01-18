@@ -13,9 +13,9 @@
 
 ```vue
 <template>
-  <cl-page>
-    <!-- 页面内容 -->
-  </cl-page>
+	<cl-page>
+		<!-- 页面内容 -->
+	</cl-page>
 </template>
 ```
 
@@ -52,18 +52,18 @@ const ui = useUi();
 ```ts
 // 显示确认弹窗
 ui.showConfirm({
-  title: "提示",
-  message: "确定要提交吗？",
+	title: "提示",
+	message: "确定要提交吗？"
 });
 
 // 显示提示信息
 ui.showTips("订单已结算成功", () => {
-  router.back();
+	router.back();
 });
 
 // 显示 Toast 消息
 ui.showToast({
-  message: "Hello",
+	message: "Hello"
 });
 
 // 显示 Loading
@@ -94,7 +94,7 @@ const page = usePage();
 | `onScroll`     | 监听页面滚动     | `(callback: (top: number) => void)` | -        |
 | `offScroll`    | 取消监听页面滚动 | `(callback: (top: number) => void)` | -        |
 
-:::tip 提示
+:::tip 子组件中使用
 `onScroll` 可以在任意子组件中使用，不仅解决了 `onPageScroll` 的兼容性问题，还提供了更灵活的页面滚动监听能力
 :::
 
@@ -105,9 +105,21 @@ const { onScroll } = usePage();
 
 // 监听页面滚动
 onScroll((top) => {
-  console.log(`页面滚动距离: ${top}px`);
+	console.log(`页面滚动距离: ${top}px`);
 });
 
 // 固定到指定位置
 scrollTo(1000);
+```
+
+```html
+<template>
+	<cl-page @scroll="onScroll"></cl-page>
+</template>
+
+<script lang="ts" setup>
+	const onScroll = (top: number) => {
+		console.log(`页面滚动距离: ${top}px`);
+	};
+</script>
 ```

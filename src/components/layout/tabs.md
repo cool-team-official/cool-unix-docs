@@ -8,10 +8,10 @@
 | ---------- | ------------------ | --------------------------- | ------ | ------ |
 | pt         | 样式穿透配置       | [PassThrough](#passthrough) | -      | -      |
 | modelValue | 当前选中标签的值   | number \| string            | -      | -      |
-| height     | 标签容器高度       | number \| string            | -      | 80     |
+| height     | 标签容器高度(px)   | number                      | -      | 40     |
 | list       | 标签数据列表       | ClTabsItem[]                | -      | []     |
 | fill       | 是否横向填充标签   | boolean                     | -      | true   |
-| gutter     | 标签之间的间距     | number                      | -      | 30     |
+| gutter(px) | 标签之间的间距     | number                      | -      | 14     |
 | color      | 选中状态的文字颜色 | string                      | -      | -      |
 | unColor    | 未选中状态文字颜色 | string                      | -      | -      |
 | showLine   | 是否显示底部下划线 | boolean                     | -      | true   |
@@ -56,38 +56,38 @@ import { ref } from "vue";
 const val = ref("1");
 
 const list = ref<ClTabsItem[]>([
-  {
-    label: "Vue",
-    value: "1",
-  },
-  {
-    label: "React",
-    value: "2",
-  },
-  {
-    label: "Angular",
-    value: "3",
-  },
-  {
-    label: "Svelte",
-    value: "4",
-  },
-  {
-    label: "Jquery",
-    value: "5",
-  },
-  {
-    label: "Vuex",
-    value: "6",
-  },
-  {
-    label: "Vue Router",
-    value: "7",
-  },
-  {
-    label: "Pinia",
-    value: "8",
-  },
+	{
+		label: "Vue",
+		value: "1"
+	},
+	{
+		label: "React",
+		value: "2"
+	},
+	{
+		label: "Angular",
+		value: "3"
+	},
+	{
+		label: "Svelte",
+		value: "4"
+	},
+	{
+		label: "Jquery",
+		value: "5"
+	},
+	{
+		label: "Vuex",
+		value: "6"
+	},
+	{
+		label: "Vue Router",
+		value: "7"
+	},
+	{
+		label: "Pinia",
+		value: "8"
+	}
 ]);
 </script>
 ```
@@ -106,22 +106,22 @@ import { ref } from "vue";
 const val = ref("1");
 
 const list = ref<ClTabsItem[]>([
-  {
-    label: "Vue",
-    value: "1",
-  },
-  {
-    label: "React",
-    value: "2",
-  },
-  {
-    label: "Angular",
-    value: "3",
-  },
-  {
-    label: "Svelte",
-    value: "4",
-  },
+	{
+		label: "Vue",
+		value: "1"
+	},
+	{
+		label: "React",
+		value: "2"
+	},
+	{
+		label: "Angular",
+		value: "3"
+	},
+	{
+		label: "Svelte",
+		value: "4"
+	}
 ]);
 </script>
 ```
@@ -142,22 +142,22 @@ import { ref } from "vue";
 const val = ref("1");
 
 const list = ref<ClTabsItem[]>([
-  {
-    label: "Vue",
-    value: "1",
-  },
-  {
-    label: "React",
-    value: "2",
-  },
-  {
-    label: "Angular",
-    value: "3",
-  },
-  {
-    label: "Svelte",
-    value: "4",
-  },
+	{
+		label: "Vue",
+		value: "1"
+	},
+	{
+		label: "React",
+		value: "2"
+	},
+	{
+		label: "Angular",
+		value: "3"
+	},
+	{
+		label: "Svelte",
+		value: "4"
+	}
 ]);
 </script>
 ```
@@ -178,24 +178,24 @@ import { ref } from "vue";
 const val = ref("1");
 
 const list = ref<ClTabsItem[]>([
-  {
-    label: "Vue",
-    value: "1",
-  },
-  {
-    label: "React",
-    value: "2",
-    disabled: true, // 禁用此标签
-  },
-  {
-    label: "Angular",
-    value: "3",
-  },
-  {
-    label: "Svelte",
-    value: "4",
-    disabled: true, // 禁用此标签
-  },
+	{
+		label: "Vue",
+		value: "1"
+	},
+	{
+		label: "React",
+		value: "2",
+		disabled: true // 禁用此标签
+	},
+	{
+		label: "Angular",
+		value: "3"
+	},
+	{
+		label: "Svelte",
+		value: "4",
+		disabled: true // 禁用此标签
+	}
 ]);
 </script>
 ```
@@ -216,22 +216,22 @@ import { ref } from "vue";
 const val = ref("1");
 
 const list = ref<ClTabsItem[]>([
-  {
-    label: "Vue",
-    value: "1",
-  },
-  {
-    label: "React",
-    value: "2",
-  },
-  {
-    label: "Angular",
-    value: "3",
-  },
-  {
-    label: "Svelte",
-    value: "4",
-  },
+	{
+		label: "Vue",
+		value: "1"
+	},
+	{
+		label: "React",
+		value: "2"
+	},
+	{
+		label: "Angular",
+		value: "3"
+	},
+	{
+		label: "Svelte",
+		value: "4"
+	}
 ]);
 </script>
 ```
@@ -242,12 +242,12 @@ const list = ref<ClTabsItem[]>([
 
 ```vue
 <cl-tabs
-  v-model="val"
-  :list="list"
-  show-slider
-  :pt="{
-    className: '!p-2',
-  }"
+	v-model="val"
+	:list="list"
+	show-slider
+	:pt="{
+		className: '!p-2'
+	}"
 ></cl-tabs>
 
 <script lang="ts" setup>
@@ -257,22 +257,22 @@ import { ref } from "vue";
 const val = ref("1");
 
 const list = ref<ClTabsItem[]>([
-  {
-    label: "Vue",
-    value: "1",
-  },
-  {
-    label: "React",
-    value: "2",
-  },
-  {
-    label: "Angular",
-    value: "3",
-  },
-  {
-    label: "Svelte",
-    value: "4",
-  },
+	{
+		label: "Vue",
+		value: "1"
+	},
+	{
+		label: "React",
+		value: "2"
+	},
+	{
+		label: "Angular",
+		value: "3"
+	},
+	{
+		label: "Svelte",
+		value: "4"
+	}
 ]);
 </script>
 ```

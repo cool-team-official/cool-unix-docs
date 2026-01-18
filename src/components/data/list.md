@@ -27,12 +27,12 @@ List 组件用于展示一系列的数据项，支持自定义样式、交互操
 
 ```ts
 type ClListItemPassThrough = {
-  className?: string;
-  inner?: PassThroughProps;
-  label?: PassThroughProps;
-  content?: PassThroughProps;
-  icon?: ClIconProps;
-  collapse?: PassThroughProps;
+	className?: string;
+	inner?: PassThroughProps;
+	label?: ClTextProps;
+	content?: PassThroughProps;
+	icon?: ClIconProps;
+	collapse?: PassThroughProps;
 };
 ```
 
@@ -59,15 +59,15 @@ type ClListItemPassThrough = {
 
 样式透传配置对象，用于深度自定义组件内部元素的样式。
 
-| 参数      | 说明                  | 类型                                                        |
-| --------- | --------------------- | ----------------------------------------------------------- |
-| className | 组件根元素的 CSS 类名 | string                                                      |
-| inner     | 内部容器样式配置      | [PassThroughProps](/src/components/doc.md#passthroughprops) |
-| label     | 标签文本样式配置      | [PassThroughProps](/src/components/doc.md#passthroughprops) |
-| content   | 内容区域样式配置      | [PassThroughProps](/src/components/doc.md#passthroughprops) |
-| icon      | 图标样式配置          | [ClIconProps](/src/components/basic/icon.md#passthrough)    |
-| image     | 图片样式配置          | [ClImageProps](/src/components/basic/image.md#passthrough)  |
-| collapse  | 折叠内容样式配置      | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| 参数      | 说明                  | 类型                                                          |
+| --------- | --------------------- | ------------------------------------------------------------- |
+| className | 组件根元素的 CSS 类名 | string                                                        |
+| inner     | 内部容器样式配置      | [PassThroughProps](/src/components/doc.md#passthroughprops)   |
+| label     | 标签文本样式配置      | [ClTextProps](/src/components/basic/text.md#passthroughprops) |
+| content   | 内容区域样式配置      | [PassThroughProps](/src/components/doc.md#passthroughprops)   |
+| icon      | 图标样式配置          | [ClIconProps](/src/components/basic/icon.md#passthrough)      |
+| image     | 图片样式配置          | [ClImageProps](/src/components/basic/image.md#passthrough)    |
+| collapse  | 折叠内容样式配置      | [PassThroughProps](/src/components/doc.md#passthroughprops)   |
 
 ## 插槽
 
@@ -85,7 +85,7 @@ type ClListItemPassThrough = {
 
 ```html
 <cl-list-item label="用户名">
-  <cl-text>神仙都没用</cl-text>
+	<cl-text>神仙都没用</cl-text>
 </cl-list-item>
 ```
 
@@ -95,7 +95,7 @@ type ClListItemPassThrough = {
 
 ```html
 <cl-list-item label="QQ" justify="start">
-  <cl-text>615206459</cl-text>
+	<cl-text>615206459</cl-text>
 </cl-list-item>
 ```
 
@@ -105,7 +105,7 @@ type ClListItemPassThrough = {
 
 ```html
 <cl-list-item label="年龄" arrow>
-  <cl-text>18</cl-text>
+	<cl-text>18</cl-text>
 </cl-list-item>
 ```
 
@@ -125,15 +125,15 @@ type ClListItemPassThrough = {
 
 ```vue
 <cl-list-item
-  arrow
-  :pt="{
-    image: {
-      width: 48,
-      height: 48,
-    },
-  }"
-  label="神仙都没用"
-  image="https://unix.cool-js.com/images/demo/avatar.jpg"
+	arrow
+	:pt="{
+		image: {
+			width: 48,
+			height: 48
+		}
+	}"
+	label="神仙都没用"
+	image="https://unix.cool-js.com/images/demo/avatar.jpg"
 >
 </cl-list-item>
 ```
@@ -144,13 +144,11 @@ type ClListItemPassThrough = {
 
 ```html
 <cl-list-item label="点击展开" collapse arrow>
-  <template #collapse>
-    <view class="bg-surface-100 dark:bg-surface-700 p-3 rounded-xl">
-      <cl-text>
-        云想衣裳花想容，春风拂槛露华浓。若非群玉山头见，会向瑶台月下逢。
-      </cl-text>
-    </view>
-  </template>
+	<template #collapse>
+		<view class="bg-surface-100 dark:bg-surface-700 p-3 rounded-xl">
+			<cl-text> 云想衣裳花想容，春风拂槛露华浓。若非群玉山头见，会向瑶台月下逢。 </cl-text>
+		</view>
+	</template>
 </cl-list-item>
 ```
 
@@ -161,25 +159,23 @@ type ClListItemPassThrough = {
 ```html
 <!-- 左滑显示编辑按钮 -->
 <cl-list-item label="左滑编辑" swipeable>
-  <template #swipe-right>
-    <view
-      class="bg-green-500 w-20 h-full flex flex-row items-center justify-center"
-    >
-      <text class="text-white text-md">编辑</text>
-    </view>
-  </template>
+	<template #swipe-right>
+		<view class="bg-green-500 w-20 h-full flex flex-row items-center justify-center">
+			<cl-text color="white">{{ t("编辑") }}</cl-text>
+		</view>
+	</template>
 </cl-list-item>
 
 <!-- 右滑显示删除按钮 -->
 <cl-list-item ref="listItemRef" label="右滑删除" swipeable>
-  <template #swipe-left>
-    <view
-      class="bg-red-500 w-20 h-full flex flex-row items-center justify-center"
-      @tap="onDelete"
-    >
-      <text class="text-white text-md">删除</text>
-    </view>
-  </template>
+	<template #swipe-left>
+		<view
+			class="bg-red-500 w-20 h-full flex flex-row items-center justify-center"
+			@tap="onDelete"
+		>
+			<cl-text color="white">{{ t("删除") }}</cl-text>
+		</view>
+	</template>
 </cl-list-item>
 ```
 
@@ -189,9 +185,9 @@ type ClListItemPassThrough = {
 
 ```html
 <cl-list border title="功能">
-  <cl-list-item label="我的订单" hoverable></cl-list-item>
-  <cl-list-item label="我的收藏" hoverable></cl-list-item>
-  <cl-list-item label="我的钱包" hoverable></cl-list-item>
+	<cl-list-item label="我的订单" hoverable></cl-list-item>
+	<cl-list-item label="我的收藏" hoverable></cl-list-item>
+	<cl-list-item label="我的钱包" hoverable></cl-list-item>
 </cl-list>
 ```
 
@@ -203,20 +199,20 @@ type ClListItemPassThrough = {
 <cl-list border title="功能" :list="list"></cl-list>
 
 <script lang="ts" setup>
-  import { ref } from "vue";
-  import { type ClListItem } from "@/uni_modules/cool-ui";
+	import { ref } from "vue";
+	import { type ClListItem } from "@/uni_modules/cool-ui";
 
-  const list = ref<ClListItem[]>([
-    {
-      label: "我的订单",
-    },
-    {
-      label: "我的收藏",
-    },
-    {
-      label: "我的钱包",
-      content: "10,000.00",
-    },
-  ]);
+	const list = ref<ClListItem[]>([
+		{
+			label: "我的订单"
+		},
+		{
+			label: "我的收藏"
+		},
+		{
+			label: "我的钱包",
+			content: "10,000.00"
+		}
+	]);
 </script>
 ```

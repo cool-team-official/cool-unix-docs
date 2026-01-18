@@ -4,18 +4,18 @@
 
 ## 参数
 
-| 参数       | 说明               | 类型                        | 可选值 | 默认值 |
-| ---------- | ------------------ | --------------------------- | ------ | ------ |
-| pt         | 样式穿透配置       | [PassThrough](#passthrough) | -      | -      |
-| modelValue | 绑定的当前值       | number                      | -      | 0      |
-| values     | 绑定的范围值       | number[]                    | -      | []     |
-| max        | 可选择的最大值     | number                      | -      | 100    |
-| min        | 可选择的最小值     | number                      | -      | 0      |
-| step       | 滑动步长           | number                      | -      | 1      |
-| disabled   | 是否禁用滑块       | boolean                     | -      | false  |
-| blockSize  | 滑块手柄大小（px） | number                      | -      | 20     |
-| showValue  | 是否显示当前值     | boolean                     | -      | false  |
-| range      | 是否启用范围选择   | boolean                     | -      | false  |
+| 参数       | 说明             | 类型                        | 可选值 | 默认值 |
+| ---------- | ---------------- | --------------------------- | ------ | ------ |
+| pt         | 样式穿透配置     | [PassThrough](#passthrough) | -      | -      |
+| modelValue | 绑定的当前值     | number                      | -      | 0      |
+| values     | 绑定的范围值     | number[]                    | -      | []     |
+| max        | 可选择的最大值   | number                      | -      | 100    |
+| min        | 可选择的最小值   | number                      | -      | 0      |
+| step       | 滑动步长         | number                      | -      | 1      |
+| disabled   | 是否禁用滑块     | boolean                     | -      | false  |
+| blockSize  | 滑块手柄大小(px) | number                      | -      | 20     |
+| showValue  | 是否显示当前值   | boolean                     | -      | false  |
+| range      | 是否启用范围选择 | boolean                     | -      | false  |
 
 ## 事件
 
@@ -66,10 +66,10 @@
 
 ### 自定义范围
 
-设置滑块的最大值为 50
+设置滑块的最大值为 30
 
 ```html
-<cl-slider :max="50"></cl-slider>
+<cl-slider :max="30"></cl-slider>
 ```
 
 ### 禁用状态

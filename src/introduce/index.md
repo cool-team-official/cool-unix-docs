@@ -17,11 +17,10 @@
 
 仓库地址：
 
-| 平台        | 仓库地址                                                                        |
-| ----------- | ------------------------------------------------------------------------------- |
-| **GitHub**  | [cool-team-official/cool-unix](https://github.com/cool-team-official/cool-unix) |
-| **Gitee**   | [cool-team-official/cool-unix](https://gitee.com/cool-team-official/cool-unix)  |
-| **GitCode** | [cool_team/cool-unix](https://gitcode.com/cool_team/cool-unix)                  |
+| 平台       | 仓库地址                                                                        |
+| ---------- | ------------------------------------------------------------------------------- |
+| **GitHub** | [cool-team-official/cool-unix](https://github.com/cool-team-official/cool-unix) |
+| **Gitee**  | [cool-team-official/cool-unix](https://gitee.com/cool-team-official/cool-unix)  |
 
 加入我们：
 

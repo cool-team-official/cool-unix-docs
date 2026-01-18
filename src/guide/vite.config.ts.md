@@ -14,7 +14,7 @@ Cool Unix 基于 [Vite](https://cn.vitejs.dev/) 构建工具，提供快速的�
 
 ```ts
 import { defineConfig } from "vite";
-import { cool } from "@cool-vue/vite-plugin";
+import { cool } from "@cool-vue/unix";
 import { proxy } from "./config/proxy";
 import tailwindcss from "tailwindcss";
 import { join } from "node:path";
@@ -25,53 +25,38 @@ const resolve = (dir: string) => join(__dirname, dir);
 
 // 代理配置预处理
 for (const i in proxy) {
-  proxy[`/${i}/`] = proxy[i];
+	proxy[`/${i}/`] = proxy[i];
 }
 
 export default defineConfig({
-  // 🔌 插件配置
-  plugins: [
-    // uni-app x 核心插件
-    uni(),
+	// 🔌 插件配置
+	plugins: [
+		// uni-app x 核心插件
+		uni(),
 
-    // Cool 框架插件
-    cool({
-      type: "uniapp-x", // 项目类型
-      proxy, // API 代理配置
-      tailwind: {
-        enable: true, // 启用 Tailwind CSS
-      },
-      eps: {
-        dist: ".cool", // EPS 输出目录
-      },
-    }),
-  ],
+		// Cool 框架插件
+		cool({
+			proxy // API 代理配置
+		})
+	],
 
-  // 🌐 开发服务器配置
-  server: {
-    port: 9900, // 开发服务器端口
-    proxy, // API 代理设置
-  },
+	// 🌐 开发服务器配置
+	server: {
+		port: 9900, // 开发服务器端口
+		proxy // API 代理设置
+	},
 
-  // 🎨 CSS 处理配置
-  css: {
-    postcss: {
-      plugins: [
-        // Tailwind CSS 处理
-        tailwindcss({
-          config: resolve("./tailwind.config.ts"),
-        }),
-      ],
-    },
-  },
-
-  // 📁 路径别名配置
-  resolve: {
-    alias: {
-      "@": resolve("./"), // 项目根目录
-      $: resolve("./uni_modules/"), // uni_modules 目录
-    },
-  },
+	// 🎨 CSS 处理配置
+	css: {
+		postcss: {
+			plugins: [
+				// Tailwind CSS 处理
+				tailwindcss({
+					config: resolve("./tailwind.config.ts")
+				})
+			]
+		}
+	}
 });
 ```
 

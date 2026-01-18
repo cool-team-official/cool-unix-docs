@@ -18,6 +18,7 @@
 - cl-switch（开关）
 - cl-upload（上传）
 - cl-slider（滑块）
+- cl-calendar（日历）
 
 :::
 
@@ -25,17 +26,17 @@
 
 ### 参数
 
-| 参数          | 说明                 | 类型                         | 可选值                     | 默认值   |
-| ------------- | -------------------- | ---------------------------- | -------------------------- | -------- |
-| pt            | 样式穿透配置         | [PassThrough](#passthrough)  | —                          | —        |
-| modelValue    | 表单数据模型         | any                          | —                          | {}       |
-| rules         | 表单规则             | Map<string, ClFormRule[]>    | —                          | []       |
-| labelPosition | 标签位置             | [ClFormLabelPosition](#类型) | 'top' \| 'left' \| 'right' | 'top'    |
-| labelWidth    | 标签宽度             | string                       | —                          | '120rpx' |
-| showAsterisk  | 是否显示必填星号     | boolean                      | —                          | true     |
-| showMessage   | 是否显示错误信息     | boolean                      | —                          | true     |
-| disabled      | 是否禁用整个表单     | boolean                      | —                          | false    |
-| scrollToError | 滚动到第一个错误位置 | boolean                      | —                          | true     |
+| 参数          | 说明                 | 类型                         | 可选值                     | 默认值 |
+| ------------- | -------------------- | ---------------------------- | -------------------------- | ------ |
+| pt            | 样式穿透配置         | [PassThrough](#passthrough)  | —                          | —      |
+| modelValue    | 表单数据模型         | any                          | —                          | {}     |
+| rules         | 表单规则             | Map<string, ClFormRule[]>    | —                          | []     |
+| labelPosition | 标签位置             | [ClFormLabelPosition](#类型) | 'top' \| 'left' \| 'right' | 'top'  |
+| labelWidth    | 标签宽度(px)         | number                       | —                          | '70px' |
+| showAsterisk  | 是否显示必填星号     | boolean                      | —                          | true   |
+| showMessage   | 是否显示错误信息     | boolean                      | —                          | true   |
+| disabled      | 是否禁用整个表单     | boolean                      | —                          | false  |
+| scrollToError | 滚动到第一个错误位置 | boolean                      | —                          | true   |
 
 ### 插槽
 
@@ -273,70 +274,68 @@ const rules = new Map<string, ClFormRule[]>([
 
 ```vue
 <template>
-  <cl-form-item :label="t('动态验证')" required prop="contacts">
-    <view
-      class="contacts border border-solid border-surface-200 rounded-xl p-3 dark:!border-surface-700"
-    >
-      <cl-form-item
-        v-for="(item, index) in formData.contacts"
-        :key="index"
-        :label="t('联系人') + ` - ${index + 1}`"
-        :prop="`contacts[${index}].phone`"
-        :rules="
-          [
-            {
-              required: true,
-              message: t('手机号不能为空')
-            }
-          ] as ClFormRule[]
-        "
-        required
-      >
-        <view class="flex flex-row items-center">
-          <cl-input
-            :pt="{
-              className: 'flex-1 mr-2',
-            }"
-            v-model="item.phone"
-            :placeholder="t('请输入手机号')"
-          ></cl-input>
+	<cl-form-item :label="t('动态验证')" required prop="contacts">
+		<view
+			class="contacts border border-solid border-surface-200 rounded-xl p-3 dark:!border-surface-700"
+		>
+			<cl-form-item
+				v-for="(item, index) in formData.contacts"
+				:key="index"
+				:label="t('联系人') + ` - ${index + 1}`"
+				:prop="`contacts[${index}].phone`"
+				:rules="
+					[
+						{
+							required: true,
+							message: t('手机号不能为空')
+						}
+					] as ClFormRule[]
+				"
+				required
+			>
+				<view class="flex flex-row items-center">
+					<cl-input
+						:pt="{
+							className: 'flex-1 mr-2'
+						}"
+						v-model="item.phone"
+						:placeholder="t('请输入手机号')"
+					></cl-input>
 
-          <cl-button
-            type="light"
-            icon="subtract-line"
-            @tap="removeContact(index)"
-          ></cl-button>
-        </view>
-      </cl-form-item>
+					<cl-button
+						type="light"
+						icon="subtract-line"
+						@tap="removeContact(index)"
+					></cl-button>
+				</view>
+			</cl-form-item>
 
-      <cl-button icon="add-line" @tap="addContact">{{
-        t("添加联系人")
-      }}</cl-button>
-    </view>
-  </cl-form-item>
+			<cl-button icon="add-line" @tap="addContact">{{ t("添加联系人") }}</cl-button>
+		</view>
+	</cl-form-item>
 </template>
 
 <script lang="ts" setup>
 type FormData = {
-  // ...
-  contacts: Contact[];
+	// ...
+	contacts: Contact[];
 };
 
 const formData = ref<FormData>({
-  // ...
-  contacts: [],
+	// ...
+	contacts: []
 }) as Ref<FormData>;
 
 // 添加一个联系人
 function addContact() {
-  formData.value.contacts.push({
-    phone: "",
-  });
+	formData.value.contacts.push({
+		phone: ""
+	});
 }
 
 // 移除联系人
 function removeContact(index: number) {
-  formData.value.contacts.splice(index, 1);
+	formData.value.contacts.splice(index, 1);
 }
 </script>
 ```
@@ -348,28 +347,28 @@ function removeContact(index: number) {
 ```ts
 // 表单规则类型
 type ClFormRule = {
-  // 是否必填
-  required?: boolean;
-  // 错误信息
-  message?: string;
-  // 最小长度
-  min?: number;
-  // 最大长度
-  max?: number;
-  // 正则验证
-  pattern?: RegExp;
-  // 自定义验证函数
-  validator?: (value: any | null) => boolean | string;
+	// 是否必填
+	required?: boolean;
+	// 错误信息
+	message?: string;
+	// 最小长度
+	min?: number;
+	// 最大长度
+	max?: number;
+	// 正则验证
+	pattern?: RegExp;
+	// 自定义验证函数
+	validator?: (value: any | null) => boolean | string;
 };
 
 type ClFormValidateError = {
-  field: string;
-  message: string;
+	field: string;
+	message: string;
 };
 
 type ClFormValidateResult = {
-  valid: boolean;
-  errors: ClFormValidateError[];
+	valid: boolean;
+	errors: ClFormValidateError[];
 };
 
 type ClFormLabelPosition = "left" | "top" | "right";
@@ -384,19 +383,15 @@ type ClFormLabelPosition = "left" | "top" | "right";
 
 ```vue
 <template>
-  <cl-form v-model="formData">
-    <cl-form-item prop="avatarUrl">
-      <cl-upload v-model="formData.avatarUrl" test></cl-upload>
-    </cl-form-item>
+	<cl-form v-model="formData">
+		<cl-form-item prop="avatarUrl">
+			<cl-upload v-model="formData.avatarUrl" test></cl-upload>
+		</cl-form-item>
 
-    <cl-form-item label="用户名" prop="nickName">
-      <cl-input
-        v-model="formData.nickName"
-        placeholder="请输入用户名"
-        clearable
-      ></cl-input>
-    </cl-form-item>
-  </cl-form>
+		<cl-form-item label="用户名" prop="nickName">
+			<cl-input v-model="formData.nickName" placeholder="请输入用户名" clearable></cl-input>
+		</cl-form-item>
+	</cl-form>
 </template>
 
 <script setup lang="ts">
@@ -404,14 +399,14 @@ import { ref, type Ref } from "vue";
 
 // 自定义表单数据类型
 type FormData = {
-  avatarUrl: string;
-  nickName: string;
+	avatarUrl: string;
+	nickName: string;
 };
 
 // 表单数据
 const formData = ref<FormData>({
-  avatarUrl: "",
-  nickName: "神仙都没用",
+	avatarUrl: "",
+	nickName: "神仙都没用"
 }) as Ref<FormData>;
 </script>
 ```
@@ -425,19 +420,15 @@ const formData = ref<FormData>({
 
 ```vue
 <template>
-  <cl-form v-model="formData" :rules="rules">
-    <cl-form-item prop="avatarUrl">
-      <cl-upload v-model="formData.avatarUrl" test></cl-upload>
-    </cl-form-item>
+	<cl-form v-model="formData" :rules="rules">
+		<cl-form-item prop="avatarUrl">
+			<cl-upload v-model="formData.avatarUrl" test></cl-upload>
+		</cl-form-item>
 
-    <cl-form-item label="用户名" prop="nickName" required>
-      <cl-input
-        v-model="formData.nickName"
-        placeholder="请输入用户名"
-        clearable
-      ></cl-input>
-    </cl-form-item>
-  </cl-form>
+		<cl-form-item label="用户名" prop="nickName" required>
+			<cl-input v-model="formData.nickName" placeholder="请输入用户名" clearable></cl-input>
+		</cl-form-item>
+	</cl-form>
 </template>
 
 <script setup lang="ts">
@@ -446,27 +437,27 @@ import { type ClFormRule } from "@/uni_modules/cool-ui";
 
 // 自定义表单数据类型
 type FormData = {
-  avatarUrl: string;
-  nickName: string;
+	avatarUrl: string;
+	nickName: string;
 };
 
 // 表单数据
 const formData = ref<FormData>({
-  avatarUrl: "",
-  nickName: "神仙都没用",
+	avatarUrl: "",
+	nickName: "神仙都没用"
 }) as Ref<FormData>;
 
 // ------ 以下为新增内容 ------
 
 // 表单验证规则
 const rules = new Map<string, ClFormRule[]>([
-  [
-    "nickName",
-    [
-      { required: true, message: t("用户名不能为空") },
-      { min: 3, max: 20, message: t("用户名长度在3-20个字符之间") },
-    ],
-  ],
+	[
+		"nickName",
+		[
+			{ required: true, message: t("用户名不能为空") },
+			{ min: 3, max: 20, message: t("用户名长度在3-20个字符之间") }
+		]
+	]
 ]);
 </script>
 ```
@@ -482,19 +473,15 @@ const rules = new Map<string, ClFormRule[]>([
 
 ```vue
 <template>
-  <cl-form ref="formRef" v-model="formData" :rules="rules">
-    <cl-form-item prop="avatarUrl">
-      <cl-upload v-model="formData.avatarUrl" test></cl-upload>
-    </cl-form-item>
+	<cl-form ref="formRef" v-model="formData" :rules="rules">
+		<cl-form-item prop="avatarUrl">
+			<cl-upload v-model="formData.avatarUrl" test></cl-upload>
+		</cl-form-item>
 
-    <cl-form-item label="用户名" prop="nickName" required>
-      <cl-input
-        v-model="formData.nickName"
-        placeholder="请输入用户名"
-        clearable
-      ></cl-input>
-    </cl-form-item>
-  </cl-form>
+		<cl-form-item label="用户名" prop="nickName" required>
+			<cl-input v-model="formData.nickName" placeholder="请输入用户名" clearable></cl-input>
+		</cl-form-item>
+	</cl-form>
 </template>
 
 <script setup lang="ts">
@@ -503,27 +490,27 @@ import { type ClFormRule, useForm } from "@/uni_modules/cool-ui";
 
 // 自定义表单数据类型
 type FormData = {
-  avatarUrl: string;
-  nickName: string;
+	avatarUrl: string;
+	nickName: string;
 };
 
 // 表单数据
 const formData = ref<FormData>({
-  avatarUrl: "",
-  nickName: "神仙都没用",
+	avatarUrl: "",
+	nickName: "神仙都没用"
 }) as Ref<FormData>;
 
 // ------ 以下为新增内容 ------
 
 // 表单验证规则
 const rules = new Map<string, ClFormRule[]>([
-  [
-    "nickName",
-    [
-      { required: true, message: t("用户名不能为空") },
-      { min: 3, max: 20, message: t("用户名长度在3-20个字符之间") },
-    ],
-  ],
+	[
+		"nickName",
+		[
+			{ required: true, message: t("用户名不能为空") },
+			{ min: 3, max: 20, message: t("用户名长度在3-20个字符之间") }
+		]
+	]
 ]);
 
 // 获取 cl-form 的组件实例
@@ -531,22 +518,22 @@ const { formRef, validate, clearValidate } = useForm();
 
 // 重置表单数据
 function reset() {
-  formData.value.avatarUrl = "";
-  formData.value.nickName = "";
+	formData.value.avatarUrl = "";
+	formData.value.nickName = "";
 
-  // 清空验证
-  clearValidate();
+	// 清空验证
+	clearValidate();
 }
 
 // 提交表单，调用表单验证方法 validate
 function submit() {
-  validate((valid, errors) => {
-    if (valid) {
-      // 验证通过
-    } else {
-      // 验证不通过，可以提示错误信息 errors
-    }
-  });
+	validate((valid, errors) => {
+		if (valid) {
+			// 验证通过
+		} else {
+			// 验证不通过，可以提示错误信息 errors
+		}
+	});
 }
 </script>
 ```

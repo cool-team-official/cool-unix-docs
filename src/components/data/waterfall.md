@@ -8,7 +8,7 @@
 | ------- | ---------------------- | --------------------------- | ------ | ------ |
 | pt      | 样式透传配置           | [PassThrough](#passthrough) | -      | -      |
 | column  | 瀑布流列数             | number                      | -      | 2      |
-| gutter  | 列间距，单位为 rpx     | number                      | -      | 12     |
+| gutter  | 列间距(px)             | number                      | -      | 8      |
 | nodeKey | 数据项的唯一标识字段名 | string                      | -      | "id"   |
 
 ### PassThrough
@@ -35,10 +35,10 @@
 
 ### 自定义间距
 
-使用 `gutter` 参数设置列之间的间距，单位为 rpx。
+使用 `gutter` 参数设置列之间的间距。
 
 ```html
-<cl-waterfall :column="2" :gutter="20"></cl-waterfall>
+<cl-waterfall :column="2" :gutter="12"></cl-waterfall>
 ```
 
 ## 内容渲染
@@ -48,12 +48,12 @@
 使用 `#item` 插槽来定义每个瀑布流项目的内容，组件会自动计算每个项目的高度并进行布局。
 
 ```html
-<cl-waterfall :column="2" :gutter="16">
-  <template #item="{ item, index }">
-    <image :src="item.image" mode="widthFix" class="w-full rounded-xl"></image>
+<cl-waterfall :column="2">
+	<template #item="{ item, index }">
+		<image :src="item.image" mode="widthFix" class="w-full rounded-xl"></image>
 
-    <cl-text class="mt-2">{{ item.title }}</cl-text>
-  </template>
+		<cl-text class="mt-2">{{ item.title }}</cl-text>
+	</template>
 </cl-waterfall>
 ```
 
@@ -72,18 +72,18 @@
 const waterfallRef = ref<ClWaterfallComponentPublicInstance | null>(null);
 
 // 追加单个数据项
-waterfallRef.value?.append([
-  {
-    id: 1,
-    title: "夕阳西下的海滩边，金色阳光温柔地洒在波光粼粼的海面上",
-    image: "/static/demo/2.jpg",
-  },
+waterfallRef.value!.append([
+	{
+		id: 1,
+		title: "夕阳西下的海滩边，金色阳光温柔地洒在波光粼粼的海面上",
+		image: "/static/demo/2.jpg"
+	}
 ]);
 
 // 追加多个数据项
-waterfallRef.value?.append([
-  { id: 2, title: "标题2", image: "/static/demo/3.jpg" },
-  { id: 3, title: "标题3", image: "/static/demo/4.jpg" },
+waterfallRef.value!.append([
+	{ id: 2, title: "标题2", image: "/static/demo/3.jpg" },
+	{ id: 3, title: "标题3", image: "/static/demo/4.jpg" }
 ]);
 ```
 
@@ -95,9 +95,9 @@ waterfallRef.value?.append([
 const waterfallRef = ref<ClWaterfallComponentPublicInstance | null>(null);
 
 // 更新 id 为 1 的数据项
-waterfallRef.value?.update(1, {
-  title: "更新后的标题",
-  likeCount: 999,
+waterfallRef.value!.update(1, {
+	title: "更新后的标题",
+	likeCount: 999
 });
 ```
 
@@ -109,7 +109,7 @@ waterfallRef.value?.update(1, {
 const waterfallRef = ref<ClWaterfallComponentPublicInstance | null>(null);
 
 // 移除 id 为 1 的数据项
-waterfallRef.value?.remove(1);
+waterfallRef.value!.remove(1);
 ```
 
 ### 清空数据
@@ -120,7 +120,7 @@ waterfallRef.value?.remove(1);
 const waterfallRef = ref<ClWaterfallComponentPublicInstance | null>(null);
 
 // 清空所有数据
-waterfallRef.value?.clear();
+waterfallRef.value!.clear();
 ```
 
 ## 完整示例
@@ -129,163 +129,150 @@ waterfallRef.value?.clear();
 
 ```html
 <template>
-  <cl-page back-top>
-    <view class="py-2">
-      <cl-waterfall ref="waterfallRef" :column="2" :gutter="16">
-        <template #item="{ item, index }">
-          <view class="bg-white mb-3 rounded-xl dark:!bg-gray-800 relative">
-            <!-- 图片展示 -->
-            <image
-              :src="item.image"
-              mode="widthFix"
-              class="w-full rounded-xl"
-            ></image>
+	<cl-page back-top>
+		<view class="py-2">
+			<cl-waterfall ref="waterfallRef" :column="2">
+				<template #item="{ item, index }">
+					<view class="bg-white mb-3 rounded-xl dark:!bg-gray-800 relative">
+						<!-- 图片展示 -->
+						<image :src="item.image" mode="widthFix" class="w-full rounded-xl"></image>
 
-            <!-- 广告标识 -->
-            <template v-if="item.isAd">
-              <cl-tag :pt="{ className: 'absolute left-1 top-1 scale-75' }">
-                广告
-              </cl-tag>
-              <cl-icon
-                color="white"
-                name="close-line"
-                :pt="{ className: 'absolute right-2 top-2' }"
-                @tap="del(item.id as number)"
-              ></cl-icon>
-            </template>
+						<!-- 广告标识 -->
+						<template v-if="item.isAd">
+							<cl-tag :pt="{ className: 'absolute left-1 top-1 scale-75' }">
+								广告
+							</cl-tag>
+							<cl-icon
+								color="white"
+								name="close-line"
+								:pt="{ className: 'absolute right-2 top-2' }"
+								@tap="del(item.id as number)"
+							></cl-icon>
+						</template>
 
-            <!-- 内容区域 -->
-            <view class="p-3" v-else>
-              <cl-text>{{ item.title }}</cl-text>
+						<!-- 内容区域 -->
+						<view class="p-3" v-else>
+							<cl-text>{{ item.title }}</cl-text>
 
-              <!-- 点赞区域 -->
-              <cl-row
-                class="mt-2"
-                :pt="{ className: 'justify-end items-center' }"
-              >
-                <cl-icon name="heart-line"></cl-icon>
-                <cl-text :pt="{ className: '!text-sm ml-1' }">
-                  {{ item.likeCount }}
-                </cl-text>
-              </cl-row>
-            </view>
-          </view>
-        </template>
-      </cl-waterfall>
+							<!-- 点赞区域 -->
+							<cl-row class="mt-2" :pt="{ className: 'justify-end items-center' }">
+								<cl-icon name="heart-line"></cl-icon>
+								<cl-text :pt="{ className: '!text-sm ml-1' }">
+									{{ item.likeCount }}
+								</cl-text>
+							</cl-row>
+						</view>
+					</view>
+				</template>
+			</cl-waterfall>
 
-      <!-- 加载更多指示器 -->
-      <cl-loadmore :loading="loading"></cl-loadmore>
-    </view>
-  </cl-page>
+			<!-- 加载更多指示器 -->
+			<cl-loadmore :loading="loading"></cl-loadmore>
+		</view>
+	</cl-page>
 </template>
 
 <script lang="ts" setup>
-  import { random } from "@/cool";
-  import { onMounted, ref } from "vue";
+	import { random } from "@/.cool";
+	import { onMounted, ref } from "vue";
 
-  const waterfallRef = ref<ClWaterfallComponentPublicInstance | null>(null);
-  const loading = ref(false);
+	const waterfallRef = ref<ClWaterfallComponentPublicInstance | null>(null);
+	const loading = ref(false);
 
-  let id = 0;
+	let id = 0;
 
-  // 生成模拟数据
-  function generateMockData() {
-    return [
-      {
-        id: id++,
-        likeCount: random(100, 1000),
-        title: "春日樱花盛开时节，粉色花瓣如诗如画般飘洒",
-        image: "/static/demo/1.jpg",
-      },
-      {
-        id: id++,
-        likeCount: random(100, 1000),
-        title:
-          "夕阳西下的海滩边，金色阳光温柔地洒在波光粼粼的海面上，构成令人心旷神怡的日落美景",
-        image: "/static/demo/2.jpg",
-      },
-      {
-        id: id++,
-        likeCount: random(100, 1000),
-        title:
-          "寒冬腊月时分，洁白雪花纷纷扬扬地覆盖着整个世界，感受冬日的宁静与美好",
-        image: "/static/demo/3.jpg",
-      },
-      {
-        id: id++,
-        image: "/static/demo/4.jpg",
-        isAd: true,
-      },
-      {
-        id: id++,
-        likeCount: random(100, 1000),
-        title: "都市夜景霓虹闪烁，五彩斑斓光芒照亮城市营造梦幻般景象",
-        image: "/static/demo/5.jpg",
-      },
-      {
-        id: id++,
-        likeCount: random(100, 1000),
-        title:
-          "云雾缭绕的山间风光如诗如画让人心旷神怡，微风轻抚树梢带来阵阵清香，鸟儿在林间自由歌唱",
-        image: "/static/demo/6.jpg",
-      },
-      {
-        id: id++,
-        likeCount: random(100, 1000),
-        title:
-          "古老建筑与现代摩天大楼交相辉映，传统与现代完美融合创造独特城市景观",
-        image: "/static/demo/7.jpg",
-      },
-      {
-        id: id++,
-        likeCount: random(100, 1000),
-        title:
-          "广袤田野绿意盎然风光无限，金黄麦浪在微风中轻柔摇曳，农家炊烟袅袅升起",
-        image: "/static/demo/8.jpg",
-      },
-      {
-        id: id++,
-        likeCount: random(100, 1000),
-        title: "璀璨星空下银河横跨天际，繁星闪烁神秘光芒营造浪漫夜空美景",
-        image: "/static/demo/9.jpg",
-      },
-      {
-        id: id++,
-        likeCount: random(100, 1000),
-        title:
-          "雄伟瀑布从高耸悬崖飞流直下激起千层浪花，彩虹在水雾中若隐若现如梦如幻",
-        image: "/static/demo/10.jpg",
-      },
-    ];
-  }
+	// 生成模拟数据
+	function generateMockData() {
+		return [
+			{
+				id: id++,
+				likeCount: random(100, 1000),
+				title: "春日樱花盛开时节，粉色花瓣如诗如画般飘洒",
+				image: "/static/demo/1.jpg"
+			},
+			{
+				id: id++,
+				likeCount: random(100, 1000),
+				title: "夕阳西下的海滩边，金色阳光温柔地洒在波光粼粼的海面上，构成令人心旷神怡的日落美景",
+				image: "/static/demo/2.jpg"
+			},
+			{
+				id: id++,
+				likeCount: random(100, 1000),
+				title: "寒冬腊月时分，洁白雪花纷纷扬扬地覆盖着整个世界，感受冬日的宁静与美好",
+				image: "/static/demo/3.jpg"
+			},
+			{
+				id: id++,
+				image: "/static/demo/4.jpg",
+				isAd: true
+			},
+			{
+				id: id++,
+				likeCount: random(100, 1000),
+				title: "都市夜景霓虹闪烁，五彩斑斓光芒照亮城市营造梦幻般景象",
+				image: "/static/demo/5.jpg"
+			},
+			{
+				id: id++,
+				likeCount: random(100, 1000),
+				title: "云雾缭绕的山间风光如诗如画让人心旷神怡，微风轻抚树梢带来阵阵清香，鸟儿在林间自由歌唱",
+				image: "/static/demo/6.jpg"
+			},
+			{
+				id: id++,
+				likeCount: random(100, 1000),
+				title: "古老建筑与现代摩天大楼交相辉映，传统与现代完美融合创造独特城市景观",
+				image: "/static/demo/7.jpg"
+			},
+			{
+				id: id++,
+				likeCount: random(100, 1000),
+				title: "广袤田野绿意盎然风光无限，金黄麦浪在微风中轻柔摇曳，农家炊烟袅袅升起",
+				image: "/static/demo/8.jpg"
+			},
+			{
+				id: id++,
+				likeCount: random(100, 1000),
+				title: "璀璨星空下银河横跨天际，繁星闪烁神秘光芒营造浪漫夜空美景",
+				image: "/static/demo/9.jpg"
+			},
+			{
+				id: id++,
+				likeCount: random(100, 1000),
+				title: "雄伟瀑布从高耸悬崖飞流直下激起千层浪花，彩虹在水雾中若隐若现如梦如幻",
+				image: "/static/demo/10.jpg"
+			}
+		];
+	}
 
-  // 刷新数据
-  function refresh() {
-    const items = generateMockData();
-    waterfallRef.value?.append(items);
-  }
+	// 刷新数据
+	function refresh() {
+		const items = generateMockData();
+		waterfallRef.value!.append(items);
+	}
 
-  // 删除指定项目
-  function del(id: number) {
-    waterfallRef.value?.remove(id);
-  }
+	// 删除指定项目
+	function del(id: number) {
+		waterfallRef.value!.remove(id);
+	}
 
-  // 触底加载更多
-  onReachBottom(() => {
-    if (loading.value) return;
+	// 触底加载更多
+	onReachBottom(() => {
+		if (loading.value) return;
 
-    loading.value = true;
+		loading.value = true;
 
-    setTimeout(() => {
-      refresh();
-      loading.value = false;
-    }, 1000);
-  });
+		setTimeout(() => {
+			refresh();
+			loading.value = false;
+		}, 1000);
+	});
 
-  // 初始化数据
-  onMounted(() => {
-    refresh();
-  });
+	// 初始化数据
+	onMounted(() => {
+		refresh();
+	});
 </script>
 ```
 
@@ -300,9 +287,9 @@ waterfallRef.value?.clear();
 
 ```ts
 interface ClWaterfallComponentPublicInstance {
-  append(items: any[]): void;
-  update(id: any, data: Partial<any>): void;
-  remove(id: any): void;
-  clear(): void;
+	append(items: any[]): void;
+	update(id: any, data: Partial<any>): void;
+	remove(id: any): void;
+	clear(): void;
 }
 ```

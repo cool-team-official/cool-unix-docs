@@ -1,12 +1,14 @@
 # Loading 加载中
 
+加载动画用于在数据请求或操作处理中，为用户提供当前正在进行中的提示，提升用户体验。
+
 ## 参数
 
 | 参数    | 说明         | 类型                        | 可选值 | 默认值 |
 | ------- | ------------ | --------------------------- | ------ | ------ |
 | pt      | 样式穿透配置 | [PassThrough](#passthrough) |        |        |
 | loading | 是否加载中   | boolean                     |        | true   |
-| size    | 图标大小     | string \| number            |        | 24     |
+| size    | 图标大小(px) | number                      |        | 24     |
 | color   | 图标颜色     | string                      |        |        |
 
 ## PassThrough

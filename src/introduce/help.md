@@ -29,7 +29,7 @@
 ```ts
 // ❌ 错误写法：箭头函数可选参数
 const getName = (age?: number) => {
-  console.log(age);
+	console.log(age);
 };
 
 getName(10); // ✅ 成功
@@ -37,7 +37,7 @@ getName(); // ❌ 报错：No value passed for parameter 'p1'
 
 // ✅ 正确写法：普通函数 + 默认值
 function getName(age: number | null = null) {
-  console.log(age);
+	console.log(age);
 }
 
 getName(10); // ✅ 成功
@@ -51,22 +51,22 @@ getName(); // ✅ 成功
 ```ts
 // utils.ts
 export function getName(val: string) {
-  return val;
+	return val;
 }
 
 export const getName2 = (val: string) => {
-  return val;
+	return val;
 };
 ```
 
 ```html
 <!-- demo.uvue -->
 <template>
-  <!-- ❌ 错误：export function 在模板中使用会报错 -->
-  <text>{{ getName('用户名') }}</text>
+	<!-- ❌ 错误：export function 在模板中使用会报错 -->
+	<text>{{ getName('用户名') }}</text>
 
-  <!-- ✅ 正确：export const 箭头函数可以正常使用 -->
-  <text>{{ getName2('用户名') }}</text>
+	<!-- ✅ 正确：export const 箭头函数可以正常使用 -->
+	<text>{{ getName2('用户名') }}</text>
 </template>
 ```
 
@@ -81,50 +81,50 @@ APP 端不支持通过父级样式修改控制子元素样式，需要为子元�
 ```html
 <!-- ❌ 问题示例 -->
 <view class="container" :class="{ 'active': isActive }">
-  <text class="title">标题文本</text>
+	<text class="title">标题文本</text>
 </view>
 
 <style lang="scss" scoped>
-  .container {
-    @apply bg-white;
+	.container {
+		@apply bg-white;
 
-    .title {
-      @apply text-gray-700;
-    }
+		.title {
+			@apply text-gray-700;
+		}
 
-    &.active {
-      @apply bg-blue-500; /* ✅ 父元素样式生效 */
+		&.active {
+			@apply bg-blue-500; /* ✅ 父元素样式生效 */
 
-      .title {
-        @apply text-white; /* ❌ 子元素样式不生效 */
-      }
-    }
-  }
+			.title {
+				@apply text-white; /* ❌ 子元素样式不生效 */
+			}
+		}
+	}
 </style>
 ```
 
 ```html
 <!-- ✅ 正确解决方案 -->
 <view class="container" :class="{ 'active': isActive }">
-  <text class="title" :class="{ 'active': isActive }">标题文本</text>
+	<text class="title" :class="{ 'active': isActive }">标题文本</text>
 </view>
 
 <style lang="scss" scoped>
-  .container {
-    @apply bg-white;
+	.container {
+		@apply bg-white;
 
-    &.active {
-      @apply bg-blue-500;
-    }
-  }
+		&.active {
+			@apply bg-blue-500;
+		}
+	}
 
-  .title {
-    @apply text-gray-700;
+	.title {
+		@apply text-gray-700;
 
-    &.active {
-      @apply text-white; /* ✅ 生效 */
-    }
-  }
+		&.active {
+			@apply text-white; /* ✅ 生效 */
+		}
+	}
 </style>
 ```
 
@@ -141,12 +141,12 @@ APP 端不支持通过父级样式修改控制子元素样式，需要为子元�
 ```css
 /* ❌ 默认设置可能导致异常 */
 .transition-element {
-  transition-property: all;
+	transition-property: all;
 }
 
 /* ✅ 推荐明确指定过渡属性 */
 .transition-element {
-  transition-property: opacity, transform;
+	transition-property: opacity, transform;
 }
 ```
 
@@ -161,8 +161,8 @@ APP 端不支持通过父级样式修改控制子元素样式，需要为子元�
 <cl-input v-model="content as string"></cl-input>
 
 <script lang="ts" setup>
-  import { ref } from "vue";
-  const content = ref<string>("");
+	import { ref } from "vue";
+	const content = ref<string>("");
 </script>
 ```
 
@@ -172,26 +172,26 @@ APP 端不支持通过父级样式修改控制子元素样式，需要为子元�
 
 ```ts
 type Item = {
-  label: string;
-  value: number;
+	label: string;
+	value: number;
 };
 
 // ✅ 正确：明确指定泛型
 const list = ref<Item[]>([
-  {
-    label: "Vue",
-    value: 1,
-  },
-  {
-    label: "React",
-    value: 2,
-  },
+	{
+		label: "Vue",
+		value: 1
+	},
+	{
+		label: "React",
+		value: 2
+	}
 ]);
 
 // ✅ 正确：添加元素时使用类型断言
 list.value.push({
-  label: "Angular",
-  value: 3,
+	label: "Angular",
+	value: 3
 } as Item);
 ```
 
@@ -201,18 +201,18 @@ UTS 是强类型语言，不允许动态类型转换，即使类型结构相同�
 
 ```ts
 type UserA = {
-  name: string;
-  age: number;
+	name: string;
+	age: number;
 };
 
 type UserB = {
-  name: string;
-  age: number;
+	name: string;
+	age: number;
 };
 
 const userA = {
-  name: "张三",
-  age: 25,
+	name: "张三",
+	age: 25
 } as UserA;
 
 // ❌ 错误：即使结构相同也不能直接转换
@@ -220,8 +220,8 @@ console.log((userA as UserB).age);
 
 // ✅ 正确：需要重新创建对象
 const userB: UserB = {
-  name: userA.name,
-  age: userA.age,
+	name: userA.name,
+	age: userA.age
 };
 ```
 
@@ -234,18 +234,18 @@ let value: number | null = null;
 
 // ❌ 错误用法
 if (value) {
-  console.log("有值");
+	console.log("有值");
 }
 
 // ✅ 正确用法
 if (value != null) {
-  console.log("有值");
+	console.log("有值");
 }
 
 // ✅ 推荐：使用工具函数
-import { isNull } from "@/cool";
+import { isNull } from "@/.cool";
 if (!isNull(value)) {
-  console.log("有值");
+	console.log("有值");
 }
 ```
 
@@ -270,10 +270,10 @@ console.log(value ?? 1);
 
 ```ts
 type User = {
-  name: string;
-  age: number;
-  email?: string; // 可选属性
-  avatar: string | null; // 可空属性
+	name: string;
+	age: number;
+	email?: string; // 可选属性
+	avatar: string | null; // 可空属性
 };
 
 const user = ref<User | null>(null);
@@ -289,9 +289,9 @@ const userEmail = user.value?.email ?? "未设置";
 
 ```ts
 const data = {
-  name: "张三",
-  age: 25,
-  city: "北京",
+	name: "张三",
+	age: 25,
+	city: "北京"
 };
 
 // 基本取值方法
@@ -309,22 +309,22 @@ console.log(data.getBoolean("active", false)); // 布尔类型
 
 ```ts
 type User = {
-  name: string;
-  age: number;
-  province?: string;
-  city?: string;
+	name: string;
+	age: number;
+	province?: string;
+	city?: string;
 };
 
 const rawData = {
-  name: "李四",
-  age: 30,
+	name: "李四",
+	age: 30
 };
 
 // ❌ 错误：直接类型断言会报错
 // console.log((rawData as User).name);
 
 // ✅ 正确：使用解析函数
-import { parse } from "@/cool";
+import { parse } from "@/.cool";
 const user = parse<User>(rawData);
 console.log(user?.name);
 ```
@@ -354,7 +354,7 @@ const { windowHeight } = uni.getWindowInfo();
 
 // ✅ 解决方案1：使用屏幕高度
 onReady(() => {
-  const { screenHeight } = uni.getWindowInfo();
+	const { screenHeight } = uni.getWindowInfo();
 });
 
 // ✅ 解决方案2：使用屏幕高度，手动减去导航了、安全区域等
@@ -366,16 +366,16 @@ const { screenHeight } = uni.getWindowInfo();
 ```ts
 // ❌ 问题：立即查询可能获取不准确
 onMounted(() => {
-  const query = uni.createSelectorQuery();
-  // 可能获取到错误值
+	const query = uni.createSelectorQuery();
+	// 可能获取到错误值
 });
 
 // ✅ 解决方案：延迟 50ms 执行
 onMounted(() => {
-  setTimeout(() => {
-    const query = uni.createSelectorQuery();
-    // 获取准确值
-  }, 50);
+	setTimeout(() => {
+		const query = uni.createSelectorQuery();
+		// 获取准确值
+	}, 50);
 });
 ```
 

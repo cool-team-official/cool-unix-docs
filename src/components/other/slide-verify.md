@@ -9,7 +9,7 @@
 | pt             | 样式穿透配置               | [PassThrough](#passthrough) | -                  | -          |
 | modelValue     | 是否验证成功               | boolean                     | -                  | false      |
 | mode           | 验证模式                   | string                      | "slide" \| "image" | "slide"    |
-| size           | 滑块大小                   | number                      | -                  | 40         |
+| size(px)       | 滑块大小                   | number                      | -                  | 40         |
 | disabled       | 是否禁用                   | boolean                     | -                  | false      |
 | imageUrl       | 图片 URL（图片模式使用）   | string                      | -                  | ""         |
 | imageSize      | 图片大小（图片模式使用）） | number \| string            | -                  | 300        |
@@ -48,11 +48,7 @@
 - 通过 `@fail` 事件监听滑动验证失败回调
 
 ```html
-<cl-slide-verify
-  v-model="status"
-  @success="onSuccess"
-  @fail="onFail"
-></cl-slide-verify>
+<cl-slide-verify v-model="status" @success="onSuccess" @fail="onFail"></cl-slide-verify>
 ```
 
 ### 没有错误提示
@@ -71,7 +67,7 @@
 
 ```html
 <cl-slide-verify
-  mode="image"
-  image-url="https://unix.cool-js.com/images/demo/avatar.jpg"
+	mode="image"
+	image-url="https://unix.cool-js.com/images/demo/avatar.jpg"
 ></cl-slide-verify>
 ```

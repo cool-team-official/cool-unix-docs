@@ -8,6 +8,22 @@
 
 - [欢迎在 GitHub 上为我们点 Star](https://github.com/cool-team-official/cool-unix)
 
+## v8.1.0 - 2026.1.18
+
+- [功能] 新增“宽屏”支持，默认单位由 `rpx` 调整为 `px`，提升显示适配性
+- [功能] 增加插件机制 `plugins`，支持自动加载，扩展更灵活
+- [功能] 目录结构优化，将 `/cool` 调整为 `/.cool`
+- [功能] 国际化目录更名，统一由 `/locale` 改为 `/locales`
+- [功能] 核心代码优化，支持自动引入，无需手动导入
+- [功能] 新增底部导航栏组件 `cl-tabbar`
+- [功能] 优化并升级 `unix-i18n`、`unix-ui-types`、`unix-icons` 命令的使用体验和功能完善
+- [优化] 解决 `cl-cropper` 在 APP 端首次加载图片时出现模糊的问题
+- [优化] 修复 `cl-text` 在多端下的对齐异常
+- [优化] 修复 `cl-icon` 在多端下的对齐异常
+- [优化] 修复 `cl-button` 在 IOS 端 `light` 按下样式异常问题
+- [优化] 优化 `cl-picker-view` 在不同端的样式一致性
+- [优化] 解决 `tailwind` 部分符号如 `>` `|` 渲染异常问题
+
 ## v8.0.31 - 2025.12.02
 
 - [功能]更新 `icon` 脚本

@@ -17,7 +17,7 @@
 | disabled         | 是否禁用输入框                                                           | boolean                     |                                                                                     | false    |
 | readonly         | 是否设置为只读状态                                                       | boolean                     |                                                                                     | false    |
 | fixed            | 如果 textarea 是在 position:fixed 的区域，需要显示指定属性 fixed 为 true | boolean                     |                                                                                     | false    |
-| height           | 文本域高度                                                               | number \| string            |                                                                                     | 120      |
+| height           | 文本域高度                                                               | number                      |                                                                                     | 70       |
 | autoHeight       | 是否自动调整高度                                                         | boolean                     |                                                                                     | false    |
 | showWordLimit    | 是否显示字数统计                                                         | boolean                     |                                                                                     | true     |
 | clearable        | 是否显示清空按钮                                                         | boolean                     |                                                                                     | false    |
@@ -94,11 +94,11 @@
 
 ```vue
 <cl-textarea
-  :pt="{
-    className: '!bg-sky-100 !border-sky-700',
-    inner: {
-      className: '!text-sky-700',
-    },
-  }"
+	:pt="{
+		className: '!bg-sky-100 !border-sky-700',
+		inner: {
+			className: '!text-sky-700'
+		}
+	}"
 ></cl-textarea>
 ```

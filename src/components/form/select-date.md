@@ -54,10 +54,10 @@
 
 样式穿透配置对象，用于深度自定义组件内部元素的样式。
 
-| 参数    | 说明                   | 类型                       |
-| ------- | ---------------------- | -------------------------- |
-| trigger | 选择器触发元素样式配置 | ClSelectTriggerPassThrough |
-| popup   | 弹窗容器样式配置       | [ClPopupPassThrough](/src/components/feedback/popup.md#passthrough)       |
+| 参数    | 说明                   | 类型                                                                |
+| ------- | ---------------------- | ------------------------------------------------------------------- |
+| trigger | 选择器触发元素样式配置 | ClSelectTriggerPassThrough                                          |
+| popup   | 弹窗容器样式配置       | [ClPopupPassThrough](/src/components/feedback/popup.md#passthrough) |
 
 ## 示例
 
@@ -67,13 +67,13 @@
 
 ```html
 <template>
-  <cl-select-date v-model="selectedDate"></cl-select-date>
+	<cl-select-date v-model="selectedDate"></cl-select-date>
 </template>
 
 <script setup>
-  import { ref } from "vue";
+	import { ref } from "vue";
 
-  const selectedDate = ref("");
+	const selectedDate = ref("");
 </script>
 ```
 
@@ -103,10 +103,10 @@
 
 ```html
 <cl-select-date
-  v-model="dateTime"
-  type="second"
-  title="选择时间"
-  placeholder="请选择日期时间"
+	v-model="dateTime"
+	type="second"
+	title="选择时间"
+	placeholder="请选择日期时间"
 ></cl-select-date>
 ```
 
@@ -116,11 +116,11 @@
 
 ```html
 <cl-select-date
-  v-model="formattedDate"
-  type="date"
-  label-format="YYYY年MM月DD日"
-  value-format="YYYY-MM-DD"
-  title="选择日期"
+	v-model="formattedDate"
+	type="date"
+	label-format="YYYY年MM月DD日"
+	value-format="YYYY-MM-DD"
+	title="选择日期"
 ></cl-select-date>
 ```
 
@@ -130,11 +130,11 @@
 
 ```html
 <cl-select-date
-  v-model="internationalDate"
-  :headers="['Year', 'Month', 'Date', 'Hour', 'Minute', 'Second']"
-  confirm-text="Confirm"
-  cancel-text="Cancel"
-  title="Select Date"
+	v-model="internationalDate"
+	:headers="['Year', 'Month', 'Date', 'Hour', 'Minute', 'Second']"
+	confirm-text="Confirm"
+	cancel-text="Cancel"
+	title="Select Date"
 ></cl-select-date>
 ```
 
@@ -144,12 +144,12 @@
 
 ```html
 <cl-select-date
-  v-model="appointmentDate"
-  type="date"
-  start="2025-01-01 00:00:00"
-  end="2025-12-31 23:59:59"
-  title="选择预约日期"
-  placeholder="请选择预约日期"
+	v-model="appointmentDate"
+	type="date"
+	start="2025-01-01 00:00:00"
+	end="2025-12-31 23:59:59"
+	title="选择预约日期"
+	placeholder="请选择预约日期"
 ></cl-select-date>
 ```
 
@@ -159,38 +159,34 @@
 
 ```html
 <template>
-  <cl-select-date
-    ref="selectDateRef"
-    v-model="customDate"
-    :show-trigger="false"
-    type="date"
-  ></cl-select-date>
+	<cl-select-date
+		ref="selectDateRef"
+		v-model="customDate"
+		:show-trigger="false"
+		type="date"
+	></cl-select-date>
 
-  <button @click="openDatePicker">点击选择日期</button>
+	<button @click="openDatePicker">点击选择日期</button>
 </template>
 
 <script setup lang="ts">
-  import { ref } from "vue";
+	import { ref } from "vue";
 
-  const selectDateRef = ref<ClSelectDateComponentPublicInstance | null>(null);
-  const customDate = ref("");
+	const selectDateRef = ref<ClSelectDateComponentPublicInstance | null>(null);
+	const customDate = ref("");
 
-  function openDatePicker() {
-    selectDateRef.value!.open((value: string) => {
-      console.log("选择的日期:", value);
-    });
-  }
+	function openDatePicker() {
+		selectDateRef.value!.open((value: string) => {
+			console.log("选择的日期:", value);
+		});
+	}
 </script>
 ```
 
 ### 禁用状态
 
 ```html
-<cl-select-date
-  v-model="disabledDate"
-  disabled
-  placeholder="此选择器已禁用"
-></cl-select-date>
+<cl-select-date v-model="disabledDate" disabled placeholder="此选择器已禁用"></cl-select-date>
 ```
 
 ### 范围选择
@@ -207,39 +203,32 @@
 - 添加参数 `shortcuts`，并且是 `ClSelectDateShortcut[]` 类型
 
 ```vue
-<cl-select-date
-  v-model:values="values"
-  rangeable
-  :shortcuts="shortcuts"
-></cl-select-date>
+<cl-select-date v-model:values="values" rangeable :shortcuts="shortcuts"></cl-select-date>
 
 <script setup lang="ts">
 import { ref } from "vue";
 import { type ClSelectDateShortcut } from "@/uni_modules/cool-ui";
-import { dayUts } from "@/cool";
+import { dayUts } from "@/.cool";
 
 const shortcuts = ref<ClSelectDateShortcut[]>([
-  {
-    label: "昨日",
-    value: [
-      dayUts().subtract(1, "day").format("YYYY-MM-DD"),
-      dayUts().format("YYYY-MM-DD"),
-    ],
-  },
-  {
-    label: "本周",
-    value: [
-      dayUts().startOf("week").format("YYYY-MM-DD"),
-      dayUts().endOf("week").format("YYYY-MM-DD"),
-    ],
-  },
-  {
-    label: "本月",
-    value: [
-      dayUts().startOf("month").format("YYYY-MM-DD"),
-      dayUts().endOf("month").format("YYYY-MM-DD"),
-    ],
-  },
+	{
+		label: "昨日",
+		value: [dayUts().subtract(1, "day").format("YYYY-MM-DD"), dayUts().format("YYYY-MM-DD")]
+	},
+	{
+		label: "本周",
+		value: [
+			dayUts().startOf("week").format("YYYY-MM-DD"),
+			dayUts().endOf("week").format("YYYY-MM-DD")
+		]
+	},
+	{
+		label: "本月",
+		value: [
+			dayUts().startOf("month").format("YYYY-MM-DD"),
+			dayUts().endOf("month").format("YYYY-MM-DD")
+		]
+	}
 ]);
 </script>
 ```

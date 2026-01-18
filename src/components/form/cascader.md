@@ -16,7 +16,7 @@
 | labelKey      | 标签显示字段的键名       | string                      |        | "label"  |
 | valueKey      | 值字段的键名             | string                      |        | "value"  |
 | textSeparator | 文本分隔符               | string                      |        | " - "    |
-| height        | 列表高度                 | string \| number            |        | 800      |
+| height        | 列表高度                 | string \| number            |        | 400      |
 
 :::warning
 `options` 中包含多少层级的 `children`，用户就需要依次选择对应的层级次数，直到选中最后一级为止。
@@ -45,88 +45,88 @@
 
 ```html
 <template>
-  <cl-cascader v-model="val" :options="options"></cl-cascader>
+	<cl-cascader v-model="val" :options="options"></cl-cascader>
 </template>
 
 <script setup>
-    import { ref } from "vue";
-    import { type ClCascaderOption } from "@/uni_modules/cool-ui";
+	  import { ref } from "vue";
+	  import { type ClCascaderOption } from "@/uni_modules/cool-ui";
 
-    const val = ref<string[]>([]);
+	  const val = ref<string[]>([]);
 
-    const options = ref<ClCascaderOption[]>([{
-  		label: "电子产品",
-  		value: "1",
-  		children: [
-  			{
-  				label: "手机",
-  				value: "1-1",
-  				children: [
-  					{
-  						label: "苹果",
-  						value: "1-1-1",
-  					},
-  					{
-  						label: "华为",
-  						value: "1-1-2",
-  					},
-  					{
-  						label: "小米",
-  						value: "1-1-3"
-  					}
-  				]
-  			},
-  			{
-  				label: "电脑",
-  				value: "1-2",
-  				children: [
-  					{
-  						label: "笔记本",
-  						value: "1-2-1"
-  					},
-  					{
-  						label: "台式机",
-  						value: "1-2-2"
-  					}
-  				]
-  			},
-  		]
-  	},
-  	{
-  		label: "服装",
-  		value: "2",
-  		children: [
-  			{
-  				label: "男装",
-  				value: "2-1",
-  				children: [
-  					{
-  						label: "上衣",
-  						value: "2-1-1"
-  					},
-  					{
-  						label: "裤装",
-  						value: "2-1-2"
-  					},
-  				]
-  			},
-  			{
-  				label: "女装",
-  				value: "2-2",
-  				children: [
-  					{
-  						label: "裙装",
-  						value: "2-2-1"
-  					},
-  					{
-  						label: "上装",
-  						value: "2-2-2"
-  					}
-  				]
-  			}
-  		]
-  	}
-  ]);
+	  const options = ref<ClCascaderOption[]>([{
+			label: "电子产品",
+			value: "1",
+			children: [
+				{
+					label: "手机",
+					value: "1-1",
+					children: [
+						{
+							label: "苹果",
+							value: "1-1-1",
+						},
+						{
+							label: "华为",
+							value: "1-1-2",
+						},
+						{
+							label: "小米",
+							value: "1-1-3"
+						}
+					]
+				},
+				{
+					label: "电脑",
+					value: "1-2",
+					children: [
+						{
+							label: "笔记本",
+							value: "1-2-1"
+						},
+						{
+							label: "台式机",
+							value: "1-2-2"
+						}
+					]
+				},
+			]
+		},
+		{
+			label: "服装",
+			value: "2",
+			children: [
+				{
+					label: "男装",
+					value: "2-1",
+					children: [
+						{
+							label: "上衣",
+							value: "2-1-1"
+						},
+						{
+							label: "裤装",
+							value: "2-1-2"
+						},
+					]
+				},
+				{
+					label: "女装",
+					value: "2-2",
+					children: [
+						{
+							label: "裙装",
+							value: "2-2-1"
+						},
+						{
+							label: "上装",
+							value: "2-2-2"
+						}
+					]
+				}
+			]
+		}
+	]);
 </script>
 ```
 
@@ -136,16 +136,16 @@
 
 ```html
 <template>
-  <cl-cascader v-model="val" :options="options"></cl-cascader>
+	<cl-cascader v-model="val" :options="options"></cl-cascader>
 </template>
 
 <script setup>
-  import { ref } from "vue";
-  import { useCascader } from "@/uni_modules/cool-ui";
-  import pca from "@/data/pca.json";
+	import { ref } from "vue";
+	import { useCascader } from "@/uni_modules/cool-ui";
+	import pca from "@/data/pca.json";
 
-  const val = ref<string[]>([]);
+	const val = ref<string[]>([]);
 
-  const options = useCascader(pca)
+	const options = useCascader(pca)
 </script>
 ```

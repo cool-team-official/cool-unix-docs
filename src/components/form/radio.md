@@ -25,11 +25,11 @@ Radio 单选框组件用于在一组选项中进行单一选择。支持自定�
 
 样式穿透配置对象，用于深度自定义组件内部元素的样式。
 
-| 参数      | 说明             | 类型                                                        |
-| --------- | ---------------- | ----------------------------------------------------------- |
-| className | 组件根元素样式   | string                                                      |
-| icon      | 图标元素配置     | [ClIconProps](/src/components/basic/icon.md#passthrough)    |
-| label     | 标签文本元素配置 | [PassThroughProps](/src/components/doc.md#passthroughprops) |
+| 参数      | 说明             | 类型                                                          |
+| --------- | ---------------- | ------------------------------------------------------------- |
+| className | 组件根元素样式   | string                                                        |
+| icon      | 图标元素配置     | [ClIconProps](/src/components/basic/icon.md#passthrough)      |
+| label     | 标签文本元素配置 | [ClTextProps](/src/components/basic/text.md#passthroughprops) |
 
 ## 使用示例
 
@@ -39,17 +39,17 @@ Radio 单选框组件用于在一组选项中进行单一选择。支持自定�
 
 ```html
 <template>
-  <cl-radio v-model="selectedFramework" value="vue">Vue.js</cl-radio>
-  <cl-radio v-model="selectedFramework" value="react">React</cl-radio>
-  <cl-radio v-model="selectedFramework" value="angular">Angular</cl-radio>
-  <cl-radio v-model="selectedFramework" value="svelte">Svelte</cl-radio>
+	<cl-radio v-model="selected" value="vue">Vue.js</cl-radio>
+	<cl-radio v-model="selected" value="react">React</cl-radio>
+	<cl-radio v-model="selected" value="angular">Angular</cl-radio>
+	<cl-radio v-model="selected" value="svelte">Svelte</cl-radio>
 </template>
 
 <script setup>
-  import { ref } from "vue";
+	import { ref } from "vue";
 
-  // 当前选中的框架
-  const selectedFramework = ref("vue");
+	// 当前选中的框架
+	const selected = ref("vue");
 </script>
 ```
 
@@ -59,15 +59,15 @@ Radio 单选框组件用于在一组选项中进行单一选择。支持自定�
 
 ```html
 <template>
-  <cl-radio v-model="tech" value="available">可用选项</cl-radio>
-  <cl-radio v-model="tech" value="disabled" disabled>禁用选项</cl-radio>
-  <cl-radio v-model="tech" value="normal">普通选项</cl-radio>
+	<cl-radio v-model="selected" value="available">可用选项</cl-radio>
+	<cl-radio v-model="selected" value="disabled" disabled>禁用选项</cl-radio>
+	<cl-radio v-model="selected" value="normal">普通选项</cl-radio>
 </template>
 
 <script setup>
-  import { ref } from "vue";
+	import { ref } from "vue";
 
-  const tech = ref("available");
+	const selected = ref("available");
 </script>
 ```
 
@@ -77,18 +77,14 @@ Radio 单选框组件用于在一组选项中进行单一选择。支持自定�
 
 ```html
 <template>
-  <cl-radio v-model="textOption" value="option1" :show-icon="false">
-    纯文本选项一
-  </cl-radio>
-  <cl-radio v-model="textOption" value="option2" :show-icon="false">
-    纯文本选项二
-  </cl-radio>
+	<cl-radio v-model="selected" value="option1" :show-icon="false"> 纯文本选项一 </cl-radio>
+	<cl-radio v-model="selected" value="option2" :show-icon="false"> 纯文本选项二 </cl-radio>
 </template>
 
 <script setup>
-  import { ref } from "vue";
+	import { ref } from "vue";
 
-  const textOption = ref("option1");
+	const selected = ref("option1");
 </script>
 ```
 
@@ -98,28 +94,18 @@ Radio 单选框组件用于在一组选项中进行单一选择。支持自定�
 
 ```html
 <template>
-  <cl-radio
-    v-model="favorite"
-    value="liked"
-    active-icon="heart-fill"
-    inactive-icon="heart-line"
-  >
-    我喜欢的
-  </cl-radio>
-  <cl-radio
-    v-model="favorite"
-    value="starred"
-    active-icon="star-fill"
-    inactive-icon="star-line"
-  >
-    我收藏的
-  </cl-radio>
+	<cl-radio v-model="selected" value="liked" active-icon="heart-fill" inactive-icon="heart-line">
+		我喜欢的
+	</cl-radio>
+	<cl-radio v-model="selected" value="starred" active-icon="star-fill" inactive-icon="star-line">
+		我收藏的
+	</cl-radio>
 </template>
 
 <script setup>
-  import { ref } from "vue";
+	import { ref } from "vue";
 
-  const favorite = ref("liked");
+	const selected = ref("liked");
 </script>
 ```
 
@@ -129,29 +115,24 @@ Radio 单选框组件用于在一组选项中进行单一选择。支持自定�
 
 ```html
 <template>
-  <cl-radio
-    v-for="(item, index) in frameworkOptions"
-    :key="index"
-    v-model="selectedTech"
-    :value="item.value"
-  >
-    {{ item.label }}
-  </cl-radio>
+	<cl-radio v-for="(item, index) in options" :key="index" v-model="selected" :value="item.value">
+		{{ item.label }}
+	</cl-radio>
 </template>
 
 <script lang="ts" setup>
-  import { ref } from "vue";
-  import { type ClRadioOption } from "@/uni_modules/cool-ui";
+	import { ref } from "vue";
+	import { type ClRadioOption } from "@/uni_modules/cool-ui";
 
-  // 定义选项数据类型
-  const frameworkOptions = ref<ClRadioOption[]>([
-    { label: "Vue.js", value: "vue" },
-    { label: "React", value: "react" },
-    { label: "Angular", value: "angular" },
-    { label: "Svelte", value: "svelte" },
-  ]);
+	// 定义选项数据类型
+	const options = ref<ClRadioOption[]>([
+		{ label: "Vue.js", value: "vue" },
+		{ label: "React", value: "react" },
+		{ label: "Angular", value: "angular" },
+		{ label: "Svelte", value: "svelte" }
+	]);
 
-  // 当前选中的技术栈
-  const selectedTech = ref("vue");
+	// 当前选中的技术栈
+	const selected = ref("vue");
 </script>
 ```

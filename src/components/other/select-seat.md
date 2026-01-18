@@ -3,8 +3,10 @@
 座位选择组件，支持缩放、拖动、自定义样式和图片渲染，适用于电影院、剧院等场景的座位选择。
 
 :::warning 提示
-使用图片时，请确保配置了跨域访问权限，否则可能导致图片渲染失败。
-:::
+
+1. 使用图片时，请确保配置了跨域访问权限，否则可能导致图片渲染失败。
+2. 图标仅在 H5 和 APP 端有效，建议优先通过图片进行配置，以确保跨端表现一致。
+   :::
 
 ## 基础参数
 
@@ -38,25 +40,25 @@
 ```typescript
 // 选中值类型
 interface ClSelectSeatValue {
-  row: number;
-  col: number;
+	row: number;
+	col: number;
 }
 
 // 座位项类型
 interface ClSelectSeatItem {
-  row: number;
-  col: number;
-  disabled?: boolean; // 是否禁用
-  empty?: boolean; // 是否为空位（不渲染）
-  bgColor?: string; // 自定义背景色
-  borderColor?: string; // 自定义边框色
-  selectedBgColor?: string; // 自定义选中背景色
-  selectedColor?: string; // 自定义选中图标色
-  selectedIcon?: string; // 自定义选中图标
-  selectedImage?: string; // 自定义选中图片
-  icon?: string; // 自定义图标
-  image?: string; // 自定义图片
-  color?: string; // 自定义图标颜色
+	row: number;
+	col: number;
+	disabled?: boolean; // 是否禁用
+	empty?: boolean; // 是否为空位（不渲染）
+	bgColor?: string; // 自定义背景色
+	borderColor?: string; // 自定义边框色
+	selectedBgColor?: string; // 自定义选中背景色
+	selectedColor?: string; // 自定义选中图标色
+	selectedIcon?: string; // 自定义选中图标
+	selectedImage?: string; // 自定义选中图片
+	icon?: string; // 自定义图标
+	image?: string; // 自定义图片
+	color?: string; // 自定义图标颜色
 }
 ```
 
@@ -82,19 +84,19 @@ interface ClSelectSeatItem {
 
 ```html
 <template>
-  <cl-select-seat
-    v-model="selectedSeats"
-    :rows="10"
-    :cols="12"
-    :width="350"
-    :height="400"
-  ></cl-select-seat>
+	<cl-select-seat
+		v-model="selectedSeats"
+		:rows="10"
+		:cols="12"
+		:width="350"
+		:height="400"
+	></cl-select-seat>
 </template>
 
 <script lang="ts" setup>
-  import type { ClSelectSeatValue } from "@/uni_modules/cool-ui/types";
+	import type { ClSelectSeatValue } from "@/uni_modules/cool-ui/types";
 
-  const selectedSeats = ref<ClSelectSeatValue[]>([]);
+	const selectedSeats = ref<ClSelectSeatValue[]>([]);
 </script>
 ```
 
@@ -104,45 +106,42 @@ interface ClSelectSeatItem {
 
 ```html
 <template>
-  <cl-select-seat
-    v-model="selectedSeats"
-    :rows="5"
-    :cols="8"
-    :width="350"
-    :height="250"
-    :seats="seats"
-  ></cl-select-seat>
+	<cl-select-seat
+		v-model="selectedSeats"
+		:rows="5"
+		:cols="8"
+		:width="350"
+		:height="250"
+		:seats="seats"
+	></cl-select-seat>
 </template>
 
 <script lang="ts" setup>
-  import type {
-    ClSelectSeatItem,
-    ClSelectSeatValue,
-  } from "@/uni_modules/cool-ui/types";
+	import type { ClSelectSeatItem, ClSelectSeatValue } from "@/uni_modules/cool-ui/types";
 
-  const selectedSeats = ref<ClSelectSeatValue[]>([]);
+	const selectedSeats = ref<ClSelectSeatValue[]>([]);
 
-  const seats = ref<ClSelectSeatItem[]>([]);
+	const seats = ref<ClSelectSeatItem[]>([]);
 
-  // 初始化座位
-  for (let row = 0; row < 5; row++) {
-    for (let col = 0; col < 8; col++) {
-      const seat: ClSelectSeatItem = { row, col };
+	// 初始化座位
+	for (let row = 0; row < 5; row++) {
+		for (let col = 0; col < 8; col++) {
+			const seat: ClSelectSeatItem = { row, col };
 
-      // 设置部分座位为已售（禁用）
-      if ((row === 2 && col === 3) || (row === 2 && col === 4)) {
-        seat.disabled = true;
-        seat.bgColor = "#ef4444";
-      }
+			// 设置部分座位为已售（禁用）
+			if ((row === 2 && col === 3) || (row === 2 && col === 4)) {
+				seat.disabled = true;
+				seat.bgColor = "#ef4444";
+			}
 
-      // 设置走廊（空位）
-      if (col === 4 && row < 2) {
-        seat.empty = true;
-      }
+			// 设置走廊（空位）
+			if (col === 4 && row < 2) {
+				seat.empty = true;
+			}
 
-      seats.value.push(seat);
-    }
-  }
+			seats.value.push(seat);
+		}
+	}
 </script>
 ```
 
@@ -152,13 +151,13 @@ interface ClSelectSeatItem {
 
 ```html
 <cl-select-seat
-  v-model="selectedSeats"
-  :rows="8"
-  :cols="10"
-  :width="350"
-  :height="300"
-  image="/static/seat-normal.png"
-  selected-image="/static/seat-selected.png"
+	v-model="selectedSeats"
+	:rows="8"
+	:cols="10"
+	:width="350"
+	:height="300"
+	image="/static/seat-normal.png"
+	selected-image="/static/seat-selected.png"
 ></cl-select-seat>
 ```
 
@@ -166,15 +165,15 @@ interface ClSelectSeatItem {
 
 ```html
 <cl-select-seat
-  v-model="selectedSeats"
-  :rows="6"
-  :cols="8"
-  :width="350"
-  :height="280"
-  bg-color="#f0f9ff"
-  border-color="#0ea5e9"
-  selected-bg-color="#0284c7"
-  selected-color="#ffffff"
+	v-model="selectedSeats"
+	:rows="6"
+	:cols="8"
+	:width="350"
+	:height="280"
+	bg-color="#f0f9ff"
+	border-color="#0ea5e9"
+	selected-bg-color="#0284c7"
+	selected-color="#ffffff"
 ></cl-select-seat>
 ```
 
@@ -182,33 +181,29 @@ interface ClSelectSeatItem {
 
 ```html
 <template>
-  <cl-select-seat
-    v-model="selectedSeats"
-    :rows="8"
-    :cols="10"
-    :width="350"
-    :height="300"
-    @seat-click="onSeatClick"
-    @move="onMove"
-  ></cl-select-seat>
+	<cl-select-seat
+		v-model="selectedSeats"
+		:rows="8"
+		:cols="10"
+		:width="350"
+		:height="300"
+		@seat-click="onSeatClick"
+		@move="onMove"
+	></cl-select-seat>
 </template>
 
 <script lang="ts" setup>
-  import type { ClSelectSeatValue, ClSelectSeatItem } from "@/types/components";
+	import type { ClSelectSeatValue, ClSelectSeatItem } from "@/types/components";
 
-  const selectedSeats = ref<ClSelectSeatValue[]>([]);
+	const selectedSeats = ref<ClSelectSeatValue[]>([]);
 
-  function onSeatClick(seat: ClSelectSeatItem) {
-    console.log("点击座位:", seat.row + 1, "排", seat.col + 1, "座");
-  }
+	function onSeatClick(seat: ClSelectSeatItem) {
+		console.log("点击座位:", seat.row + 1, "排", seat.col + 1, "座");
+	}
 
-  function onMove(info: {
-    translateX: number;
-    translateY: number;
-    scale: number;
-  }) {
-    console.log("缩放比例:", info.scale);
-  }
+	function onMove(info: { translateX: number; translateY: number; scale: number }) {
+		console.log("缩放比例:", info.scale);
+	}
 </script>
 ```
 
@@ -216,30 +211,30 @@ interface ClSelectSeatItem {
 
 ```html
 <template>
-  <cl-select-seat
-    ref="seatRef"
-    v-model="selectedSeats"
-    :rows="8"
-    :cols="10"
-    :width="350"
-    :height="300"
-  ></cl-select-seat>
-  <button @click="markSold">标记已售</button>
+	<cl-select-seat
+		ref="seatRef"
+		v-model="selectedSeats"
+		:rows="8"
+		:cols="10"
+		:width="350"
+		:height="300"
+	></cl-select-seat>
+	<button @click="markSold">标记已售</button>
 </template>
 
 <script lang="ts" setup>
-  import type { ClSelectSeatComponentPublicInstance } from "@/types/components";
+	import type { ClSelectSeatComponentPublicInstance } from "@/types/components";
 
-  const seatRef = ref<ClSelectSeatComponentPublicInstance | null>(null);
-  const selectedSeats = ref([]);
+	const seatRef = ref<ClSelectSeatComponentPublicInstance | null>(null);
+	const selectedSeats = ref([]);
 
-  function markSold() {
-    // 将第3排第5座标记为已售
-    seatRef.value1.setSeat(2, 4, {
-      disabled: true,
-      bgColor: "#ef4444",
-    });
-  }
+	function markSold() {
+		// 将第3排第5座标记为已售
+		seatRef.value1.setSeat(2, 4, {
+			disabled: true,
+			bgColor: "#ef4444"
+		});
+	}
 </script>
 ```
 

@@ -45,13 +45,11 @@
 <cl-keyboard-number ref="keyboardNumberRef"> </cl-keyboard-number>
 
 <script setup lang="ts">
-  const keyboardNumberRef = ref<ClKeyboardNumberComponentPublicInstance | null>(
-    null
-  );
+	const keyboardNumberRef = ref<ClKeyboardNumberComponentPublicInstance | null>(null);
 
-  function openKeyboardNumber() {
-    keyboardNumberRef.value?.open();
-  }
+	function openKeyboardNumber() {
+		keyboardNumberRef.value!.open();
+	}
 </script>
 ```
 
@@ -98,12 +96,11 @@
 <cl-keyboard-password ref="keyboardPasswordRef"> </cl-keyboard-password>
 
 <script setup lang="ts">
-  const keyboardPasswordRef =
-    ref<ClKeyboardPasswordComponentPublicInstance | null>(null);
+	const keyboardPasswordRef = ref<ClKeyboardPasswordComponentPublicInstance | null>(null);
 
-  function openKeyboardPassword() {
-    keyboardPasswordRef.value?.open();
-  }
+	function openKeyboardPassword() {
+		keyboardPasswordRef.value!.open();
+	}
 </script>
 ```
 
@@ -145,15 +142,14 @@
 #### 基础用法
 
 ```html
-<cl-keyboard-car ref="keyboardCarRef" @change="handleCarNumberChange">
-</cl-keyboard-car>
+<cl-keyboard-car ref="keyboardCarRef" @change="handleCarNumberChange"> </cl-keyboard-car>
 
 <script setup lang="ts">
-  const keyboardCarRef = ref<ClKeyboardCarComponentPublicInstance | null>(null);
+	const keyboardCarRef = ref<ClKeyboardCarComponentPublicInstance | null>(null);
 
-  function openKeyboardCar() {
-    keyboardCarRef.value?.open();
-  }
+	function openKeyboardCar() {
+		keyboardCarRef.value!.open();
+	}
 </script>
 ```
 
