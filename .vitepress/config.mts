@@ -69,11 +69,11 @@ export default defineConfig({
 				items: [
 					{
 						text: "Cool uni(uniapp版)",
-						link: "https://uni-docs.cool-js.com/"
+						link: "https://uni-docscool-js.com/"
 					},
 					{
 						text: "Cool Admin(Vue版)",
-						link: "https://vue.cool-admin.com"
+						link: "https://vuecool-admin.com"
 					},
 					{
 						text: "Cool Admin(Nodejs版)",
@@ -81,7 +81,7 @@ export default defineConfig({
 					},
 					{
 						text: "Cool Admin(Java版)",
-						link: "https://java.cool-admin.com"
+						link: "https://javacool-admin.com"
 					}
 				]
 			}
@@ -475,44 +475,44 @@ export default defineConfig({
 						text: "目录结构",
 						items: [
 							{
-								text: ".cool",
+								text: "cool",
 								items: [
 									{
 										text: "animation",
 										link: "/src/components/other/animation.md"
 									},
-									{ text: "components", link: "/src/guide/.cool/components.md" },
-									{ text: "ctx", link: "/src/guide/.cool/ctx.md" },
-									{ text: "hooks", link: "/src/guide/.cool/hooks.md" },
+									{ text: "components", link: "/src/guide/cool/components.md" },
+									{ text: "ctx", link: "/src/guide/cool/ctx.md" },
+									{ text: "hooks", link: "/src/guide/cool/hooks.md" },
 									{ text: "icons", link: "/src/introduce/icon.md" },
 									{ text: "locale", link: "/src/introduce/i18n.md" },
-									{ text: "router", link: "/src/guide/.cool/router.md" },
-									{ text: "service", link: "/src/guide/.cool/service.md" },
-									{ text: "store", link: "/src/guide/.cool/store.md" },
-									{ text: "theme", link: "/src/guide/.cool/theme.md" },
-									{ text: "upload", link: "/src/guide/.cool/upload.md" },
+									{ text: "router", link: "/src/guide/cool/router.md" },
+									{ text: "service", link: "/src/guide/cool/service.md" },
+									{ text: "store", link: "/src/guide/cool/store.md" },
+									{ text: "theme", link: "/src/guide/cool/theme.md" },
+									{ text: "upload", link: "/src/guide/cool/upload.md" },
 									{
 										text: "utils",
 										items: [
 											{
 												text: "comm",
-												link: "/src/guide/.cool/utils/comm.md"
+												link: "/src/guide/cool/utils/comm.md"
 											},
 											{
 												text: "day",
-												link: "/src/guide/.cool/utils/day.md"
+												link: "/src/guide/cool/utils/day.md"
 											},
 											{
 												text: "path",
-												link: "/src/guide/.cool/utils/path.md"
+												link: "/src/guide/cool/utils/path.md"
 											},
 											{
 												text: "storage",
-												link: "/src/guide/.cool/utils/storage.md"
+												link: "/src/guide/cool/utils/storage.md"
 											},
 											{
 												text: "parse",
-												link: "/src/guide/.cool/utils/parse.md"
+												link: "/src/guide/cool/utils/parse.md"
 											}
 										]
 									}

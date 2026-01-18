@@ -16,18 +16,18 @@
 
 ```ts
 export const proxy = {
-  dev: {
-    // target: "https://show.cool-admin.com/api",
-    target: "http://127.0.0.1:8001",
-    changeOrigin: true,
-    rewrite: (path: string) => path.replace("/dev", ""),
-  },
+	dev: {
+		// target: "https://show.cool-admin.com/api",
+		target: "http://127.0.0.1:8001",
+		changeOrigin: true,
+		rewrite: (path: string) => path.replace("/dev", "")
+	},
 
-  prod: {
-    target: "https://show.cool-admin.com",
-    changeOrigin: true,
-    rewrite: (path: string) => path.replace("/prod", "/api"),
-  },
+	prod: {
+		target: "https://show.cool-admin.com",
+		changeOrigin: true,
+		rewrite: (path: string) => path.replace("/prod", "/api")
+	}
 };
 
 export const value = "dev";
@@ -48,7 +48,6 @@ export const value = "dev";
 ### 🔄 自动化集成
 
 - **接口自动扫描**：自动扫描服务端接口，生成对应的请求方法
-- **类型安全**：详见 [service 文档](/src/guide/cool/service.md) 了解更多
 - **开发体验优化**：减少手动配置，提高开发效率
 
 ### 🛠 丰富的内置功能

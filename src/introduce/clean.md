@@ -15,17 +15,17 @@ pnpm add @cool-vue/vite-plugin@8.2.6
 ```ts
 // vite.config.ts
 {
-  cool({
-    type: "uniapp-x",
-    proxy,
-    tailwind: {
-      enable: true,
-    },
-    eps: {
-      dist: ".cool",
-    },
-    clean: true, //【重要】是否纯净版
-  });
+	cool({
+		type: "uniapp-x",
+		proxy,
+		tailwind: {
+			enable: true
+		},
+		eps: {
+			dist: ".cool"
+		},
+		clean: true //【重要】是否纯净版
+	});
 }
 ```
 
@@ -43,12 +43,12 @@ pnpm add @cool-vue/vite-plugin@8.2.6
 - 缺少了 `eps` 类型生成
 - 缺少了 `service` 层的请求类型定义
 - 需要自行实现页面请求逻辑,包括登录、用户信息修改等功能
-- 需要调整 `/cool/service/index.ts` 中的 `Response` 返回值类型
-- 需要修改 `/cool/store/user.ts` 中的用户信息类型定义,包括:
-  - token 处理
-  - 登录状态判断
-  - 用户详情
-  - 信息更新等
+- 需要调整 `/.cool/service/index.ts` 中的 `Response` 返回值类型
+- 需要修改 `/.cool/store/user.ts` 中的用户信息类型定义,包括:
+    - token 处理
+    - 登录状态判断
+    - 用户详情
+    - 信息更新等
 - 字典(`dict`)功能不可用
 - 需要调整 `/router/index.ts` 中的路由导航逻辑
-- 需要重新实现 `/cool/upload/index.ts` 中的文件上传功能
+- 需要重新实现 `/.cool/upload/index.ts` 中的文件上传功能

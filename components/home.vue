@@ -48,7 +48,7 @@ const tab = reactive({
     //   label: "Eps",
     //   value: "eps",
     //   content: "一键生成接口服务层代码，自动完成类型定义",
-    //   doc: "https://unix.cool-js.com/src/guide/cool/service.html",
+    //   doc: "https://unix.cool-js.com/src/guide/.cool/service.html",
     // },
     {
       label: "开发交流群",
