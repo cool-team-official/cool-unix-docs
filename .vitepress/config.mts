@@ -481,7 +481,6 @@ export default defineConfig({
 										text: "animation",
 										link: "/src/components/other/animation.md"
 									},
-									{ text: "components", link: "/src/guide/cool/components.md" },
 									{ text: "ctx", link: "/src/guide/cool/ctx.md" },
 									{ text: "hooks", link: "/src/guide/cool/hooks.md" },
 									{ text: "icons", link: "/src/introduce/icon.md" },
